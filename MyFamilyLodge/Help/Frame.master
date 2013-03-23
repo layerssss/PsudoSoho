@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" MasterPageFile="../Page.master" AutoEventWireup="true" CodeBehind="Frame.master.cs"
+    Inherits="MyFamilyLodge.Help.Frame" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="header" runat="server">
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.accordion .ac-head').toggle(
+				function(){
+					$(this).next().slideDown('500').prev().find('span').text('收回');
+				},
+				function(){
+					$(this).next().slideUp('500').prev().find('span').text('展开');
+				})
+				.next().hide();
+	});
+</script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderHeader" runat="server">
+    <asp:ContentPlaceHolder ID="header" runat="server">
+    </asp:ContentPlaceHolder>
+       <h2 id="help-header-s">使用帮助</h2>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="help-content">
+        <div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+</asp:Content>

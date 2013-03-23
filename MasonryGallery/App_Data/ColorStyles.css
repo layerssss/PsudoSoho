@@ -1,0 +1,81 @@
+﻿$MGRender:$
+        .bg-c1,
+        .comments,.tools-theme,
+        .title,
+        .tooltip
+        {
+            background-color: #$MGText:Color1$;
+        }
+        .mfl-btn,.btn,.subpics-handle,.comments-handle,#cboxPrevious.btn,div#cboxClose
+{
+    background-image:url('$MGText:BaseUrl$ColorStyles/icon_sprite_$MGText:Color1$$MGText:Color2$$MGText:Color3$.png');
+}
+        .bg-c2,
+        body,
+        .overlay,
+        .title-text>input,
+        .subpics,
+        .description
+        {
+            background-color: #$MGText:Color2$;
+        }
+        .bg-c3,
+        .album,
+        .mouse-msg,
+        .tools,
+        div.album-open>.title
+        {
+            background-color: #$MGText:Color3$;
+        }
+        .fg-c1,
+        .album,
+        .description,
+        a.btn-themes,
+        a.handle-tools,
+        .tools
+        {
+            color: #$MGText:Color1$;
+        }
+        .fg-c2,
+        .album-open,
+        div.album-open>.title>.title-text
+        {
+            color: #$MGText:Color2$;
+        }
+        .fg-c3,
+        .comments,
+        .title-text,
+        .tooltip,
+        .title-text>input,
+        a,
+        .tools-theme
+        {
+            color: #$MGText:Color3$;
+        }
+        .bd-c1,
+        .album,
+        .subpics>div.subpic-active
+        {
+            border: $MGText:BorderWidth$px solid #$MGText:Color1$;
+        }
+        .bd-c2
+        {
+            border: $MGText:BorderWidth$px solid #$MGText:Color2$;
+        }
+        .bd-c3,
+        .subpics>div,
+        div.album-open,
+        .comments
+        {
+            border: $MGText:BorderWidth$px solid #$MGText:Color3$;
+        }
+        .comments>form>textarea
+        {
+            border-bottom: $MGText:BorderWidth$px solid #$MGText:Color3$;
+            border-top: $MGText:BorderWidth$px solid #$MGText:Color3$;
+        }
+        .subpics>div
+        {
+            margin:$MGText:Margin$px;
+        }
+        $MGRenderEnds:$

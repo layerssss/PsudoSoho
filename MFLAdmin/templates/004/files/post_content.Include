@@ -1,0 +1,50 @@
+﻿                <div class="border border-pad2"></div>
+            </div>
+		</section>
+	<!-- footer -->
+	<footer>
+		<div class="container_24">
+        	<div class="wrapper">
+            	 <div class="foot-text"><span class="color-3">$MFLHtml:lodgeName$</span>
+				&nbsp; © 2011 由<a href="$MFLText:MFLBaseUrl$">&nbsp;&nbsp;寻旅·筑家&nbsp;&nbsp;</a>强力驱动&nbsp;|&nbsp;
+				<a href="$MFLText:MFLBaseUrl$Help/Terms.aspx">Privacy Policy</a></div>
+                  <ul class="link-img">
+                    <li><a class="tooltip img1" title="新浪微博" href="$MFLText:TemplatePropertySinaWeibo$"></a></li>
+                    <li><a class="tooltip img2" title="腾讯微博" href="$MFLText:TemplatePropertyTencentWeibo$"></a></li>
+                </ul>
+            </div>
+        </div>
+	</footer>  
+    <div class="bg"></div>
+  </div>  
+  <div class="indent1"></div>    
+    <script type="text/javascript">
+	$(function(){
+		$('.slider')._TMS({
+			prevBu:'.prev',
+			nextBu:'.next',
+			playBu:'.play',
+			duration:888,
+			easing:'none',
+			preset:'diagonalExpand',
+			pagination:true,
+			slideshow:6000,
+			numStatus:false,
+			banners:false,
+		bannerMeth:'custom',
+			bannerShow:function(banner){
+				banner
+					.hide()
+					.fadeIn(1200)
+			},
+			bannerHide:function(banner){
+				banner
+					.show()
+					.fadeOut(1200)
+			},
+			progressBar:'<div class="progbar"></div>'});
+	})
+
+	</script>        
+</body>
+</html>

@@ -1,0 +1,7 @@
+﻿<div style="height:548px">
+  <div id="myAlternativeContent">
+    <a href="http://www.adobe.com/go/getflashplayer">
+      <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取Adobe Flash播放器" />
+    </a>
+  </div>
+</div>

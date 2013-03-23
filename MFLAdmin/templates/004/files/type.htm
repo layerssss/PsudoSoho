@@ -1,0 +1,37 @@
+$IncludeText:pre_content$
+                <div class="row2">
+                	<div class="wrapper">
+                    	<div class="grid_14 alpha">
+                        	<div class="roomSlider slider">
+                            <ul class="items">
+								$MFLArray?:lodgeTypeAlbum$
+								<li> 
+								<img src="$MFLArrayText:lodgePhotoUrlLarge$" alt="$MFLArrayText:lodgePhotoTitle$" width="960" height="388"/> </a>
+								</li>
+								$MFLArrayEnds:$
+                             </ul>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</header>
+		<!-- content -->
+		<section id="content">
+			<div class="container_24">
+                <div class="wrapper">
+					<div class="main">
+						 <h3>$MFLText:type$</h3>
+						 $MFLArray?:lodgeTypeAlbum$
+						 <div class="typePhotoList clearfix">
+							<h3 class="photoTitle">$MFLArrayHtml:lodgePhotoTitle$</h3>
+							<a class="stroke lightbox-image" href="$MFLArrayText:lodgePhotoUrl$" rel="prettyPhoto[gallery1]" title="$MFLArrayText:lodgePhotoContent$">
+								<img src="$MFLArrayText:lodgePhotoUrlSmall$" alt="$MFLArrayText:lodgePhotoTitle$"/>
+							</a>
+							<p class="photoContent">$MFLArrayHtml:lodgePhotoContent$</p>
+						</div>
+						$MFLArrayEnds:$
+						<div class="clearfix"></div> 
+					</div> 
+                </div> 
+$IncludeText:post_content$

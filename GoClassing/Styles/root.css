@@ -1,0 +1,463 @@
+﻿*
+{
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    font-size:14px;
+    line-height:1.5;
+    color:#111;
+}
+a img
+{
+    border:none;
+}
+.clearfix
+{
+    clear:both;
+}
+body
+{
+}
+label
+{
+}
+div.mfl-notify
+{
+    border: 1px solid #CCCCCC;
+    padding: 4px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+div#header
+{
+    width:auto;
+    background-image:url('header-bg.png');
+    height:56px;
+    padding-top:14px;
+}
+#header-content
+{
+    position:relative;
+    
+    z-index:2100;
+}
+.homeBtn
+{
+    line-height:2;
+    float:left;
+    display:block;
+    font-size:1.2em;
+    margin-right:12px;
+}
+.msgBtn
+{
+    float:left;
+}
+.msgBtn img
+{
+    cursor:pointer; 
+    margin: 0 9px;
+}
+#header-content a
+{
+    font-weight:bold;
+    color:#fff;
+}
+#header-content a:hover
+{
+    text-decoration:none;
+    color:#CEEB49;
+}
+#header-content>a>img
+{
+    float:left;
+    position:relative;
+    top:-7px;
+}
+#header-content,#main
+{
+    width:950px;
+    margin:0 auto;
+}
+#main
+{
+    overflow:hidden;
+    position:relative;
+}
+#left, #right
+{
+}
+#left
+{
+    width: 150px;
+    float:left;
+}
+.testborder
+{
+    border:1px dashed black;
+    
+}
+#right
+{
+    width: 200px;
+    float:right;
+}
+#middle
+{
+    margin: 0px 200px 0 150px;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: #bbb;
+    padding:10px 5px;
+}
+#foot .col
+{
+    width:120px;
+    float:left;
+}
+.block
+{
+    border: 1px solid #CCCCCC;
+    padding: 4px;
+    margin-bottom: 10px;
+}
+#left .block
+{
+    border-right:none;
+}
+.block h3
+{
+    line-height:2.5;
+    color:#999;
+    font-weight:lighter;
+    font-size:0.9em;
+}
+.mfl-btn
+{
+    width:27px;
+    height:27px;
+    padding:0px;
+}
+.links-header
+{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #CCC;
+    margin-top:10px;
+}
+.links-content
+{
+    margin-top:10px;
+}
+.links-header a,.links-content a
+{
+    display: block;
+    width: auto;
+    color: #333;
+}
+.links-header a.active,.links-content a.active
+{
+    background: url("images/ui-bg_inset-soft_50_b2d228_1x100.png") repeat-x scroll 50% 50% #B2D228;
+}
+.links-header a:hover,.links-content a:hover
+{
+    text-decoration: none;
+    background-color: #EAF392;
+}
+input,textarea
+{
+    padding:4px;
+    display:inline;
+    border: 1px solid #aaa;
+}
+input[type="password"],input[type="text"]
+{
+    width:150px;
+}
+input[type="checkbox"]
+{
+    border:none;
+}
+input[type="text"],input[type="password"],textarea
+{
+    background-color:#eee;
+}
+input[type="text"].active,input[type="password"].active,textarea.active
+{
+    background-color:#fff;
+}
+a
+{
+    text-decoration: none;
+    color: #536617;
+}
+a:hover
+{
+    text-decoration:underline;
+}
+.floatright
+{
+    float:right;
+}
+.loginButtonPanel,.loginButton
+{
+    position:absolute;
+    right:0;
+    top:0;
+    z-index:2000;
+}
+.loginButtonPanel a,#LoginView1_LoginName
+{
+    width:auto;
+    display:block;
+    text-align:left;
+    z-index:2000;
+    width:150px;
+}
+#foot
+{
+    clear: both;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #ccc;
+    color: #666666;
+}
+#foot .col *,#foot .floatright
+{
+    font-size: 11px;
+}
+
+.mfl-list-itemTemplate
+{
+    display:none;
+}
+.mfl-loading
+{
+    padding:5px;
+    text-align:center;
+}
+.mfl-loading img
+{
+    margin:10px;
+}
+.mfl-list-empty
+{
+    padding:10px 20px;
+    margin:5px;
+    border:1px solid #ddd;
+    font-size:0.8em;
+    color:#999;
+}
+.mfl-list-pages
+{
+    height:25px;
+    text-align:right;
+}
+.mfl-list-pages .mfl-list-page
+{
+    display:block;
+    float:left;
+    margin:1px;
+    font-weight:normal;
+    padding:1px 2px;
+}
+
+.mfl-list-pages .mfl-list-page.mfl-list-pageDisabled
+{
+    color:#ccc;
+    text-decoration:none;
+    cursor:default;
+}
+.mfl-list-pages .mfl-list-page.mfl-list-pageCurrent
+{
+    color:#000;
+    
+}
+.loginDlg input[type="password"],.login input[type="text"]
+{
+}
+.loginDlg label
+{
+    width:150px;
+    float:left;
+    text-align:right;
+}
+.loginDlg p
+{
+    line-height:2;
+}
+
+
+.courses-list .ftype
+{
+    padding-right:20px;
+    overflow:hidden;
+    white-space:nowrap;
+}
+.courses-list a.ftype-course
+{
+    display:block;
+    font-size:1.2em;
+}
+.courses-list .mfl-list-item
+{
+    display: block;
+    width: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin: 3px;
+}
+.courses-list h3
+{
+    padding:10px 0 5px 10px;
+    display:block;
+}
+.courses-list .mfl-list-item .teacher
+{
+    float:right;
+}
+a.more
+{
+    display:block;
+    padding:5px;
+    text-align:center;
+    
+}
+.teacher
+{
+    position:relative;
+    float:left;
+    width:50px;
+    text-align:center;
+    overflow:hidden;
+    display:block;
+    height:50px;
+    z-index:1;
+}
+.teacher:hover
+{
+
+    z-index:2;
+    overflow:visible;
+}
+a.teacher:hover
+{
+    text-decoration:none;
+}
+.teacher img
+{
+}
+.teacher span.mfl-truename,.teacher span.mfl-teacherTruename
+{
+    position:relative;
+    top:-2px;
+    font-size:0.8em;
+    color:#555;
+    overflow:hidden;
+    width:48px;
+    display:block;
+    text-align:left;
+}
+.teacher:hover span.mfl-truename,.teacher:hover span.mfl-teacherTruename
+{
+    z-index:2;
+    border:1px solid #888;
+    border-top-style:none;
+    background-color:#fff;
+}
+.teacher span.mfl-truename *,.teacher span.mfl-teacherTruename *
+{
+    font-size:0.8em;
+    color:#555;
+}
+.teacher span.mfl-tags-coop,.teacher span.mfl-tags-teacherCoop
+{
+    position:absolute;
+    right:0;
+    top:34px;
+}
+.search,.msg
+{
+    border:1px solid #aaa;
+    position:absolute;
+    background-color:#fff;
+    width:500px;
+    z-index:100;
+}
+
+.search>h3,.msg>h3
+{
+    line-height:2;
+    padding:2px 10px;
+}
+.msg
+{
+    width:300px;
+}
+.search>p>a
+{
+    display:block;
+}
+.searchCtypesList a
+{
+    display:block;
+    float:left;
+    margin-right:10px;
+}
+.searchFriendsList a
+{
+    margin:5px;
+}
+.msg-list .ui-widget-content a
+{
+    font-size:0.9em;
+    color:#555;
+}
+.msg-list .ui-widget-content
+{
+    padding:8px 5px 10px 5px;
+    height:90px;
+}
+#middle .msg-list .ui-widget-content
+{
+    height:55px;
+}
+.msg-list .ui-widget-content .teacher
+{
+    margin-right:5px;
+}
+
+.msg-list .mfl-list-item .ok
+{
+    position:absolute;
+    right:10px;
+    bottom:10px;
+}
+.msg-list .mfl-list-item .check
+{
+    position:absolute;
+    left:10px;
+    bottom:10px;
+}
+.msg-list .mfl-list-item
+{
+    position:relative;
+}
+.searchText
+{
+    margin:3px 0 0 30px;
+}
+
+#right h3 .infotag
+{
+    padding-top:2px;
+    padding-bottom:1px;
+}
+div.info
+{
+    margin:10px 0;
+    padding:3px;
+    border:1px solid #ccc;
+    color:#444;
+    font-size:0.9em;
+}

@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MGModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="MGModelStoreContainer">
+    <EntitySet Name="MG_album" EntityType="MGModel.Store.MG_album" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MG_comment" EntityType="MGModel.Store.MG_comment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MG_description" EntityType="MGModel.Store.MG_description" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MG_gallery" EntityType="MGModel.Store.MG_gallery" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MG_lang" EntityType="MGModel.Store.MG_lang" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MG_langusing" EntityType="MGModel.Store.MG_langusing" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MG_subpic" EntityType="MGModel.Store.MG_subpic" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MG_theme" EntityType="MGModel.Store.MG_theme" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_MG_comment_MG_photo" Association="MGModel.Store.FK_MG_comment_MG_photo">
+      <End Role="MG_album" EntitySet="MG_album" />
+      <End Role="MG_comment" EntitySet="MG_comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MG_description_MG_photo" Association="MGModel.Store.FK_MG_description_MG_photo">
+      <End Role="MG_album" EntitySet="MG_album" />
+      <End Role="MG_description" EntitySet="MG_description" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MG_photo_MG_gallery" Association="MGModel.Store.FK_MG_photo_MG_gallery">
+      <End Role="MG_gallery" EntitySet="MG_gallery" />
+      <End Role="MG_album" EntitySet="MG_album" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MG_subpic_MG_album" Association="MGModel.Store.FK_MG_subpic_MG_album">
+      <End Role="MG_album" EntitySet="MG_album" />
+      <End Role="MG_subpic" EntitySet="MG_subpic" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MG_langusing_MG_gallery" Association="MGModel.Store.FK_MG_langusing_MG_gallery">
+      <End Role="MG_gallery" EntitySet="MG_gallery" />
+      <End Role="MG_langusing" EntitySet="MG_langusing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MG_langusing_MG_lang" Association="MGModel.Store.FK_MG_langusing_MG_lang">
+      <End Role="MG_lang" EntitySet="MG_lang" />
+      <End Role="MG_langusing" EntitySet="MG_langusing" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="MG_album">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sort" Type="int" Nullable="false" />
+    <Property Name="showWidth" Type="int" Nullable="false" />
+    <Property Name="thumbWidth" Type="int" Nullable="false" />
+    <Property Name="gallery_id" Type="int" Nullable="false" />
+    <Property Name="mainpicurl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="mainpicWidth" Type="int" Nullable="false" />
+    <Property Name="mainpicHeight" Type="int" Nullable="false" />
+    <Property Name="subpicWidth" Type="int" Nullable="false" />
+    <Property Name="YUPOO_photoId" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="mainpicurl_origin" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MG_comment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="content" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="time" Type="datetime" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="avatar" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="album_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MG_description">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="lang_code" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="album_id" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="content" Type="nvarchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="MG_gallery">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="domainname" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="default_lang_code" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="width" Type="int" Nullable="false" />
+    <Property Name="border" Type="int" Nullable="false" />
+    <Property Name="margin" Type="int" Nullable="false" />
+    <Property Name="bodyWidth" Type="int" Nullable="true" />
+    <Property Name="color1" Type="nchar" Nullable="false" MaxLength="6" />
+    <Property Name="color2" Type="nchar" Nullable="false" MaxLength="6" />
+    <Property Name="color3" Type="nchar" Nullable="false" MaxLength="6" />
+    <Property Name="type" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="YUPOO_albumId" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="opacity" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MG_lang">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="string" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="code" Type="nvarchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="MG_langusing">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gallery_id" Type="int" Nullable="false" />
+    <Property Name="lang_code" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="titile" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MG_subpic">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="url" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="album_id" Type="int" Nullable="false" />
+    <Property Name="sort" Type="int" Nullable="false" />
+    <Property Name="width" Type="int" Nullable="false" />
+    <Property Name="height" Type="int" Nullable="false" />
+    <Property Name="YUPOO_photoId" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="url_origin" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MG_theme">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="color1" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="color2" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="color3" Type="varchar" Nullable="false" MaxLength="6" />
+    <Property Name="sort" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_MG_comment_MG_photo">
+    <End Role="MG_album" Type="MGModel.Store.MG_album" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MG_comment" Type="MGModel.Store.MG_comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MG_album">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MG_comment">
+        <PropertyRef Name="album_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MG_description_MG_photo">
+    <End Role="MG_album" Type="MGModel.Store.MG_album" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MG_description" Type="MGModel.Store.MG_description" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MG_album">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MG_description">
+        <PropertyRef Name="album_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MG_photo_MG_gallery">
+    <End Role="MG_gallery" Type="MGModel.Store.MG_gallery" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MG_album" Type="MGModel.Store.MG_album" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MG_gallery">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MG_album">
+        <PropertyRef Name="gallery_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MG_subpic_MG_album">
+    <End Role="MG_album" Type="MGModel.Store.MG_album" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MG_subpic" Type="MGModel.Store.MG_subpic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MG_album">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MG_subpic">
+        <PropertyRef Name="album_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MG_langusing_MG_gallery">
+    <End Role="MG_gallery" Type="MGModel.Store.MG_gallery" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MG_langusing" Type="MGModel.Store.MG_langusing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MG_gallery">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="MG_langusing">
+        <PropertyRef Name="gallery_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MG_langusing_MG_lang">
+    <End Role="MG_lang" Type="MGModel.Store.MG_lang" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MG_langusing" Type="MGModel.Store.MG_langusing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MG_lang">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="MG_langusing">
+        <PropertyRef Name="lang_code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MGModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MGEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MG_album" EntityType="MGModel.MG_album" />
+          <EntitySet Name="MG_comment" EntityType="MGModel.MG_comment" />
+          <EntitySet Name="MG_description" EntityType="MGModel.MG_description" />
+          <EntitySet Name="MG_gallery" EntityType="MGModel.MG_gallery" />
+          <EntitySet Name="MG_lang" EntityType="MGModel.MG_lang" />
+          <EntitySet Name="MG_langusing" EntityType="MGModel.MG_langusing" />
+          <EntitySet Name="MG_subpic" EntityType="MGModel.MG_subpic" />
+          <AssociationSet Name="FK_MG_comment_MG_photo" Association="MGModel.FK_MG_comment_MG_photo">
+            <End Role="MG_album" EntitySet="MG_album" />
+            <End Role="MG_comment" EntitySet="MG_comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_description_MG_photo" Association="MGModel.FK_MG_description_MG_photo">
+            <End Role="MG_album" EntitySet="MG_album" />
+            <End Role="MG_description" EntitySet="MG_description" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_photo_MG_gallery" Association="MGModel.FK_MG_photo_MG_gallery">
+            <End Role="MG_gallery" EntitySet="MG_gallery" />
+            <End Role="MG_album" EntitySet="MG_album" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_subpic_MG_album" Association="MGModel.FK_MG_subpic_MG_album">
+            <End Role="MG_album" EntitySet="MG_album" />
+            <End Role="MG_subpic" EntitySet="MG_subpic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_langusing_MG_gallery" Association="MGModel.FK_MG_langusing_MG_gallery">
+            <End Role="MG_gallery" EntitySet="MG_gallery" />
+            <End Role="MG_langusing" EntitySet="MG_langusing" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MG_langusing_MG_lang" Association="MGModel.FK_MG_langusing_MG_lang">
+            <End Role="MG_lang" EntitySet="MG_lang" />
+            <End Role="MG_langusing" EntitySet="MG_langusing" />
+          </AssociationSet>
+          <EntitySet Name="MG_theme" EntityType="MGModel.MG_theme" />
+        </EntityContainer>
+        <EntityType Name="MG_album">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="sort" Nullable="false" />
+          <Property Type="Int32" Name="showWidth" Nullable="false" />
+          <Property Type="Int32" Name="thumbWidth" Nullable="false" />
+          <Property Type="Int32" Name="gallery_id" Nullable="false" />
+          <Property Type="String" Name="mainpicurl" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="mainpicWidth" Nullable="false" />
+          <Property Type="Int32" Name="mainpicHeight" Nullable="false" />
+          <Property Type="Int32" Name="subpicWidth" Nullable="false" />
+          <Property Type="String" Name="YUPOO_photoId" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MG_comment" Relationship="MGModel.FK_MG_comment_MG_photo" FromRole="MG_album" ToRole="MG_comment" />
+          <NavigationProperty Name="MG_description" Relationship="MGModel.FK_MG_description_MG_photo" FromRole="MG_album" ToRole="MG_description" />
+          <NavigationProperty Name="MG_gallery" Relationship="MGModel.FK_MG_photo_MG_gallery" FromRole="MG_album" ToRole="MG_gallery" />
+          <NavigationProperty Name="MG_subpic" Relationship="MGModel.FK_MG_subpic_MG_album" FromRole="MG_album" ToRole="MG_subpic" />
+          <Property Type="String" Name="mainpicurl_origin" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MG_comment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="content" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="time" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="avatar" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="album_id" Nullable="false" />
+          <NavigationProperty Name="MG_album" Relationship="MGModel.FK_MG_comment_MG_photo" FromRole="MG_comment" ToRole="MG_album" />
+        </EntityType>
+        <EntityType Name="MG_description">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="lang_code" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="album_id" Nullable="false" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="content" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MG_album" Relationship="MGModel.FK_MG_description_MG_photo" FromRole="MG_description" ToRole="MG_album" />
+        </EntityType>
+        <EntityType Name="MG_gallery">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="username" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="domainname" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="default_lang_code" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="width" Nullable="false" />
+          <Property Type="Int32" Name="border" Nullable="false" />
+          <Property Type="Int32" Name="margin" Nullable="false" />
+          <Property Type="Int32" Name="bodyWidth" />
+          <Property Type="String" Name="color1" Nullable="false" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="color2" Nullable="false" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="color3" Nullable="false" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="type" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="YUPOO_albumId" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MG_album" Relationship="MGModel.FK_MG_photo_MG_gallery" FromRole="MG_gallery" ToRole="MG_album" />
+          <NavigationProperty Name="MG_langusing" Relationship="MGModel.FK_MG_langusing_MG_gallery" FromRole="MG_gallery" ToRole="MG_langusing" />
+          <Property Type="Double" Name="opacity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MG_lang">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Type="String" Name="string" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="code" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MG_langusing" Relationship="MGModel.FK_MG_langusing_MG_lang" FromRole="MG_lang" ToRole="MG_langusing" />
+        </EntityType>
+        <EntityType Name="MG_langusing">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="gallery_id" Nullable="false" />
+          <Property Type="String" Name="lang_code" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="titile" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MG_gallery" Relationship="MGModel.FK_MG_langusing_MG_gallery" FromRole="MG_langusing" ToRole="MG_gallery" />
+          <NavigationProperty Name="MG_lang" Relationship="MGModel.FK_MG_langusing_MG_lang" FromRole="MG_langusing" ToRole="MG_lang" />
+        </EntityType>
+        <EntityType Name="MG_subpic">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="url" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="album_id" Nullable="false" />
+          <Property Type="Int32" Name="sort" Nullable="false" />
+          <Property Type="Int32" Name="width" Nullable="false" />
+          <Property Type="Int32" Name="height" Nullable="false" />
+          <Property Type="String" Name="YUPOO_photoId" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MG_album" Relationship="MGModel.FK_MG_subpic_MG_album" FromRole="MG_subpic" ToRole="MG_album" />
+          <Property Type="String" Name="url_origin" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_MG_comment_MG_photo">
+          <End Type="MGModel.MG_album" Role="MG_album" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MGModel.MG_comment" Role="MG_comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_album">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MG_comment">
+              <PropertyRef Name="album_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_description_MG_photo">
+          <End Type="MGModel.MG_album" Role="MG_album" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MGModel.MG_description" Role="MG_description" Multiplicity="*" >
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="MG_album">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MG_description">
+              <PropertyRef Name="album_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_photo_MG_gallery">
+          <End Type="MGModel.MG_gallery" Role="MG_gallery" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MGModel.MG_album" Role="MG_album" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_gallery">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MG_album">
+              <PropertyRef Name="gallery_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_subpic_MG_album">
+          <End Type="MGModel.MG_album" Role="MG_album" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MGModel.MG_subpic" Role="MG_subpic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_album">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MG_subpic">
+              <PropertyRef Name="album_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_langusing_MG_gallery">
+          <End Type="MGModel.MG_gallery" Role="MG_gallery" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MGModel.MG_langusing" Role="MG_langusing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_gallery">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MG_langusing">
+              <PropertyRef Name="gallery_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MG_langusing_MG_lang">
+          <End Type="MGModel.MG_lang" Role="MG_lang" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MGModel.MG_langusing" Role="MG_langusing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MG_lang">
+              <PropertyRef Name="code" />
+            </Principal>
+            <Dependent Role="MG_langusing">
+              <PropertyRef Name="lang_code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MG_theme">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="color1" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="color2" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="color3" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="sort" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MGModelStoreContainer" CdmEntityContainer="MGEntities">
+    <EntitySetMapping Name="MG_album">
+      <EntityTypeMapping TypeName="IsTypeOf(MGModel.MG_album)">
+        <MappingFragment StoreEntitySet="MG_album">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="showWidth" ColumnName="showWidth" />
+          <ScalarProperty Name="thumbWidth" ColumnName="thumbWidth" />
+          <ScalarProperty Name="gallery_id" ColumnName="gallery_id" />
+          <ScalarProperty Name="mainpicurl" ColumnName="mainpicurl" />
+          <ScalarProperty Name="mainpicWidth" ColumnName="mainpicWidth" />
+          <ScalarProperty Name="mainpicHeight" ColumnName="mainpicHeight" />
+          <ScalarProperty Name="subpicWidth" ColumnName="subpicWidth" />
+          <ScalarProperty Name="YUPOO_photoId" ColumnName="YUPOO_photoId" />
+          <ScalarProperty Name="mainpicurl_origin" ColumnName="mainpicurl_origin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MG_comment">
+      <EntityTypeMapping TypeName="IsTypeOf(MGModel.MG_comment)">
+        <MappingFragment StoreEntitySet="MG_comment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="album_id" ColumnName="album_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MG_description">
+      <EntityTypeMapping TypeName="IsTypeOf(MGModel.MG_description)">
+        <MappingFragment StoreEntitySet="MG_description">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="lang_code" ColumnName="lang_code" />
+          <ScalarProperty Name="album_id" ColumnName="album_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="content" ColumnName="content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MG_gallery">
+      <EntityTypeMapping TypeName="IsTypeOf(MGModel.MG_gallery)">
+        <MappingFragment StoreEntitySet="MG_gallery">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="domainname" ColumnName="domainname" />
+          <ScalarProperty Name="default_lang_code" ColumnName="default_lang_code" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="border" ColumnName="border" />
+          <ScalarProperty Name="margin" ColumnName="margin" />
+          <ScalarProperty Name="bodyWidth" ColumnName="bodyWidth" />
+          <ScalarProperty Name="color1" ColumnName="color1" />
+          <ScalarProperty Name="color2" ColumnName="color2" />
+          <ScalarProperty Name="color3" ColumnName="color3" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="YUPOO_albumId" ColumnName="YUPOO_albumId" />
+          <ScalarProperty Name="opacity" ColumnName="opacity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MG_lang">
+      <EntityTypeMapping TypeName="IsTypeOf(MGModel.MG_lang)">
+        <MappingFragment StoreEntitySet="MG_lang">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="string" ColumnName="string" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MG_langusing">
+      <EntityTypeMapping TypeName="IsTypeOf(MGModel.MG_langusing)">
+        <MappingFragment StoreEntitySet="MG_langusing">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="gallery_id" ColumnName="gallery_id" />
+          <ScalarProperty Name="lang_code" ColumnName="lang_code" />
+          <ScalarProperty Name="titile" ColumnName="titile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MG_subpic">
+      <EntityTypeMapping TypeName="IsTypeOf(MGModel.MG_subpic)">
+        <MappingFragment StoreEntitySet="MG_subpic">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="album_id" ColumnName="album_id" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="YUPOO_photoId" ColumnName="YUPOO_photoId" />
+          <ScalarProperty Name="url_origin" ColumnName="url_origin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MG_theme">
+      <EntityTypeMapping TypeName="IsTypeOf(MGModel.MG_theme)">
+        <MappingFragment StoreEntitySet="MG_theme">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="color1" ColumnName="color1" />
+          <ScalarProperty Name="color2" ColumnName="color2" />
+          <ScalarProperty Name="color3" ColumnName="color3" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model">
+        <EntityTypeShape EntityType="MGModel.MG_album" Width="1.5" PointX="3" PointY="5.25" Height="3.6892097981770817" />
+        <EntityTypeShape EntityType="MGModel.MG_comment" Width="1.5" PointX="5.25" PointY="2.875" Height="2.3520719401041674" />
+        <EntityTypeShape EntityType="MGModel.MG_description" Width="1.5" PointX="5.25" PointY="6" Height="2.1610522460937496" />
+        <EntityTypeShape EntityType="MGModel.MG_gallery" Width="1.5" PointX="0.75" PointY="5.125" Height="4.0712491861979165" />
+        <EntityTypeShape EntityType="MGModel.MG_lang" Width="1.5" PointX="0.75" PointY="2.375" Height="1.5879931640625031" />
+        <EntityTypeShape EntityType="MGModel.MG_langusing" Width="1.5" PointX="3" PointY="2" Height="2.161052246093746" />
+        <EntityTypeShape EntityType="MGModel.MG_subpic" Width="1.5" PointX="5.25" PointY="8.875" Height="2.5430916341145888" />
+        <AssociationConnector Association="MGModel.FK_MG_comment_MG_photo" >
+          <ConnectorPoint PointX="4.5" PointY="5.25" />
+          <ConnectorPoint PointX="4.875" PointY="4.875" />
+          <ConnectorPoint PointX="4.875" PointY="5.6020719401041674" />
+          <ConnectorPoint PointX="5.25" PointY="5.2270719401041674" />
+        </AssociationConnector>
+        <AssociationConnector Association="MGModel.FK_MG_description_MG_photo" >
+          <ConnectorPoint PointX="4.5" PointY="7.0805261230468748" />
+          <ConnectorPoint PointX="5.25" PointY="7.0805261230468748" />
+        </AssociationConnector>
+        <AssociationConnector Association="MGModel.FK_MG_photo_MG_gallery" >
+          <ConnectorPoint PointX="2.25" PointY="7.0946048990885409" />
+          <ConnectorPoint PointX="3" PointY="7.0946048990885409" />
+        </AssociationConnector>
+        <AssociationConnector Association="MGModel.FK_MG_subpic_MG_album" >
+          <ConnectorPoint PointX="3.75" PointY="8.9392097981770817" />
+          <ConnectorPoint PointX="3.75" PointY="10.178651216145834" />
+          <ConnectorPoint PointX="5.25" PointY="10.178651216145834" />
+        </AssociationConnector>
+        <AssociationConnector Association="MGModel.FK_MG_langusing_MG_gallery" >
+          <ConnectorPoint PointX="2.25" PointY="5.125" />
+          <ConnectorPoint PointX="2.625" PointY="4.75" />
+          <ConnectorPoint PointX="2.625" PointY="3.080526123046873" />
+          <ConnectorPoint PointX="3" PointY="3.080526123046873" />
+        </AssociationConnector>
+        <AssociationConnector Association="MGModel.FK_MG_langusing_MG_lang" >
+          <ConnectorPoint PointX="2.25" PointY="3.5842596435546881" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="3.5842596435546876" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="3.5842596435546881" />
+          <ConnectorPoint PointX="3" PointY="3.5842596435546881" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MGModel.MG_theme" Width="1.5" PointX="7.375" PointY="3.75" Height="1.9700325520833317" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,37 @@
+$IncludeText:pre_content$
+                <div class="row2">
+                	<div class="wrapper">
+                    	<div class="grid_14 alpha">
+                        	<div class="roomSlider slider">
+                            <ul class="items">
+								$MFLArray?:roomAlbum$
+								<li> 
+								<img src="$MFLArrayText:roomPhotoUrlLarge$" alt="$MFLArrayText:roomPhotoTitle$" /> </a>
+								</li>
+								$MFLArrayEnds:$
+                             </ul>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</header>
+		<!-- content -->
+		<section id="content">
+			<div class="container_24">
+                <div class="wrapper">
+					<div class="main">
+						<h3>房间设施</h3>
+						<div class="room-list-module">
+							$MFLArray?:lodgeRooms$
+							<div class="room-list">
+							<a class="$MFLArrayShowIf:roomCurrent,active$" href$MFLArrayShowIf:roomCurrent,Current$="room$MFLArrayText:roomId$.htm">
+							<p>$MFLArrayText:roomName$<span class="roomPrize">￥$MFLArrayText:roomPrize$/晚</span></p>
+							<ul>$MFLArrayText:roomAttributes$</ul>
+							</a>
+							</div>
+							$MFLArrayEnds:$
+						</div>
+					</div> 
+                </div> 
+$IncludeText:post_content$

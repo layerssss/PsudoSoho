@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="ftp://static.goclassing.com/ext_mfllodge/" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="配置文件1" publishMethod="FTP" replaceMatchingFiles="True" userName="goclassing" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATB3WlHuuMkC5oO4ryJCULgAAAAACAAAAAAAQZgAAAAEAACAAAABynTe1GwgMYCxg98EovxB3Cc1HmK56YoGMhumzm47sWAAAAAAOgAAAAAIAACAAAABlYbyDiKpiy7iY6Ar5CG2AT9pWtiHD7G8M/01BOpW4eyAAAAD7kOQJlHSJo1s6YDs4qzTNX2y2k4ZgGEfMGbrBMmk15EAAAADM0dOut+CW2wmLWmWko//RIoCxGJUuSf5kXrMJA9gFTEZSZLUG/W4/h826cvdHrs6j5RKbmnPlqCNCho5W9JBR" SelectedForPublish="True">
+    <file relUrl="bin/MFLMirrorLib.dll" publishTime="03/17/2012 19:26:56" />
+    <file relUrl="Web.config" publishTime="03/17/2012 23:50:24" />
+    <file relUrl="bin/MFLLodge.pdb" publishTime="03/17/2012 19:27:11" />
+    <file relUrl="WebService.asmx" publishTime="12/23/2011 10:07:35" />
+    <file relUrl="bin/MFLJson.dll" publishTime="03/17/2012 19:26:55" />
+    <file relUrl="bin/MFLLodge.dll" publishTime="03/17/2012 19:27:11" />
+    <file relUrl="bin/MFL.dll" publishTime="03/17/2012 19:27:01" />
+    <file relUrl="bin/YupooAPI.NET.dll" publishTime="03/17/2012 19:26:56" />
+    <file relUrl="bin/MFLJson.pdb" publishTime="03/17/2012 19:26:55" />
+    <file relUrl="bin/YupooAPI.NET.pdb" publishTime="03/17/2012 19:26:56" />
+    <file relUrl="bin/GCServiceBase.dll" publishTime="03/17/2012 19:26:57" />
+    <file relUrl="bin/MFLMirrorLib.pdb" publishTime="03/17/2012 19:26:56" />
+    <file relUrl="bin/MFL.pdb" publishTime="03/17/2012 19:27:01" />
+    <file relUrl="Global.asax" publishTime="12/23/2011 10:07:35" />
+    <file relUrl="bin/GCServiceBase.pdb" publishTime="03/17/2012 19:26:56" />
+    <file relUrl="Default.aspx" publishTime="12/23/2011 10:07:35" />
+  </publishProfile>
+</publishData>

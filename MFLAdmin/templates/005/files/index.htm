@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>$MFLText:TemplatePropertyTitle$</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="$MFLText:baseUrl$assets/shared/css/reset.css" type="text/css" media="screen">
+<link rel="stylesheet" href="$MFLText:baseUrl$assets/005/css/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="$MFLText:baseUrl$assets/005/css/layout.css" type="text/css" media="screen">
+<link rel="stylesheet" href="$MFLText:baseUrl$assets/shared/css/prettyPhoto.css" type="text/css" media="screen">
+<script type="text/javascript" src="$MFLText:baseUrl$assets/shared/js/html5.js"></script>
+<script type="text/javascript" src="$MFLText:baseUrl$assets/shared/js/jquery-1.6.2.min.js" ></script>
+<script type="text/javascript" src="$MFLText:baseUrl$assets/lodge/js/roomQuery.js" ></script>
+<script type="text/javascript" src="$MFLText:baseUrl$assets/005/js/collapsing-site-navigation.js"></script>
+<script src="$MFLText:baseUrl$assets/shared/js/jquery.prettyPhoto.js" type="text/javascript"></script>
+<script type="text/javascript" src="$MFLText:baseUrl$assets/005/js/custom.js"></script>
+<script src="$MFLText:baseUrl$assets/shared/js/bgstretcher.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+    //  Initialize Backgound Stretcher	  
+            var bg=new Array();
+            $MFLArray:specialPhotosBg$
+            bg.push('$MFLArrayText:lodgePhotoUrl$');
+            $MFLArrayEnds:$ 
+		$(document).bgStretcher({
+			images: bg
+		});
+	});
+</script>
+  <!--[if lt IE 7]>
+  <![endif]-->
+</head>
+<body>
+<div class="extra">
+		<!-- header -->
+
+		<header>
+			<div class="main">
+				<h1><a href="#" onclick="return false;" id="logo">$MFLText:lodgeName$</a></h1>
+				<div class="back">
+					<span id="cc_back" class="cc_back">返回目录</span>
+				</div>
+				<div class="back">
+					<span id="cc_back" class="cc_back_page">关闭</span>
+
+				</div>
+			</div>
+		</header>	
+		<section id="content">
+			<div class="main">
+				<div class="box1">
+					<div class="top">
+						<div class="bottom">
+							<div class="right">
+
+								<div class="left">
+									<div class="box1-tail">
+										<div id="cc_menu" class="cc_menu">
+											<div class="cc_item" style="z-index:5;">
+												<article class="cc_content_1"><img src="$MFLText:specialPhotoSlide0$" alt="image" />
+												<span class="cc_title ">邂逅</span>
+												<div class="cc_submenu">
+													<span class="li-1" >$MFLHtml:TemplatePropertySlideText0$</span>
+												</div></article>
+											</div>
+											<div class="cc_item" style="z-index:4;">
+
+												<article class="cc_content_2"><img src="$MFLText:specialPhotoSlide1$" alt="image" />
+												<span class="cc_title">印象</span>
+												<div class="cc_submenu">
+													<span class="li-2">$MFLHtml:TemplatePropertySlideText1$</span>
+												</div></article>
+
+											</div>
+											<div class="cc_item" style="z-index:3;">
+												<article class="cc_content_3"><img src="$MFLText:specialPhotoSlide2$" alt="image" />
+												<span class="cc_title">房间</span>
+												<div class="cc_submenu">
+													<span class="li-3">$MFLHtml:TemplatePropertySlideText2$</span> 
+												</div></article>
+											</div>
+											<div class="cc_item" style="z-index:2;">
+												<article class="cc_content_4"><img src="$MFLText:specialPhotoSlide3$" alt="image" />
+												<span class="cc_title">交通</span>
+												<div class="cc_submenu">
+													<span class="li-3">$MFLHtml:TemplatePropertySlideText3$</span>
+												</div></article>
+											</div>
+											<div class="cc_item" style="z-index:1;">
+												<article class="cc_content_5"><img src="$MFLText:specialPhotoSlide4$" alt="image" />
+
+												<span class="cc_title">预订</span>
+												<div class="cc_submenu">
+													<span class="li-4">$MFLHtml:TemplatePropertySlideText4$</span>
+												</div></article>
+											</div>
+											<div id="cc_content" class="cc_content">
+
+												<section class="cc_content_1" id="page1">
+													<h2 class="h2-pad1">$MFLText:lodgeName$ 欢迎您</h2>
+													<div class="width">
+														<p>$MFLHtml:lodgeDescription$</p>
+														<div class="gallery clearfix">
+														$MFLArray:lodgePhotoTypes$
+														<div>
+															<a onclick="return false;" href="#$MFLArrayText:typePinyin$" class="read_more" title="$MFLArrayText:type$">$MFLArrayText:type$</a>
+															<img src="$MFLArrayText:firstImgSmall$" title="$MFLArrayText:type$" />
+														</div>
+														$MFLArrayEnds:$
+														</div>
+														</div>
+
+													</section>
+												<section class="cc_content_2" id="page2">
+													<h2 class="h2-bot">印象</h2>
+													<div class=" pad-right"><div class="wrapper">
+														$MFLArray?:lodgeAlbum$
+														<div class="typePhotoList clearfix">
+															<a class="stroke lightbox-image" href="$MFLArrayText:lodgePhotoUrl$" rel="prettyPhoto[gallery1]" title="$MFLArrayText:lodgePhotoContent$">
+																<img src="$MFLArrayText:lodgePhotoUrlSmall$" alt="$MFLArrayText:lodgePhotoTitle$"/>
+															</a>
+														</div>
+														$MFLArrayEnds:$
+													</div>
+												</section>
+												<section class="cc_content_3" id="page3">
+												<div class="room-list-module">
+													$MFLArray?:lodgeRooms$
+													<div class="room-list">
+													<a class="read_more" onclick="return false;" href="#room$MFLArrayText:roomId$">
+													<p>$MFLArrayText:roomName$<span class="roomPrize">$MFLArrayText:roomPrize$/晚</span></p>
+													</a>
+													</div>
+													$MFLArrayEnds:$
+												</div>
+												</section>
+												<section class="cc_content_4" id="page4">
+												<img src="http://api.map.baidu.com/staticimage?width=490&height=300&zoom=13&center=$MFLText:lodgeLongtitude$,$MFLText:lodgeLatitude$&markers=$MFLText:lodgeLongtitude$,$MFLText:lodgeLatitude$" class="map" />
+												<p>$MFLHtml:lodgeTraffic$</p>
+												</section>
+
+												<section class="cc_content_5" id="page5">
+												<div class="resv-note module-bg">
+													<h3>订房需知</h3>
+													<div>$MFLHtml:lodgeOrder$</div>
+												</div>
+												  <a href="#reservation" onclick="return false;" class="read_more">查询</a>
+												<!--房间预订-->
+												</section>
+										    </div>
+										    $MFLArray:lodgePhotoTypes$
+											<section class="read_more_content $MFLArrayText:typePinyin$">
+												<div class="cont">
+												$MFLArrayText:content$
+												</div>
+											</section> 
+											$MFLArrayEnds:$
+										    $MFLArray:lodgeRooms$
+											<section class="read_more_content room$MFLArrayText:roomId$">
+												<div class="cont">
+												$MFLArrayText:content$
+												</div>
+											</section> 
+											$MFLArrayEnds:$
+											<section class="read_more_content reservation">
+                                                <div class="cont">
+                                                <div class="resv-main roomQuery">
+													<h3>房间查询</h3>
+													<table>
+													<caption class="rq-head">
+														<span class="rq-date rq-datepicker">2011年11月24号</span>入住情况<span class="rq-sum rq-availableSum">5房间可预订</span>
+														
+													</caption>
+													<tbody class="rq-container">
+													</tbody>
+												</table>
+												</div>  
+												<script type="text/javascript" language="javasctipt">
+													$(function(){
+														$('.roomQuery').roomQuery({
+															datepickerOption:{
+																
+															},
+															tooltipTheme:'lightness',
+															baseUrl:'$MFLText:baseUrl$',
+															rooms:$MFLText:lodgeRooms$
+														});
+													});
+												</script>
+                                                </div>
+                                            </section>
+										</div>
+
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="block"></div>
+		</section>
+
+	</div> 	
+	<!-- footer -->
+	<footer>
+		<div class="main">
+			<div class="policy">
+				由<a href="$MFLText:MFLBaseUrl$">&nbsp;&nbsp;寻旅·筑家&nbsp;&nbsp;</a>强力驱动&nbsp;|&nbsp;
+				<a href="$MFLText:MFLBaseUrl$Help/Terms.aspx">隐私策略</a>
+
+			</div>
+			 <!-- {%FOOTER_LINK} -->
+		</div>
+	</footer>
+</body>
+</html>

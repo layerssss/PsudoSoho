@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>$title$</title>
+    <link href="/Styles/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/root.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="header">
+        <div id="header-content">
+            <a href="$baseUrl$" title="上课网">
+                <img src="$baseUrl$Styles/header-logo.png" alt="Goclassing" /></a>
+        </div>
+    </div>
+    <div id="main">
+        $GCRender:$
+        <div id="left">
+            <div class="links-header" style="border: none; position: relative;">
+                <img src="/Avatars/$GCText:id$.jpg" class="avatar" title="$GCText:truename$" alt="$GCText:truename$" />
+                <p style="clear: both; display: block;" class="list">
+                </p>
+            </div>
+            <div class="friends block ">
+                <h3 class="">
+                    $GCText:sex$的好友</h3>
+                <div class="list">
+                    <span class="mfl-list-itemTemplate">
+                        <div class="teacher">
+                            <a href="/T/$username$">
+                                <img src="/Avatars/$id$.small.jpg" /></a> <span class="mfl-tags-coop"><a href="/$coop$/"
+                                    title="$coop$">
+                                    <img alt="$coop$" title="$coop$" src="/Styles/Tags/$coop$.gif" /></a></span>
+                            <span class="mfl-teacherTruename">$truename$</span>
+                        </div>
+                    </span>
+                </div>
+                <div class="origin">
+                    $GCArray?:friends$
+                    <div class="teacher">
+                        <a href="/T/$GCArrayText:username$">
+                            <img src="/Avatars/$GCArrayText:id$.small.jpg" /></a> <span class="mfl-tags-coop">$GCArrayTags:coop$<a
+                                href="/$GCArrayTagsText:$/" title="$GCArrayTagsText:$"><img alt="$GCArrayTagsText:$"
+                                    title="$GCArrayTagsText:$" src="/Styles/Tags/$GCArrayTagsText:$.gif" /></a>$GCArrayTagsEnds:$</span>
+                        <span class="mfl-truename">$GCArrayHtml:truename$</span>
+                    </div>
+                    $GCArrayEnds:$
+                </div>
+                <p style="clear: both; display: block; height: 30px;" class="list">
+                </p>
+                <a href="#" style="clear: both;" class="more">更多...</a>
+            </div>
+        </div>
+        <div id="right">
+            <div id="notifications">
+            </div>
+            <div class="links-header block" style="display: none;" id="op">
+                <div id="optext">
+                </div>
+                <div id="oploading">
+                </div>
+            </div>
+            <div id="wizardNav">
+            <a href="#Profile" style="padding: 10px 5px;width:188px;">
+                    $GCText:sex$的资料
+            </a><a href="#Courses" style="padding: 10px 5px;width:188px;">
+                    $GCText:sex$正在教授的课程
+            </a><a href="#PCourses" style="padding: 10px 5px;width:188px;">
+                    $GCText:sex$正在学习的课程
+            </a><a href="#Notes" style="padding: 10px 5px;width:188px;">
+                    给$GCText:sex$留言
+            </a>
+            </div>
+        </div>
+        <div id="middle0">
+            <div class="user block">
+                个人主页：<a href="$GCHtml:baseurl$T/$GCHtml:username$">$GCHtml:baseurl$T/$GCHtml:username$</a><br />
+                真实姓名：<span class="truename">$GCText:truename$</span> <span>$GCTags:coop$ <a href="/$GCArrayTagsText:$/"
+                    title="$GCArrayTagsText:$">
+                    <img alt="$GCArrayTagsText:$" title="$GCArrayTagsText:$" src="/Styles/Tags/$GCArrayTagsText:$.gif" /></a>
+                    $GCArrayTagsEnds:$</span>
+                <img title="性别：$GCText:sexchar$" id="sexicon" src="/styles/sex$GCText:sexprefix$.gif" /><br />
+                <span class="from">来自：$GCText:uprovince$ $GCText:ucity$</span>
+            </div>
+        </div>
+        <div id="middle" class="middleProfile">
+            <div class="floatfix">
+                <div class="profiles">
+                    <div class="block mfl-list-itemTemplate">
+                        <h3 class="mfl-name ">
+                        </h3>
+                        <div class="mfl-data-value mfl-text-value">
+                        </div>
+                    </div>
+                    $GCArray?:profiles$
+                    <div class="block  mfl-list-item ">
+                        <h3>
+                            $GCArrayText:name$</h3>
+                        <div>
+                            $GCArrayHtml:value$</div>
+                    </div>
+                    $GCArrayEnds:profiles$
+                </div>
+                <div class="moreprofiles">
+                    <div class="block mfl-list-itemTemplate">
+                        <h3 class="mfl-name">
+                        </h3>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="middle2" class="middleCourses">
+            <div class="floatfix">
+                <div class="courses block ">
+                    <h3>
+                        <span class="mfl-list-pages floatright"></span>$GCText:sex$正在教授的课程</h3>
+                    <div class="list courses-list" style="">
+                        <div class="mfl-list-itemTemplate">
+                            <div>
+                                <div class="teacher">
+                                    <a href="/T/$teacherUsername$">
+                                        <img src="/Avatars/$teacherId$.small.jpg" /></a> <span class="mfl-tags-teacherCoop">
+                                            <a href="/$teacherCoop$/" title="$teacherCoop$">
+                                                <img alt="$teacherCoop$" title="$teacherCoop$" src="/Styles/Tags/$teacherCoop$.gif" /></a></span>
+                                    <span class="mfl-teacherTruename">$teacherTruename$</span>
+                                </div>
+                                <a href="/c/$showId$" class="ftype-course ftype mfl-name">$name$</a></div>
+                             <a class="mfl-ctype2 ftype-ctype2 ftype ctype" href="/C/$ctype1$/$ctype2$/">
+                                    $ctype2$</a> <a class="mfl-ctype1 ftype-ctype1 ftype ctype" href="/C/$ctype1$/">$ctype1$</a>
+                            <span class="ftype-friend ftype mfl-numMembers">$numMembers$</span>
+                        </div>
+                    </div>
+                    <div class="origin courses-list">
+                        $GCArray?:courses$
+                        <div class="mfl-list-item">
+                            <div>
+                                <div class="teacher">
+                                    <a href="/T/$GCArrayText:teacherUsername$">
+                                        <img src="/Avatars/$GCArrayText:teacherId$.small.jpg" /></a> <span class="mfl-tags-teacherCoop">
+                                            $GCArrayTags:teacherCoop$<a href="/$GCArrayTagsText:$/" title="$GCArrayTagsText:$"><img
+                                                alt="$GCArrayTagsText:$" title="$GCArrayTagsText:$" src="/Styles/Tags/$GCArrayTagsText:$.gif" /></a>$GCArrayTagsEnds:$</span>
+                                    <span class="mfl-teacherTruename">$GCArrayHtml:teacherTruename$</span>
+                                </div>
+                                <a href="/c/$GCArrayText:showId$" class="ftype-course ftype mfl-name">$GCArrayHtml:name$</a></div>
+                             <a class="mfl-ctype2 ftype-ctype2 ftype ctype" href="/C/$GCArrayText:ctype1$/$GCArrayText:ctype2$/">
+                                    $GCArrayText:ctype2$</a> <a class="mfl-ctype1 ftype-ctype1 ftype ctype" href="/C/$GCArrayText:ctype1$/">
+                                        $GCArrayText:ctype1$</a> <span class="ftype-friend ftype mfl-numMembers">$GCArrayText:numMembers$</span>
+                        </div>
+                        $GCArrayEnds:courses$
+                    </div>
+                    <div class="mfl-list-pages">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="middle3" class="middlePCourses">
+            <div class="floatfix">
+                <div class="pcourses block ">
+                    <h3>
+                        <span class="mfl-list-pages floatright"></span>$GCText:sex$正在学习的课程</h3>
+                    <div class="list courses-list" style="">
+                        <div class="mfl-list-itemTemplate">
+                            <div>
+                                <div class="teacher">
+                                    <a href="/T/$teacherUsername$">
+                                        <img src="/Avatars/$teacherId$.small.jpg" /></a> <span class="mfl-tags-teacherCoop">
+                                            <a href="/$teacherCoop$/" title="$teacherCoop$">
+                                                <img alt="$teacherCoop$" title="$teacherCoop$" src="/Styles/Tags/$teacherCoop$.gif" /></a></span>
+                                    <span class="mfl-teacherTruename">$teacherTruename$</span>
+                                </div>
+                                <a href="/c/$showId$" class="ftype-course ftype mfl-name">$name$</a></div>
+                             <a class="mfl-ctype2 ftype-ctype2 ftype ctype" href="/C/$ctype1$/$ctype2$/">
+                                    $ctype2$</a> <a class="mfl-ctype1 ftype-ctype1 ftype ctype" href="/C/$ctype1$/">$ctype1$</a>
+                            <span class="ftype-friend ftype mfl-numMembers">$numMembers$</span>
+                        </div>
+                    </div>
+                    <div class="origin courses-list">
+                        $GCArray?:pcourses$
+                        <div class="mfl-list-item">
+                            <div>
+                                <div class="teacher">
+                                    <a href="/T/$GCArrayText:teacherUsername$">
+                                        <img src="/Avatars/$GCArrayText:teacherId$.small.jpg" /></a> <span class="mfl-tags-teacherCoop">
+                                            $GCArrayTags:teacherCoop$<a href="/$GCArrayTagsText:$/" title="$GCArrayTagsText:$"><img
+                                                alt="$GCArrayTagsText:$" title="$GCArrayTagsText:$" src="/Styles/Tags/$GCArrayTagsText:$.gif" /></a>$GCArrayTagsEnds:$</span>
+                                    <span class="mfl-teacherTruename">$GCArrayHtml:teacherTruename$</span>
+                                </div>
+                                <a href="/c/$GCArrayText:showId$" class="ftype-course ftype mfl-name">$GCArrayHtml:name$</a></div>
+                             <a class="mfl-ctype2 ftype-ctype2 ftype ctype" href="/C/$GCArrayText:ctype1$/$GCArrayText:ctype2$/">
+                                    $GCArrayText:ctype2$</a> <a class="mfl-ctype1 ftype-ctype1 ftype ctype" href="/C/$GCArrayText:ctype1$/">
+                                        $GCArrayText:ctype1$</a> <span class="ftype-friend ftype mfl-numMembers">$GCArrayText:numMembers$</span>
+                        </div>
+                        $GCArrayEnds:courses$
+                    </div>
+                    <div class="mfl-list-pages">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="middle4" class="middleNotes">
+            <div class="floatfix">
+                <div class="notes block">
+                    <h3>
+                        <span class="mfl-list-pages floatright"></span>$GCText:sex$收到的留言</h3>
+                    <div class="notes-list">
+                        <div class="ui-widge mfl-list-itemTemplate">
+                            <div class="ui-widget-content">
+                                <div class="floatright">
+                                    <span class="time">$time$<br />
+                                        <a href="#" onclick="$('.reply textarea').val('(回复 $teacherTruename$) ').focus(5);return false;">
+                                            [回复$teacherSex$]</a></span>
+                                    <div class="teacher">
+                                        <a href="/T/$teacherUsername$">
+                                            <img src="/Avatars/$teacherId$.small.jpg" /></a> <span class="mfl-tags-teacherCoop">
+                                                <a href="/$teacherCoop$/" title="$teacherCoop$">
+                                                    <img alt="$teacherCoop$" title="$teacherCoop$" src="/Styles/Tags/$teacherCoop$.gif" /></a>
+                                            </span><span class="mfl-truename"><span class="truename">$teacherTruename$</span></span><span
+                                                style="display: none" class="mfl-alt-teacherId" title="$teacherId$"></span>
+                                    </div>
+                                    <div class="mfl-alt-id" title="$id$">
+                                    </div>
+                                </div>
+                                $content$
+                                <div style="clear: right">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mfl-list-pages">
+                    </div>
+                </div>
+                <div class="reply block ui-widget" style="display: none;">
+                    <h3 class="ui-widget-header">
+                        给$GCText:sex$留言</h3>
+                    <div class="ui-widget-content">
+                        <textarea style="width: 98%" rows="6" maxlength="300"></textarea>
+                        <span style="height: 27px; line-height: 1;" class="noupload">提交</span><input type="checkbox"
+                            id="private" value="" /><label for="private">悄悄话</label><span class="numChar"></span></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        $(function () {
+            $GCObject:settings$
+            initSetting('$GCObjectKey:$',$GCObjectText:$);
+            $GCObjectEnds:settings$
+            _settingInited=true;
+            initPage({
+            id:$GCText:id$,
+            username:"$GCText:username$",
+            truename:"$GCText:truename$",
+            ucity:"$GCText:ucity$",
+            uprovince:"$GCText:uprovince$",
+            sex:"$GCText:sex$",
+            sexprefix:"$GCText:sexprefix$",
+            sexchar:"$GCText:sexchar$",
+            isSelf:$GCText:isSelf$,
+            isFriend:$GCText:isFriend$,
+            isSalutting:$GCText:isSalutting$,
+            isSalutted:$GCText:isSalutted$
+        });
+    });
+        </script>
+        $GCRenderEnds:$
+        <div id="foot">
+            <a href="$baseUrl$Help/">使用帮助</a> <a href="$baseUrl$Privacy/">隐私声明</a>
+            <div class="floatright">
+                版权所有 上课网 Goclassing.com © 2011</div>
+        </div>
+    </div>
+</body>
+</html>

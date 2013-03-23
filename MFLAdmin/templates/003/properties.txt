@@ -1,0 +1,12 @@
+﻿Story
+我们的故事
+在这里用几段话简单地介绍一下我们旅馆的来历或者旅馆名称的来历，这两段话将放置在首页左下角。
+SinaWeibo
+新浪微博地址
+http://weibo.com/myfamilylodge
+TencentWeibo
+腾讯微博地址
+http://t.qq.com/myfamilylodge
+TitleSuffix
+标题自定义关键字后缀
+家庭旅馆,别墅旅馆

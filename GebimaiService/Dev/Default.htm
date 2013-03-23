@@ -1,0 +1,600 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>隔壁买管理中心</title>
+    <!-- Le styles -->
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <style type="text/css">
+        body
+        {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+    </style>
+    <link href="/css/responsive.css" rel="stylesheet" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link href="/css/StyleSheets.css" rel="stylesheet" type="text/css" />
+    <link href="/css/bootstrap.docs.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $('[title]').tooltip({ placement: 'bottom' });
+            $.ajax({
+                url: '/Auth/GetStatus',
+                dataType: 'jsonp',
+                success: function (j) {
+                    if (j.message) {
+                        $('#myModal .modal-body').text(String(j.message));
+                        $('#myModal').modal('show');
+                    }
+                    if (j.me == null) {
+                        $('#slf>li').toggle();
+                        $('#fb_btn').click(function () {
+                            return false;
+                        });
+                        $.ajax({
+                            url: '/Auth/GetLoginUrl',
+                            data: {
+                                provider: 'weibo',
+                                remember: false
+                            },
+                            dataType: 'jsonp',
+                            success: function (j) {
+                                $('#fb_btn').click(function () {
+                                    window.open(j.url, null, 'toolbars=no,left=' + (window.screenX + 100) + ',top=' + (window.screenY + 120) + ',width=' + ($(window).width() - 200) + ',height=500');
+                                    return false;
+                                });
+                            }
+                        });
+                    } else {
+                        $('a.profile').attr('href', '/' + j.me.username + '.user');
+                        if (j.senderInfo) {
+                            $('a.sender').attr('href', '/' + j.senderInfo.alias + '.sender');
+                        }
+                        if (j.adminInfo) {
+                            $('a.admin').attr('href', '/' + j.adminInfo.alias + '.admin');
+                        }
+                        $('#slf a.name').text(j.me.name);
+                        $('#slf img.avatar').attr('src', j.me.avatarUrl);
+                        var f = function () {
+                            $.ajax({
+                                url: '/GetMessage.aspx',
+                                dataType: 'text',
+                                error: function () {
+                                    f();
+                                },
+                                success: function (msg) {
+                                    $('#myModal .modal-body').text(String(msg));
+                                    $('#myModal').modal('show');
+                                    $('#myModal').on('hidden', function () {
+                                        location.href = "User/DismissMessage?redirect=";
+                                    })
+                                    $('title').text("【"+msg+"】");
+                                }
+                            });
+                        };
+                        f();
+                    }
+                }
+            });
+
+        });
+        var oAuthFinished = function () {
+            location.reload();
+        };
+    </script>
+    
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="60">
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </a><a class="brand" href="/">隔壁买<span class="label label-info">管理中心</span></a>
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="/">首页</a></li>
+                        <li><a target="_blank" href="http://gebimai.com/">隔壁买首页</a> </li>
+                        <li class="divider-vertical"></li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">帮助 <b
+                            class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Help/FAQ">常见问题</a></li>
+                                <li><a href="/Help/Contact">联系我们</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="pull-right nav" id="slf">
+                        <li class=""><a href="/" class="profile">
+                            <img class="avatar" /></a></li>
+                        <li class=""><a href="/" class="profile name">加载中...</a></li>
+                        <li class="">
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><b
+                                class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/" class="profile">我的资料</a></li>
+                                    <li><a href="/Auth/Logout?redirect=%2f">注销</a></li>
+                                </ul>
+                            </li>
+                        </li>
+                        <li class="offline"><a href="#" id="fb_btn"><span>用微博登陆</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        
+        <form method="post" action="/Dev/TestRobot?redirect=/Error/?message={replies}" class="form-inline">
+        <input name="salut" />
+        <input type="submit" class="btn btn-primary" value="调戏一下" />
+        </form>
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="不满意" />
+            <input readonly="readonly" class="input-xxlarge" value="亲，我错了，Fama tua rosae supera. 酱紫呢？"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="26.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="不理你" />
+            <input readonly="readonly" class="input-xxlarge" value="不要啊亲……[可怜]"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="22.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="买什么" />
+            <input readonly="readonly" class="input-xxlarge" value="饮料速食糖果饼干...要不您直接上http://gebimai.com/看看吧..."/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="44.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="你好" />
+            <input readonly="readonly" class="input-xxlarge" value="你也好啊亲"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="7.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="你说啥" />
+            <input readonly="readonly" class="input-xxlarge" value="不要学我啊亲！！！"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="50.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="关键" />
+            <input readonly="readonly" class="input-xxlarge" value="亲你要投入多一些情感便能探索到~~"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="32.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="卖什么" />
+            <input readonly="readonly" class="input-xxlarge" value="卖的东西可多了，饮料速食糖果饼干...要不您直接上http://gebimai.com/看看吧..."/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="43.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="卧槽|妈的|妈蛋|你妈|个逼" />
+            <input readonly="readonly" class="input-xxlarge" value="卧槽，请注意文明用语哦亲"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="33.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="去死|去死" />
+            <input readonly="readonly" class="input-xxlarge" value="亲……我不要死啊……"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="12.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="吃的" />
+            <input readonly="readonly" class="input-xxlarge" value="亲我们这有很多零食哒，比如泡面啊瓜子啊薯片啊任君选择，请访问gebimai.com哟"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="39.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="啤酒" />
+            <input readonly="readonly" class="input-xxlarge" value="亲你在看球吗？我们这有青啤（http://gebimai.com/goods/94），菠萝啤，不知道你要哪种呀？"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="1.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="喜欢你" />
+            <input readonly="readonly" class="input-xxlarge" value="我也喜欢你啊亲~~[亲亲]"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="28.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="大爷" />
+            <input readonly="readonly" class="input-xxlarge" value="人。。。人家才不是小受呢。。。=///="/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="27.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="大美女" />
+            <input readonly="readonly" class="input-xxlarge" value="美屎了~~~~"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="29.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="天气" />
+            <input readonly="readonly" class="input-xxlarge" value="呀，今天天气真好，不来一包瓜子吗？"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="14.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="失恋" />
+            <input readonly="readonly" class="input-xxlarge" value="亲你失恋了吗[悲伤]，送你个抱抱~"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="37.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="女朋友" />
+            <input readonly="readonly" class="input-xxlarge" value="你要做我的女朋友吗亲？"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="9.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="好饿" />
+            <input readonly="readonly" class="input-xxlarge" value="不如来包泡面吧亲，at我然后写#面#，俺这里有各种口味的哟 =/////="/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="15.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="妹纸|妹子" />
+            <input readonly="readonly" class="input-xxlarge" value="亲，这里木有卖妹纸哦"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="42.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="快递" />
+            <input readonly="readonly" class="input-xxlarge" value="亲你要来做送货员吗？到珠海@layerssss ,广州@郭宇 ，私信联系他们吧"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="5.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="我勒个去" />
+            <input readonly="readonly" class="input-xxlarge" value="亲你不要这么愤怒啊……"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="11.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="晚上" />
+            <input readonly="readonly" class="input-xxlarge" value="亲你想干嘛……？[可怜]"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="19.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="智能" />
+            <input readonly="readonly" class="input-xxlarge" value="我可能还不够智能，不过我会慢慢进步哒"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="35.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="暨大" />
+            <input readonly="readonly" class="input-xxlarge" value="亲，小买目前只为暨大珠院和本部服务哟"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="23.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="来一发" />
+            <input readonly="readonly" class="input-xxlarge" value="亲，你在讲什么我怎么听不懂呢？"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="25.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="毛线" />
+            <input readonly="readonly" class="input-xxlarge" value="瓜娃子……我不卖毛线啊……"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="17.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="汉子|壮丁" />
+            <input readonly="readonly" class="input-xxlarge" value="亲是要汉子吗？联系头哥吧，头哥是个好汉子！"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="48.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="漂亮" />
+            <input readonly="readonly" class="input-xxlarge" value="漂亮屎了。。。"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="30.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="男朋友" />
+            <input readonly="readonly" class="input-xxlarge" value="要我当你男朋友吗亲？"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="8.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="男的还是女的" />
+            <input readonly="readonly" class="input-xxlarge" value="亲我是男的……"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="10.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="真笨|好笨|太笨|笨死|笨蛋" />
+            <input readonly="readonly" class="input-xxlarge" value="亲，我错了， 亲可以投稿给我让我变得更聪明呀……[]"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="16.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="织毛衣" />
+            <input readonly="readonly" class="input-xxlarge" value="亲你要给我织毛衣么……？"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="21.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="草泥马" />
+            <input readonly="readonly" class="input-xxlarge" value="亲不要啊……"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="54.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="葡萄" />
+            <input readonly="readonly" class="input-xxlarge" value="亲我们暂时不卖水果什么的。。。"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="38.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="葡萄干" />
+            <input readonly="readonly" class="input-xxlarge" value="美丽的新疆~呀我的家【一二三唱！"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="40.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="论文" />
+            <input readonly="readonly" class="input-xxlarge" value="亲我没法帮您写论文哟。。。不如来杯咖啡醒醒脑咋样"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="18.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="说话" />
+            <input readonly="readonly" class="input-xxlarge" value="我才刚学会说话，请尽量用我听的懂的方式说嘛"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="34.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="调戏" />
+            <input readonly="readonly" class="input-xxlarge" value="亲这是打算要调戏俺么？记得at我哦~~"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="3.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="这一句" />
+            <input readonly="readonly" class="input-xxlarge" value="亲俺才刚学会说话，你要多跟俺聊聊教教俺才是不是么……？"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="20.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="送货" />
+            <input readonly="readonly" class="input-xxlarge" value="亲你要来做送货员吗？到珠海@layerssss ,广州@郭宇 ，私信联系他们吧"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="6.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="饿了" />
+            <input readonly="readonly" class="input-xxlarge" value="来包泡面吧亲，at我然后写#面#，俺会给你一堆的……"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="0" />
+<a target href="4.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="手信" />
+            <input readonly="readonly" class="input-xxlarge" value="亲要买手信吗？买包泡面吧~~[奥特曼]"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="1" />
+<a target href="47.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="登记" />
+            <input readonly="readonly" class="input-xxlarge" value="神马，亲要和我一起登记？我只要妹纸，不搞基的……[可怜]"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="1" />
+<a target href="46.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="穿越" />
+            <input readonly="readonly" class="input-xxlarge" value="宋朝好好玩哦~"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="1" />
+<a target href="45.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="你是" />
+            <input readonly="readonly" class="input-xxlarge" value="亲我是暨南大学在线小超市隔壁买的微博机器人呀~不买点啥么 http://gebimai.com"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="7" />
+<a target href="13.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="头哥" />
+            <input readonly="readonly" class="input-xxlarge" value="头哥很忙……在写代码……[酷]"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="7" />
+<a target href="49.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="晕|头晕" />
+            <input readonly="readonly" class="input-xxlarge" value="最近天气变化莫测，要注意身体呀：）"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="8" />
+<a target href="24.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="困" />
+            <input readonly="readonly" class="input-xxlarge" value="春眠不觉晓，处处蚊子咬。。。不来杯咖啡吗【戳"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="9" />
+<a target href="41.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="奏凯" />
+            <input readonly="readonly" class="input-xxlarge" value="好吧。。。果断匿了。。。"/>
+            <input class="input-mini" readonly="readonly" name="sort" value="9" />
+<a target href="2.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="爷" />
+            <input readonly="readonly" class="input-xxlarge" value="人。。。人家才不是小受呢。。。=///="/>
+            <input class="input-mini" readonly="readonly" name="sort" value="9" />
+<a target href="31.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="钱" />
+            <input readonly="readonly" class="input-xxlarge" value="啊嘞，我没有钱的概念哟，如果要查看商品价格，请访问我的主页哟 =0="/>
+            <input class="input-mini" readonly="readonly" name="sort" value="9" />
+<a target href="36.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="" />
+            <input readonly="readonly" class="input-xxlarge" value=""/>
+            <input class="input-mini" readonly="readonly" name="sort" value="999" />
+<a target href="51.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="" />
+            <input readonly="readonly" class="input-xxlarge" value=""/>
+            <input class="input-mini" readonly="readonly" name="sort" value="999" />
+<a target href="52.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+            <form class="form-inline">
+            <input readonly="readonly" class="" value="" />
+            <input readonly="readonly" class="input-xxlarge" value=""/>
+            <input class="input-mini" readonly="readonly" name="sort" value="999" />
+<a target href="53.codex" class="btn btn-primary">更改</a>
+            
+</form>
+
+<div><a href="/Dev/AddCodex?redirect={id}.codex" class="btn btn-info">增加一个</a></div>
+            
+            
+            
+        <hr>
+        <footer>
+        <p>&copy; gebimai.com 2012</p>
+        </footer>
+    </div>
+    <!-- /container -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3>
+                亲，这样不行啊~~</h3>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+            <a href="#" data-dismiss="modal" class="btn btn-primary">确定(Esc)</a>
+        </div>
+    </div>
+    <!-- Le javascript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type src="/js/bootstrap.min.js"></script>
+</body>
+</html>

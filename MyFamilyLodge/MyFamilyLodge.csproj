@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{50A4978B-70AE-46BE-B865-EDDD6EB1A9E9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyFamilyLodge</RootNamespace>
+    <AssemblyName>MyFamilyLodge</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About\Commisions.aspx" />
+    <Content Include="About\Contact.aspx" />
+    <Content Include="About\Default.aspx" />
+    <Content Include="About\Jobs.aspx" />
+    <Content Include="About\photo1.jpg" />
+    <Content Include="About\Status.aspx" />
+    <Content Include="About\Team.aspx" />
+    <Content Include="Account\Admin\Default.aspx" />
+    <Content Include="Account\Admin\TOfDay.aspx" />
+    <Content Include="Account\Admin\TOfUser.aspx" />
+    <Content Include="Account\Admin\TPushing.aspx" />
+    <Content Include="Account\Default.aspx" />
+    <Content Include="Account\Lodges.aspx" />
+    <Content Include="Account\Settings.aspx" />
+    <Content Include="Account\Transactions.aspx" />
+    <Content Include="Account\Wizards\Active.aspx" />
+    <Content Include="Account\Wizards\AddProduct.aspx" />
+    <Content Include="Account\Wizards\Charge.aspx" />
+    <Content Include="Account\Wizards\Deactive.aspx" />
+    <Content Include="Account\Wizards\Error.aspx" />
+    <Content Include="Account\Wizards\Refund.aspx" />
+    <Content Include="Account\Wizards\Renewal.aspx" />
+    <Content Include="Account\Wizards\Success.aspx" />
+    <Content Include="App_Data\TransactionData\LodgeInitializationAttributes.txt" />
+    <Content Include="App_Data\TransactionData\Products.txt" />
+    <Content Include="Blog\article.aspx" />
+    <Content Include="Blog\Default.aspx" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Help\Default.aspx" />
+    <Content Include="Help\Terms.aspx" />
+    <Content Include="images\about-header-s.png" />
+    <Content Include="images\aboutUs.jpg" />
+    <Content Include="images\account-header-s.png" />
+    <Content Include="images\blog-header-s.png" />
+    <Content Include="images\client-header-s.png" />
+    <Content Include="images\client-show.png" />
+    <Content Include="images\client-testimonial.png" />
+    <Content Include="images\cross_circle.png" />
+    <Content Include="images\footer-bg.jpg" />
+    <Content Include="images\header-bg-s.png" />
+    <Content Include="images\header-bg.png" />
+    <Content Include="images\help-header-s.png" />
+    <Content Include="images\icon\1317623706_MotionGraphic.png" />
+    <Content Include="images\icon\1317623728_WebDesign.png" />
+    <Content Include="images\icon\1317623730_Photomanip.png" />
+    <Content Include="images\icon\1317623734_Coding.png" />
+    <Content Include="images\icon\1317623736_Illustrations.png" />
+    <Content Include="images\icon\1317623739_SkinArt.png" />
+    <Content Include="images\icon\1317623742_Photography.png" />
+    <Content Include="images\icon\1317623745_Painting.png" />
+    <Content Include="images\icon\1317623749_Advertising.png" />
+    <Content Include="images\icon\1317623948_graphic_design.png" />
+    <Content Include="images\icon\1317623955_openofficeorg-draw.png" />
+    <Content Include="images\icon\1317624276_file-manager-icon.png" />
+    <Content Include="images\icon\1317624278_systfile-manager-icon.png" />
+    <Content Include="images\icon\1317642569_wallet.png" />
+    <Content Include="images\icon\booking_90x90.png" />
+    <Content Include="images\icon\config_90x90.png" />
+    <Content Include="images\icon\graphic_design\1317618950_graphic_design.png" />
+    <Content Include="images\icon\graphic_design\1317618957_graphic_design.png" />
+    <Content Include="images\icon\graphic_design\1317618960_graphic_design.png" />
+    <Content Include="images\icon\openofficeorg-draw.png" />
+    <Content Include="images\icon\paint\1317618868_graphic_design.png" />
+    <Content Include="images\icon\paint\1317618871_graphic_design.png" />
+    <Content Include="images\icon\paint\1317618879_graphic_design.png" />
+    <Content Include="images\icon\paint\1317618887_graphic_design.png" />
+    <Content Include="images\icon\paint\1317618934_graphic_design.png" />
+    <Content Include="images\icon\paint\1317618938_graphic_design.png" />
+    <Content Include="images\icon\template11_90x90.png" />
+    <Content Include="images\icon\template_90x90.png" />
+    <Content Include="images\l_logo.jpg" />
+    <Content Include="images\l_logo.png" />
+    <Content Include="images\price-header-s.png" />
+    <Content Include="images\quote-l.png" />
+    <Content Include="images\slogon.png" />
+    <Content Include="images\s_logo.png" />
+    <Content Include="js\easyTooltip.js" />
+    <Content Include="js\PCA.js" />
+    <Content Include="Membership\Default.aspx" />
+    <Content Include="Membership\Login.aspx" />
+    <Content Include="Membership\PasswordRetrieval.aspx" />
+    <Content Include="Obsolete\index.html" />
+    <Content Include="js\bootstrap-alerts.js" />
+    <Content Include="js\bootstrap-dropdown.js" />
+    <Content Include="js\bootstrap-modal.js" />
+    <Content Include="js\bootstrap-popover.js" />
+    <Content Include="js\bootstrap-scrollspy.js" />
+    <Content Include="js\bootstrap-tabs.js" />
+    <Content Include="js\bootstrap-twipsy.js" />
+    <Content Include="js\jquery.tablesorter.min.js" />
+    <Content Include="Prices.aspx" />
+    <Content Include="Account\Admin\Frame.master" />
+    <None Include="images\about-header-s.psd" />
+    <None Include="images\client-header-s.psd" />
+    <None Include="images\client-title.psd" />
+    <None Include="images\header-bg-s-back.psd" />
+    <None Include="images\header-bg-s.psd" />
+    <None Include="images\header-bg.psd" />
+    <None Include="images\price-header-s.psd" />
+    <None Include="images\slogon.psd" />
+    <None Include="Service References\AdminService\configuration91.svcinfo" />
+    <None Include="Service References\AdminService\configuration.svcinfo" />
+    <None Include="Service References\AdminService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AdminService\WebService1.wsdl" />
+    <None Include="Service References\LodgeService\configuration91.svcinfo" />
+    <None Include="Service References\LodgeService\configuration.svcinfo" />
+    <None Include="Service References\LodgeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AdminService\WebService1.disco" />
+    <None Include="Service References\LodgeService\webservice1.disco" />
+    <Content Include="Testimonials.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Service References\LodgeService\webservice1.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About\Commisions.aspx.cs">
+      <DependentUpon>Commisions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About\Commisions.aspx.designer.cs">
+      <DependentUpon>Commisions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About\Jobs.aspx.cs">
+      <DependentUpon>Jobs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About\Jobs.aspx.designer.cs">
+      <DependentUpon>Jobs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About\Status.aspx.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About\Status.aspx.designer.cs">
+      <DependentUpon>Status.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About\Team.aspx.cs">
+      <DependentUpon>Team.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About\Team.aspx.designer.cs">
+      <DependentUpon>Team.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Admin\Frame.master.cs">
+      <DependentUpon>Frame.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Admin\Frame.master.designer.cs">
+      <DependentUpon>Frame.master</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Admin\TOfDay.aspx.cs">
+      <DependentUpon>TOfDay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Admin\TOfDay.aspx.designer.cs">
+      <DependentUpon>TOfDay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Admin\TOfUser.aspx.cs">
+      <DependentUpon>TOfUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Admin\TOfUser.aspx.designer.cs">
+      <DependentUpon>TOfUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Admin\TPushing.aspx.cs">
+      <DependentUpon>TPushing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Admin\TPushing.aspx.designer.cs">
+      <DependentUpon>TPushing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Frame.Master.cs">
+      <DependentUpon>Frame.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Frame.Master.designer.cs">
+      <DependentUpon>Frame.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Lodges.aspx.cs">
+      <DependentUpon>Lodges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Lodges.aspx.designer.cs">
+      <DependentUpon>Lodges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Transactions.aspx.cs">
+      <DependentUpon>Transactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Transactions.aspx.designer.cs">
+      <DependentUpon>Transactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Wizards\Active.aspx.cs">
+      <DependentUpon>Active.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Wizards\Active.aspx.designer.cs">
+      <DependentUpon>Active.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Wizards\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Wizards\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Wizards\Charge.aspx.cs">
+      <DependentUpon>Charge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Wizards\Charge.aspx.designer.cs">
+      <DependentUpon>Charge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Wizards\Deactive.aspx.cs">
+      <DependentUpon>Deactive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Wizards\Deactive.aspx.designer.cs">
+      <DependentUpon>Deactive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Wizards\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Wizards\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Wizards\Frame.master.cs">
+      <DependentUpon>Frame.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Wizards\Frame.master.designer.cs">
+      <DependentUpon>Frame.master</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Wizards\Refund.aspx.cs">
+      <DependentUpon>Refund.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Wizards\Refund.aspx.designer.cs">
+      <DependentUpon>Refund.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Wizards\Renewal.aspx.cs">
+      <DependentUpon>Renewal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Wizards\Renewal.aspx.designer.cs">
+      <DependentUpon>Renewal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Wizards\Success.aspx.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Wizards\Success.aspx.designer.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blog\article.aspx.cs">
+      <DependentUpon>article.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog\article.aspx.designer.cs">
+      <DependentUpon>article.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blog\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blog\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About\Frame.master.cs">
+      <DependentUpon>Frame.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About\Frame.master.designer.cs">
+      <DependentUpon>Frame.master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Layout.Master.cs">
+      <DependentUpon>Layout.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layout.Master.designer.cs">
+      <DependentUpon>Layout.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Page.master.cs">
+      <DependentUpon>Page.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page.master.designer.cs">
+      <DependentUpon>Page.master</DependentUpon>
+    </Compile>
+    <Compile Include="Help\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Help\Frame.master.cs">
+      <DependentUpon>Frame.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\Frame.master.designer.cs">
+      <DependentUpon>Frame.master</DependentUpon>
+    </Compile>
+    <Compile Include="Help\Terms.aspx.cs">
+      <DependentUpon>Terms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\Terms.aspx.designer.cs">
+      <DependentUpon>Terms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Membership\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\Frame.master.cs">
+      <DependentUpon>Frame.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Membership\Frame.master.designer.cs">
+      <DependentUpon>Frame.master</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Membership\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Membership\PasswordRetrieval.aspx.cs">
+      <DependentUpon>PasswordRetrieval.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Membership\PasswordRetrieval.aspx.designer.cs">
+      <DependentUpon>PasswordRetrieval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prices.aspx.cs">
+      <DependentUpon>Prices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prices.aspx.designer.cs">
+      <DependentUpon>Prices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AdminService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LodgeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Testimonials.aspx.cs">
+      <DependentUpon>Testimonials.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Testimonials.aspx.designer.cs">
+      <DependentUpon>Testimonials.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Page.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\GCServiceBase\GCServiceBase.csproj">
+      <Project>{0D574436-630B-4E01-B14B-396E1FEF8251}</Project>
+      <Name>GCServiceBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\MFL\MFL.csproj">
+      <Project>{522865D6-1325-4527-A671-6964D96CC236}</Project>
+      <Name>MFL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About\Frame.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Membership\Frame.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Help\Frame.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Layout.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Frame.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Wizards\Frame.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AdminService\" />
+    <WCFMetadataStorage Include="Service References\LodgeService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3373</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://testing.build.xunnlv.com/</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

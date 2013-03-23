@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="/Styles/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/ftypes.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/root.css" rel="stylesheet" type="text/css" />
+    <script src="/Scripts/jquery-1.6.2.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery-ui-1.8.15.custom.min.js" type="text/javascript"></script>
+    <script src="/Scripts/mfl.js" type="text/javascript"></script>
+    <script src="/Scripts/root.js" type="text/javascript"></script>
+    <script src="/Scripts/mfl-submit.js" type="text/javascript"></script>
+    <script src="/Scripts/root-search.js" type="text/javascript"></script>
+    <link href="/Styles/home.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/ftypes.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/root-courses.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form method="post" action="" id="form1">
+    <input type="submit" name="S1" style="float: right; visibility: visible; width: 1px;
+        position: absolute; left: -10px; top: 0border-width:0; margin: 0; padding: 0;
+        overflow: hidden;" />
+    <div id="header" class="">
+        <div id="header-content">
+            <div class="floatright" style="position: relative; width: 200px;">
+                <a id="LoginView1_LoginStatus1" class="loginButton" href="javascript:__doPostBack(&#39;ctl00$ctl00$LoginView1$LoginStatus1$ctl02&#39;,&#39;&#39;)">
+                    登陆</a>
+            </div>
+            <a href="/" title="上课网">
+                <img src="/styles/header-logo.png" title="上课网" alt="上课网" /></a>
+            <input type="text" class="searchText" style="width: 300px;" /><a class="searchBtn ftype ftype-search"
+                onclick="$('.searchText').focus();MFLSubmit(this);return false;" href="#" style="cursor: pointer;
+                margin-left: 20px;"></a>
+        </div>
+    </div>
+    <div id="main">
+        <div id="left">
+            <div class="links-header">
+                <a href="/Home/" class="ftype">最近动态</a>
+            </div>
+            <div class="links-header">
+                <a href="/Home/Courses/" class="ftype" style="background-position: 0 -18px;">我的课程</a>
+                <a href="/Home/Share/" class="ftype" style="background-position: 0 -158px;">我的分享</a>
+                <a href="/Home/People/" class="ftype" style="background-position: 0 -132px;">我的好友</a>
+                <a href="/Home/Storage/" class="ftype" style="background-position: 0 -509px;">我的上传</a>
+            </div>
+            <div class="links-header">
+                <a href="/C/All/" class="ftype ftype-course">所有课程</a>
+                <div id="ContentPlaceHolder1_Panel1">
+                    <a href="/C/本科课程" class="ftype ftype-ctype1">本科课程</a><a href="/C/考试认证辅导" class="ftype ftype-ctype1">考试认证辅导</a><a
+                        href="/C/企业培训" class="ftype ftype-ctype1">企业培训</a><a href="/C/体育课程" class="ftype ftype-ctype1">体育课程</a><a
+                            href="/C/幼教" class="ftype ftype-ctype1">幼教</a><a href="/C/原创课程" class="ftype ftype-ctype1">原创课程</a><a
+                                href="/C/中学教辅" class="ftype ftype-ctype1">中学教辅</a>
+                </div>
+                <a href="/Users.aspx" class="ftype" style="background-position: 0 -132px;">所有用户</a>
+            </div>
+        </div>
+        <div id="right">
+            <div>
+                <h3 class="links-header">
+                    查看类型</h3>
+                <div class="links-content types1 types">
+                    <div class="mfl-list-itemTemplate">
+                        <div class="mfl-type ftype" style="background-position: 0 -830px;">
+                            类型</div>
+                    </div>
+                    <div class="mfl-list-empty">
+                        没有可以显示的条目</div>
+                </div>
+            </div>
+            <div>
+                <h3 class="links-header">
+                    查看学科</h3>
+                <div class="links-content types2 types">
+                    <div class="mfl-list-itemTemplate">
+                        <div class="mfl-type ftype" style="background-position: 0 -1130px;">
+                            学科</div>
+                    </div>
+                    <div class="mfl-list-empty">
+                        没有可以显示的条目</div>
+                </div>
+            </div>
+            <div class="mfl-list-pages">
+            </div>
+        </div>
+        <div id="middle">
+            <div id="notifications">
+            </div>
+            $GCRender:$
+            <div class="ctypes-list">
+                $GCArray?:ctypes1$ <a style="float:left;display:none;" href="/C/$GCArrayText:type$/">
+                $GCArrayText:type$</a> 
+                $GCArrayEnds:$ 
+                $GCArray?:ctypes2$ <a class="ftype ftype-ctype2"
+                        style="float:left;display:none;" href="/C/$GCText:ctype1$/$GCArrayText:type$/">$GCArrayText:type$</a>
+                $GCArrayEnds:$ 
+                $GCArray?:ctypes3$ <a class="ftype ftype-ctype3" style="float:left;display:none;"
+                    href="/C/$GCText:ctype1$/$GCText:ctype2$/$GCArrayText:type$/">$GCArrayText:type$</a>
+                $GCArrayEnds:$
+            </div>
+            <div class="courses-list">
+                <h3>
+                    <div class="mfl-list-pages floatright">
+                        $GCObject:coursesPages$ <a class="mfl-list-page" href="?page=$GCObjectText:$">$GCObjectKey:$</a>
+                        $GCObjectEnds:$
+                    </div>
+                    <span>所有课程列表</span></h3>
+                <div id="courses">
+                    $GCArray?:coursesListItems$
+                    <div class="mfl-list-item">
+                        <div>
+                            <div class="teacher">
+                                <a href="/T/$GCArrayText:teacherUsername$"><img src="/Avatars/$GCArrayText:teacherId$.small.jpg" /></a>
+                                <span class="mfl-tags-teacherCoop">$GCArrayTags:teacherCoop$<a href="/$GCArrayTagsText:$/" title="$GCArrayTagsText:$"><img alt="$GCArrayTagsText:$" title="$GCArrayTagsText:$" src="/Styles/Tags/$GCArrayTagsText:$.gif" /></a>$GCArrayTagsEnds:$</span>
+                                <span class="mfl-teacherTruename">$GCArrayHtml:teacherTruename$</span> </div>
+                                <a href="/c/$GCArrayText:showId$"
+                                    class="ftype-course ftype mfl-name">$GCArrayHtml:name$</a></div>
+                        <a class="mfl-ctype2 ftype-ctype2 ftype ctype" href="/C/$GCArrayText:ctype1$/$GCArrayText:ctype2$/">$GCArrayText:ctype2$</a> 
+                        <a class="mfl-ctype1 ftype-ctype1 ftype ctype" href="/C/$GCArrayText:ctype1$/">$GCArrayText:ctype1$</a>
+                        <span class="ftype-friend ftype mfl-numMembers">$GCArrayText:numMembers$</span>
+                    </div>
+                    $GCArrayEnds:courses$
+                    <div class="mfl-list-itemTemplate">
+                        <div>
+                            <div class="teacher">
+                                <a href="/T/$teacherUsername$"><img src="/Avatars/$teacherId$.small.jpg" /></a>
+                                <span class="mfl-tags-teacherCoop"><a href="/$teacherCoop$/" title="$teacherCoop$"><img alt="$teacherCoop$" title="$teacherCoop$" src="/Styles/Tags/$teacherCoop$.gif" /></a></span>
+                                <span class="mfl-teacherTruename">$teacherTruename$</span> </div>
+                                <a href="/c/$showId$"
+                                    class="ftype-course ftype mfl-name">$name$</a></div>
+                        <a class="mfl-ctype2 ftype-ctype2 ftype ctype" href="/C/$ctype1$/$ctype2$/">$ctype2$</a> 
+                        <a class="mfl-ctype1 ftype-ctype1 ftype ctype" href="/C/$ctype1$/">$ctype1$</a>
+                        <span class="ftype-friend ftype mfl-numMembers">$numMembers$</span>
+                    </div>
+                </div>
+                <div class="mfl-list-pages floatright">
+                    $GCObject:coursesPages$ <a class="mfl-list-page" href="?page=$GCObjectText:$">$GCObjectKey:$</a>
+                    $GCObjectEnds:$
+                </div>
+            </div>
+            $GCRenderEnds:$
+            <div style="clear: both;">
+            </div>
+        </div>
+        <div id="foot">
+            <a href="../Help/">使用帮助</a> <a href="../Privacy/">隐私声明</a>
+            <div class="floatright">
+                版权所有 上课网 Goclassing.com © 2011</div>
+        </div>
+    </div>
+    </form>
+    <iframe src="about:blank" id="mfl-hidden-iframe" style="display: none" name="mfl-hidden-iframe">
+    </iframe>
+</body>
+</html>

@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MFLAdmin.Site" %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>寻旅.筑家-旅馆管理中心</title>
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Le styles -->
+	<link rel="stylesheet" type="text/css" href="<%=MFL.SharedConfig.MFLBaseUrl %>css/bootstrap.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="/Style/custom-theme/jquery-ui-1.8.16.custom.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="/Style/mfl-admin-style.css" media="screen"/>
+	<script src="/Scripts/jquery-1.6.2.min.js" type="text/javascript"></script>
+    <script src="/Scripts/easyTooltip.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.ui.datepicker-zh-CN.js" type="text/javascript"></script>
+    <script src="/Scripts/mfl.js" type="text/javascript"></script>
+    <script src="/Scripts/mfl-admin.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        lodgeName = '<%=Request["lodge"] %>';
+        MFLLodgeIdent = lodgeName;
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+	<div class="topbar">
+		<div class="topbar-inner">
+			<div class="container">
+				<a href="<%=MFL.SharedConfig.MFLBaseUrl %>" class="logo">MFL</a>
+                <a href="/<%=Request["lodge"] %>/" class="brand">旅馆管理中心</a>
+				<%--<ul class="nav">
+				<li><a href="price.html">产品价格</a></li>
+					<li class="dropdown" data-dropdown="dropdown" >
+						<a href="" class="dropdown-toggle">关于我们</a>
+						<ul class="dropdown-menu" >
+							<li><a href="">公司使命</a></li>
+							<li><a href="">开发团队</a></li>
+							<li><a href="">职业机会</a></li>
+							<li><a href="">公司状况</a></li>
+						</ul>
+					</li>
+				</ul>--%>
+				<form style="display:none;" method="post" action="/Login.aspx?lodge=<%=Server.UrlEncode(Request["lodge"]) %>" class="pull-right">
+					<button value="退出" name="submit" type="submit" class="btn topbar-login success">退出</button>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+	<div id="admin-content">
+		<div class="container">
+			<div id="admin-main">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+ 
+			</div>
+			<div id="admin-sidebar">
+				<div id="admin-info">
+					<p><span class="m-color "><span class="today"><%=this.Day %></span>的入住情况：</span></p>
+				</div>
+				<div id="admin-info-content" class="clearfix">
+					<div class="square">
+						<div class="number"><span class="countFull"><%=this.CountRoom??"?" %></span>间</div>
+						<div class="text">预订</div>
+					</div>
+					<div class="square">
+						<div class="number"><span class="countEmpty"><%=this.CountEmpty??"?" %></span>间</div>
+						<div class="text">剩余</div>
+					</div>
+					<div class="square">
+						<div class="number"><span class="countPeople"><%=this.CountPeople??"?" %></span>人</div>
+						<div class="text">入住</div>
+					</div>
+				</div>
+				<div id="admin-cal">
+                    <div id="navDay">
+						<a href="/<%=Request["lodge"] %>/?day=<%=Convert.ToDateTime(this.Day).AddDays(-1).ToString("yyyy-MM-dd") %>" class="preDay"> 前一天</a>
+						<a href="/<%=Request["lodge"] %>/" class="dirToday"> 转到今天</a>
+						<a href="/<%=Request["lodge"] %>/?day=<%=Convert.ToDateTime(this.Day).AddDays(1).ToString("yyyy-MM-dd") %>" class="nextDay"> 后一天</a>
+						<div style="clear:both;"></div>
+					</div>
+					<div id="datepicker">
+					</div>
+					<div id="datepickerNote">注：日期下数字表示<span class="highlightText">已预订房间数</span></div>
+				</div>
+			</div>
+		</div><!-- END FOR Container -->
+	</div><!-- END FOR About Content -->
+	<div style="clear:both;"></div>
+	<div id="footer">
+		<div class="container">
+			<p> <a href="<%=MFL.SharedConfig.MFLBaseUrl %>">寻旅.筑家</a>. Copyright &#169; 2011&#8211;2011 by xunnlv.com. All rights reserved. </p><br/>
+			<ul class="sitemap_strip unstyled"> 
+				  <li><a href="<%=MFL.SharedConfig.MFLBaseUrl %>Blog/">团队博客</a></li> 
+				  <li><a href="<%=MFL.SharedConfig.MFLBaseUrl %>About/">关于我们</a></li> 
+				  <li><a href="<%=MFL.SharedConfig.MFLBaseUrl %>About/Contact.aspx">联系我们</a></li> 
+				  <li><a href="<%=MFL.SharedConfig.MFLBaseUrl %>About/Jobs.aspx">工作招聘</a></li> 
+				  <li><a href="<%=MFL.SharedConfig.MFLBaseUrl %>Help/Terms.aspx">使用条款</a></li> 
+			</ul> 
+		</div> 
+	</div>
+	<script type="text/javascript">
+    <%=(Request.Cookies["ScriptsToBeExecuted"]??new System.Web.HttpCookie("haha")).Value %>
+    <%Response.SetCookie(new HttpCookie("ScriptsToBeExecuted") { Expires = DateTime.Now.AddDays(-1) });%>
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿
+                             <div class="border3"></div>
+                             <div class="wrapper">
+
+                             	<div class="page1-bg">
+                                	<a href="index.htm"><img style="width:132px;height:44px;" src="$MFLText:specialPhotoLogo0$" alt="" class="img-pad1"></a>
+                                </div>
+                                 <ul class="link-img">
+                                    <li><a class="tooltip img1" title="新浪微博" href="#"></a></li>
+                                    <li><a class="tooltip img2" title="腾讯微博" href="#"></a></li>
+                                </ul>
+                             </div>
+                        </div>
+
+                    </div>    
+                </div>
+            </div>
+		</section>
+    
+	<!-- footer -->
+	<footer>
+
+		<div class="container_24">
+        <div class="foot-text">$MFLText:lodgeContact$ &copy; 2011 <span>&bull;</span> 由<a href="$MFLText:MFLBaseUrl$">寻旅·筑家</a>强力驱动&nbsp;|&nbsp;<a href="$MFLText:MFLBaseUrl$Help/Terms.aspx">Privacy Policy</a></div>
+			<!-- {%FOOTER_LINK} -->
+		</div>
+	</footer> 
+     </div>    
+   </div>  
+</body>
+</html>

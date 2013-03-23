@@ -1,0 +1,1 @@
+"C:\Users\LayersSss\Desktop\MONO\DbLinq-0.20.1\build.dbg\dbmetal" /provider:MySql /conn "Server=dev.xunnlv.com;Database=chifanshe_com" /code:"C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\Chifanshe.com\Entities\Chifanshe.cs" --pluralize --case=leave --namespace=cfs

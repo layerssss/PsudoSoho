@@ -1,0 +1,103 @@
+﻿.avatar
+{
+    width:25px;
+    height:25px;
+    float:left;
+}
+#slf>.offline
+{
+    display:none;
+}
+#fb_btn>span
+{
+    background-repeat:no-repeat;
+    background-image:url('/img/sina_wb_connect_btn.png');
+    width:126px;
+    height:24px;
+    float:left;
+    display:block;
+    text-indent:-9999px;
+}
+.well{
+    background-color: #fbfbfb;
+}
+/* user.isp.js */
+.user-hero{
+    background-color: #FFF;
+}
+.user-hero div.links a{
+    margin: 10px 10px 10px 0px;
+}
+.user-hero img.thumbnail{
+    width:50px;
+    height:50px;
+    display: inline-block;
+}
+.user-hero .label{
+    font-size:40px;
+    padding: 5px 10px;
+}
+
+/* sender.isp.js & admin.isp.js */
+.well-header{
+    background-color: #e9e9e9;
+    padding: 10px 0 10px 19px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    font-weight: normal;
+}
+.sidebar dt {
+    margin: 0 -19px 0 -19px;
+    padding: 5px;
+    border: 1px solid #eee;
+    background-color: #f1f1f1;
+}
+.sidebar dd{
+    text-align: center;
+    padding:5px;
+    margin: 0 -19px 0 -19px;
+    background-color: #FFF;
+}
+.sticky #admin-sidebar {
+    position: fixed;
+}
+div#stock a.thumbnail{
+    width: 50px;
+    height: 50px;
+}
+div#stock table td{
+    text-align: center;
+    vertical-align: middle;
+}
+span.label a.close{
+    float: none;
+    color: white;
+    opacity: 1;
+    margin: 5px;
+    text-shadow: 0 1px 0 black;
+    vertical-align: middle;
+}
+div#manage-senders .existed-senders {
+    border-left: 1px solid #ddd;
+    padding-left: 20px;
+}
+div#manage-senders .existed-senders h5.well-sub-header{
+    background-color: #e9e9e9;
+    margin: -1px -59px 19px -20px;
+    padding: 10px 0 10px 19px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    font-weight: normal;
+}
+.x-large
+{
+    font-size:x-large;
+}
+.small
+{
+    font-size:small;
+}
+section.well
+{
+    padding-top:70px;
+}

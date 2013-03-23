@@ -1,0 +1,25 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="MFLAdmin.Lodge.WebForm1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="../Scripts/jquery-1.6.2.min.js" type="text/javascript"></script>\
+
+    <script type="text/javascript">
+        $(function () {
+            
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" target="ifr" action="WebForm1.aspx" method="post" enctype="multipart/form-data">
+    <div>
+    <input type="file" name="aaa"/>
+    <input type="submit" />
+    </div>
+    </form>
+    <iframe class="ifr" id="ifr" name="ifr" src="about:blank"></iframe>
+</body>
+</html>

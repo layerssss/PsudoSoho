@@ -1,0 +1,12 @@
+﻿@charset "utf-8"; 
+
+/* 
+@frameName：Tomato Web Frame
+@brief：良好的中文字体兼容性，适合快速搭建demo，创建高保真交互原型。
+@author：GuoYu http://guoyu.me
+@ver：2.2
+*/
+
+@import url('./reset.css');
+@import url('./base.css');
+@import "sexybuttons.css";

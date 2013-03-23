@@ -1,0 +1,21 @@
+﻿<%@ Master Language="C#" MasterPageFile="Layout.Master" AutoEventWireup="true" CodeBehind="Page.master.cs" Inherits="MyFamilyLodge.FrameS" %>
+
+<asp:Content ContentPlaceHolderID="header" runat="server">
+    <asp:ContentPlaceHolder ID="header" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="header-s" class="masthead">
+		<div class="inner">
+			<div class="container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderHeader" runat="server">
+
+            </asp:ContentPlaceHolder>
+
+			</div>
+		</div>
+	</div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+</asp:Content>

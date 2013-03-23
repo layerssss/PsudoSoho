@@ -1,0 +1,41 @@
+$IncludeText:pre_content$
+                <div id="map">
+                 <img src="http://api.map.baidu.com/staticimage?width=910&height=600&zoom=15&center=$MFLText:lodgeLongtitude$,$MFLText:lodgeLatitude$&markers=$MFLText:lodgeLongtitude$,$MFLText:lodgeLatitude$" />   
+                </div>
+            </div>
+        </header>
+    <!--==============================content================================-->
+        <section id="content">
+            <div class="bg">
+                <div class="main container_16">
+					<div class="resv-note module-bg">
+						<h3>订房需知</h3>
+						<div>$MFLHtml:lodgeOrder$</div>
+					</div>
+                    <div class="resv-main roomQuery">
+						<h3>房间查询</h3>
+						<div class="rq-datepicker"></div>
+						<table>
+						<caption class="rq-head">
+							<span class="rq-date">2011年11月24号</span>入住情况<span class="count availableCount">5房间可预订</span>
+							
+						</caption>
+						<tbody class="rq-container">
+						</tbody>
+					</table>
+					</div>  
+					<script type="text/javascript" language="javasctipt">
+                        $(function(){
+                            $('.roomQuery').roomQuery({
+                                datepickerOption:{
+									numberOfMonths:4
+								},
+                                baseUrl:'$MFLText:baseUrl$',
+                                rooms:$MFLText:lodgeRooms$
+                            });
+                        });
+					</script>  
+                </div>
+            </div>
+        </section>
+$IncludeText:post_content$

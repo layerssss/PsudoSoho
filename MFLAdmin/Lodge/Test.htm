@@ -1,0 +1,42 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script src="../Scripts/jquery-1.6.2.min.js" type="text/javascript"></script>
+    <script src="../Scripts/mfl.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.add').click(function () {
+                $('<input type="button" value="删除参数" />').appendTo(
+                $('<div><span>' + $('.key').val() + '</span><input type="text" name="' + $('.key').val() + '" /></div>').appendTo('.vals')).click(function () {
+                    $(this).parent().remove();
+                });
+            });
+            MFLAjax({
+                action: "获取操作",
+                success: function (json) {
+                    $.each(json.actions, function (i, v) {
+                        $('<option>' + v + '</option>').appendTo('select');
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" target="iframe" method="Get" action="Data.aspx">
+    <div>
+    <input type="hidden" name="formatted" value="true" />
+    Action:<select name="Action">
+    <option>获取操作</option>
+    </select>
+    <input type="checkbox" name="listArgs" value="true" />显示参数
+    <div class="vals"></div>参数名称:<input type="text" class="key" value="" /><input type="button" class="add" value="添加参数" /><br />
+    <input type="submit" class="submit" value="测试" />
+    </div>
+    </form>
+    <iframe width="99%" height="400" name="iframe" id="iframe"></iframe>
+</body>
+</html>

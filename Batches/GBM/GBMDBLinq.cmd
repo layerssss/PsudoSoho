@@ -1,0 +1,1 @@
+"C:\Users\LayersSss\Desktop\MONO\DbLinq-0.20.1\build.dbg\dbmetal" /provider:MySql /conn "Server=dev.xunnlv.com;Database=gebimai_com" /code:"C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\Entities\Gebimai.cs" --pluralize --case=leave

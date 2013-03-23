@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>$MFLText:PageTitle$</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="$MFLText:baseUrl$assets/shared/css/reset.css" type="text/css" media="screen">
+<link rel="stylesheet" href="$MFLText:baseUrl$assets/shared/css/grid.css" type="text/css" media="screen">
+<link rel="stylesheet" href="$MFLText:baseUrl$assets/shared/css/prettyPhoto.css" type="text/css" media="screen">
+<link rel="stylesheet" href="$MFLText:baseUrl$assets/002/css/style.css" type="text/css" media="screen">
+<script type="text/javascript" src="$MFLText:baseUrl$assets/shared/js/jquery-1.6.2.min.js" ></script>
+<script type="text/javascript" src="$MFLText:baseUrl$assets/lodge/js/roomQuery.js" ></script>
+<script src="$MFLText:baseUrl$assets/shared/js/jquery.easing.1.3.js" type="text/javascript"></script>
+<script src="$MFLText:baseUrl$assets/shared/js/easyTooltip.js" type="text/javascript"></script>
+<script type="text/javascript" src="$MFLText:baseUrl$assets/shared/js/superfish.js"></script>
+<script src="$MFLText:baseUrl$assets/shared/js/jquery.kwicks-1.5.1.pack.js" type="text/javascript"></script>
+<script src="$MFLText:baseUrl$assets/shared/js/jquery.jqtransform.js" type="text/javascript"></script>
+<script src="$MFLText:baseUrl$assets/shared/js/jquery.slideDown.js" type="text/javascript"></script>
+<script src="$MFLText:baseUrl$assets/shared/js/jquery.prettyPhoto.js" type="text/javascript"></script>
+<script type="text/javascript" src="$MFLText:baseUrl$assets/002/js/custom.js"></script>
+
+<script type="text/javascript">
+			$().ready(function() {
+				$('.kwicks').kwicks({
+					max : 526,
+					spacing : 2
+				});
+			});
+</script>  
+<script type="text/javascript">
+		$(function(){
+			 $('#package_form, #planner_form').jqTransform({imgPath:'jqtransformplugin/img/'});
+            });		
+</script>         
+ <!--[if lt IE 7]> 
+ 		<div style=' clear: both; text-align:center;  padding:0 0 0 0px; position: relative;'>
+			<a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg"  border="0" height="42" width="820" alt="You are using an outdated browser. For a  faster, safer browsing experience, upgrade for free today. /></a>
+		</div> 
+  <![endif]-->
+
+    <!--[if lt IE 9]> 
+        <script type="text/javascript" src="$MFLText:baseUrl$assets/shared/js/html5.js"></script>
+    <![endif]--> 
+</head>
+
+<body id="page1">
+ <div class="bg1">
+	<div class="box">
+		<!-- header -->
+		<header>
+			<div class="row">
+            <div class="indent"></div>
+
+            	<div class="row-bg">
+                	<h1><a style="background-image:url('$MFLText:specialPhotoLogo0$');" href="#">$MFLText:lodgeName$</a></h1>
+                </div>
+                <div class="border"></div>
+            </div>
+
+            <div class="row1">
+            	<div class="container_24">
+                	<div class="extra-wrap">
+                	<nav>
+                    <ul class="sf-menu">
+                        <li class="last1"><a href="index.htm" class="$MFLShowIfEqual:FileName,active,index.htm$">旅馆首页</a></li>   
+                        <li><a href="OurStory.htm" class="$MFLShowIfEqual:FileName,active,OurStory.htm$">我们的故事</a></li>                      	
+                        <li><a href="$MFLText:FirstRoomLink$" class="$MFLShowIfEqual:FileName,active,room.htm$">房间展示</a></li>
+                        $MFLArray?:lodgePhotoTypes$
+                        <li><a class="$MFLArrayShowIf:typeCurrent,active$" href="$MFLArrayHtml:typePinyin$.htm">$MFLArrayText:type$</a></li>
+                        $MFLArrayEnds:$
+                        <li><a href="Reservation.htm" class="$MFLShowIfEqual:FileName,active,Reservation.htm$">房间预订</a></li>
+                        <li class="last"><a href="Location.htm" class="$MFLShowIfEqual:FileName,active,Location.htm$">交通</a></li>
+                        
+                    </ul>
+                </nav>               
+                <div class="clear"></div>
+                </div>
+                </div>
+            </div>
+
+		</header>
+		<!-- content -->
+		<section id="content">
+			<div class="row2">
+            	<div class="row2-bg" style="height:auto;min-height:10px;">
+                    <div class="padding">
+                        <div class="kwicks-box" style="padding:30px 40px;">
+                                <h2>$MFLText:type$</h2>
+                                        $MFLArray?:lodgeTypeAlbum$
+										<div class="typePhotoList clearfix">
+											<h3 class="photoTitle">$MFLArrayHtml:lodgePhotoTitle$</h3>
+											<a class="stroke lightbox-image" href="$MFLArrayText:lodgePhotoUrl$" rel="prettyPhoto[gallery1]" title="$MFLArrayText:lodgePhotoContent$">
+												<img src="$MFLArrayText:lodgePhotoUrl$" alt="$MFLArrayText:lodgePhotoTitle$"/>
+											</a>
+											<p class="photoContent">$MFLArrayHtml:lodgePhotoContent$</p>
+										</div>
+                                        $MFLArrayEnds:$
+                                        <div class="clearfix"></div>
+                        </div>
+</div>    
+                </div>
+
+                <div class="box1">
+                <div class="padding">
+
+                             <div class="border3"></div>
+                             <div class="wrapper">
+
+                             	<div class="page1-bg">
+                                	<a href="index.htm"><img style="width:132px;height:44px;" src="$MFLText:specialPhotoLogo0$" alt="" class="img-pad1"></a>
+                                </div>
+                                 <ul class="link-img">
+                                    <li><a class="tooltip img1" title="新浪微博" href="#"></a></li>
+                                    <li><a class="tooltip img2" title="腾讯微博" href="#"></a></li>
+                                </ul>
+                             </div>
+                        </div>
+
+                    </div>    
+                </div>
+            </div>
+		</section>
+    
+	<!-- footer -->
+	<footer>
+
+		<div class="container_24">
+        <div class="foot-text">$MFLText:lodgeContact$ &copy; 2011 <span>&bull;</span> 由<a href="$MFLText:MFLBaseUrl$">寻旅·筑家</a>强力驱动&nbsp;|&nbsp;<a href="$MFLText:MFLBaseUrl$Help/Terms.aspx">Privacy Policy</a></div>
+			<!-- {%FOOTER_LINK} -->
+		</div>
+	</footer> 
+     </div>    
+   </div>  
+</body>
+</html>

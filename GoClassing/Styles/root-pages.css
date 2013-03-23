@@ -1,0 +1,19 @@
+﻿
+.wizard
+{
+    line-height:2;
+    font-size:2em;
+    padding:10px 10px 40px 10px;
+}
+.wizard label,.wizard,.wizard input
+{
+    font-size:1.2em;
+}
+.wizard input[type="text"],.wizard input[type="password"]
+{
+    width:auto;
+}
+label.agreement
+{
+    font-size:0.8em;
+}

@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43142614-5968-4035-91F0-36A79A811AFC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GoClassing</RootNamespace>
+    <AssemblyName>GoClassing</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\..\..\..\Desktop\Dlls\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\CourseTypes.aspx" />
+    <Content Include="Admin\Default.aspx" />
+    <Content Include="Admin\ProfileName.aspx" />
+    <Content Include="Admin\UserProvinces.aspx" />
+    <Content Include="Avatars\0.jpg" />
+    <Content Include="Avatars\0.small.jpg" />
+    <Content Include="Avatars\2.jpg" />
+    <Content Include="Avatars\2.small.jpg" />
+    <Content Include="Avatars\default.jpg" />
+    <Content Include="Avatars\default.small.jpg" />
+    <Content Include="Avatars\defaultF.jpg" />
+    <Content Include="Avatars\defaultF.small.jpg" />
+    <Content Include="Avatars\defaultM.jpg" />
+    <Content Include="Avatars\defaultM.small.jpg" />
+    <Content Include="C\All\Default.aspx" />
+    <Content Include="Data.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Drop\dummy.txt" />
+    <Content Include="Eula\Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="GetIp.aspx" />
+    <Content Include="GetMirrorIp.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Hello.txt" />
+    <Content Include="Help\Default.aspx" />
+    <Content Include="Home\Courses\Default.aspx" />
+    <Content Include="Home\Default.aspx" />
+    <Content Include="Home\Friends\Default.aspx" />
+    <Content Include="Home\Messages\Default.aspx" />
+    <Content Include="Home\Security\Default.aspx" />
+    <Content Include="Home\Status\Default.aspx" />
+    <Content Include="InternalError.aspx" />
+    <Content Include="Internal\Course.aspx" />
+    <Content Include="Internal\CourseMembers.aspx" />
+    <Content Include="Internal\CoursePost.aspx" />
+    <Content Include="Internal\Errors\dummy.txt" />
+    <Content Include="Internal\Messages\dummy.txt" />
+    <Content Include="Internal\NotReady.aspx" />
+    <Content Include="Internal\ShowInfo.aspx" />
+    <Content Include="Internal\Teacher.aspx" />
+    <Content Include="Internal\Templates\CoursePost.html" />
+    <Content Include="Internal\Templates\Courses.html" />
+    <Content Include="Internal\Templates\Home.Master.html" />
+    <Content Include="Internal\Templates\Mail.html" />
+    <Content Include="Internal\Templates\Teacher.html" />
+    <Content Include="Blank.Master" />
+    <Content Include="Internal\Templates\MailMsg.html" />
+    <Content Include="Message.aspx" />
+    <Content Include="Flash\Jplayer.swf" />
+    <Content Include="Model1.edmx.sql" />
+    <Content Include="Scripts\jQuery.cookie.js" />
+    <Content Include="Scripts\jquery.jplayer.min.js" />
+    <Content Include="Scripts\jquery.ui.datepicker-zh-CN.js" />
+    <Content Include="Scripts\swfobject.js" />
+    <Content Include="Scripts\swfupload.js" />
+    <Content Include="Scripts\swfupload.queue.js" />
+    <Content Include="Scripts\swfupload.speed.js" />
+    <None Include="Service References\MFLMirrorServices\WebServices.wsdl" />
+    <None Include="Service References\VServerServices\WebServices.disco" />
+    <None Include="Service References\VServerServices\configuration91.svcinfo" />
+    <None Include="Service References\VServerServices\configuration.svcinfo" />
+    <None Include="Service References\VServerServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\MFLMirrorServices\WebServices.disco" />
+    <None Include="Service References\MFLMirrorServices\configuration91.svcinfo" />
+    <None Include="Service References\MFLMirrorServices\configuration.svcinfo" />
+    <None Include="Service References\MFLMirrorServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Styles\blank.gif" />
+    <Content Include="Styles\icon_calendar.gif" />
+    <Content Include="Styles\images\ui-bg_diagonals-thick_40_e8e8e8_40x40.png" />
+    <Content Include="Styles\images\ui-bg_highlight-hard_100_fbfaf9_1x100.png" />
+    <Content Include="Styles\images\ui-bg_highlight-hard_30_f2ec6e_1x100.png" />
+    <Content Include="Styles\images\ui-bg_highlight-hard_95_cccccc_1x100.png" />
+    <Content Include="Styles\images\ui-bg_inset-hard_60_d1ea6c_1x100.png" />
+    <Content Include="Styles\images\ui-bg_inset-soft_50_b2d228_1x100.png" />
+    <Content Include="Styles\images\ui-bg_inset-soft_50_c5e34a_1x100.png" />
+    <Content Include="Styles\images\ui-bg_inset-soft_50_fdfedc_1x100.png" />
+    <Content Include="Styles\images\ui-bg_spotlight_95_fffaeb_600x600.png" />
+    <Content Include="Styles\images\ui-icons_546f11_256x240.png" />
+    <Content Include="Styles\images\ui-icons_808080_256x240.png" />
+    <Content Include="Styles\images\ui-icons_847e71_256x240.png" />
+    <Content Include="Styles\images\ui-icons_8dc262_256x240.png" />
+    <Content Include="Styles\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\intro.mp4" />
+    <Content Include="Styles\intro.mp4.jpg" />
+    <Content Include="Styles\jplayer.blue.monday.css" />
+    <Content Include="Styles\jplayer.blue.monday.jpg" />
+    <Content Include="Styles\jplayer.blue.monday.seeking.gif" />
+    <Content Include="Styles\jplayer.blue.monday.video.play.png" />
+    <Content Include="Styles\msg-new.gif" />
+    <Content Include="Styles\msg.gif" />
+    <Content Include="Styles\Tags\上课网开发小组.gif" />
+    <Content Include="Styles\Tags\上课网系统管理员.gif" />
+    <Content Include="Styles\TestImageNoText_65x29.png" />
+    <Content Include="Internal\Course.master" />
+    <Content Include="Internal\Templates\Doc.txt" />
+    <Content Include="Internal\Templates\JplayerAudio.txt" />
+    <Content Include="Internal\Templates\JplayerVideo.txt" />
+    <Content Include="Internal\Templates\Null.txt" />
+    <Content Include="Internal\Templates\Course.html" />
+    <Content Include="Internal\Templates\Teachers.html" />
+    <Content Include="Internal\WebServices.asmx" />
+    <Content Include="MailVerifying.aspx" />
+    <Content Include="PageNotFound.aspx" />
+    <Content Include="Privacy\Default.aspx" />
+    <Content Include="Scripts\jquery-1.6.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.15.custom.min.js" />
+    <Content Include="Scripts\mfl-lodge-icon.js" />
+    <Content Include="Scripts\mfl-submit.js" />
+    <Content Include="Scripts\mfl-swfu.js" />
+    <Content Include="Scripts\mfl.js" />
+    <Content Include="Scripts\root.js" />
+    <Content Include="Scripts\mfl-edit.js" />
+    <Content Include="Scripts\root-search.js" />
+    <Content Include="Styles\bg.png" />
+    <Content Include="Styles\blank.png" />
+    <Content Include="Styles\btn-bg.gif" />
+    <Content Include="Styles\btn-bg.png" />
+    <Content Include="Styles\ftypes.css" />
+    <Content Include="Styles\header-bg.png" />
+    <Content Include="Styles\header-logo.png" />
+    <Content Include="Styles\home.css" />
+    <Content Include="Styles\icons_sprite.png" />
+    <Content Include="Styles\jquery-ui-1.8.16.custom.css" />
+    <Content Include="Styles\loading.gif" />
+    <Content Include="Styles\root-courses.css" />
+    <Content Include="Styles\root-pages.css" />
+    <Content Include="Styles\root-types.css" />
+    <Content Include="Styles\root.css" />
+    <Content Include="Styles\sex.gif" />
+    <Content Include="Styles\sexf.gif" />
+    <Content Include="Styles\sexm.gif" />
+    <Content Include="Styles\mail.css" />
+    <Content Include="Styles\header-logo-mail.png" />
+    <Content Include="T\All\Default.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <None Include="Service References\VServerServices\WebServices.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CourseTypes.aspx.cs">
+      <DependentUpon>CourseTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CourseTypes.aspx.designer.cs">
+      <DependentUpon>CourseTypes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProfileName.aspx.cs">
+      <DependentUpon>ProfileName.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProfileName.aspx.designer.cs">
+      <DependentUpon>ProfileName.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserProvinces.aspx.cs">
+      <DependentUpon>UserProvinces.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserProvinces.aspx.designer.cs">
+      <DependentUpon>UserProvinces.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blank.Master.cs">
+      <DependentUpon>Blank.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blank.Master.designer.cs">
+      <DependentUpon>Blank.Master</DependentUpon>
+    </Compile>
+    <Compile Include="C\All\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="C\All\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Data.aspx.cs">
+      <DependentUpon>Data.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Data.aspx.designer.cs">
+      <DependentUpon>Data.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eula\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eula\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GCMembershipProvider.cs" />
+    <Compile Include="GCRoleProvider.cs" />
+    <Compile Include="GetIp.aspx.cs">
+      <DependentUpon>GetIp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetIp.aspx.designer.cs">
+      <DependentUpon>GetIp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetMirrorIp.aspx.cs">
+      <DependentUpon>GetMirrorIp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetMirrorIp.aspx.designer.cs">
+      <DependentUpon>GetMirrorIp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Help\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Help\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Courses\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Courses\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Friends\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Friends\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Home.master.cs">
+      <DependentUpon>Home.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Home.master.designer.cs">
+      <DependentUpon>Home.master</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Messages\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Messages\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Security\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Security\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home\Status\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home\Status\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InternalError.aspx.cs">
+      <DependentUpon>InternalError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InternalError.aspx.designer.cs">
+      <DependentUpon>InternalError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\Course.aspx.cs">
+      <DependentUpon>Course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Internal\Course.aspx.designer.cs">
+      <DependentUpon>Course.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\Course.master.cs">
+      <DependentUpon>Course.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Internal\Course.master.designer.cs">
+      <DependentUpon>Course.master</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\CourseMembers.aspx.cs">
+      <DependentUpon>CourseMembers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Internal\CourseMembers.aspx.designer.cs">
+      <DependentUpon>CourseMembers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\CoursePost.aspx.cs">
+      <DependentUpon>CoursePost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Internal\CoursePost.aspx.designer.cs">
+      <DependentUpon>CoursePost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\GCCommon.cs" />
+    <Compile Include="Internal\GCException.cs" />
+    <Compile Include="Internal\GCCourse.cs" />
+    <Compile Include="Internal\GCAuthenticated.cs" />
+    <Compile Include="Internal\GCGuest.cs" />
+    <Compile Include="Internal\GCSearch.cs" />
+    <Compile Include="Internal\GCTemplateReader.cs" />
+    <Compile Include="Internal\GCUser.cs" />
+    <Compile Include="Internal\GCVisitor.cs" />
+    <Compile Include="Internal\NotReady.aspx.cs">
+      <DependentUpon>NotReady.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Internal\NotReady.aspx.designer.cs">
+      <DependentUpon>NotReady.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\ShowInfo.aspx.cs">
+      <DependentUpon>ShowInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Internal\ShowInfo.aspx.designer.cs">
+      <DependentUpon>ShowInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\Teacher.aspx.cs">
+      <DependentUpon>Teacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Internal\Teacher.aspx.designer.cs">
+      <DependentUpon>Teacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\UI.cs" />
+    <Compile Include="Internal\WebServices.asmx.cs">
+      <DependentUpon>WebServices.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MailVerifying.aspx.cs">
+      <DependentUpon>MailVerifying.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MailVerifying.aspx.designer.cs">
+      <DependentUpon>MailVerifying.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Message.aspx.cs">
+      <DependentUpon>Message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Message.aspx.designer.cs">
+      <DependentUpon>Message.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PageNotFound.aspx.cs">
+      <DependentUpon>PageNotFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageNotFound.aspx.designer.cs">
+      <DependentUpon>PageNotFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privacy\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privacy\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Root.Master.cs">
+      <DependentUpon>Root.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Root.Master.designer.cs">
+      <DependentUpon>Root.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\MFLMirrorServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\VServerServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="T\All\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T\All\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Messages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Root.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Home\Home.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Skin1\Skin1.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\MFLJson\MFLJson.csproj">
+      <Project>{8B6A0DA1-C625-4A8F-80CE-F1072E457DA1}</Project>
+      <Name>MFLJson</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\MFLMirrorLib\MFLMirrorLib.csproj">
+      <Project>{9F8B8628-2B5A-4589-939D-CCC94E8D54CC}</Project>
+      <Name>MFLMirrorLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Home\web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Admin.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Internal\Templates\Empty.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\MFLMirrorServices\" />
+    <WCFMetadataStorage Include="Service References\VServerServices\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1260</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/GoClassing</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://testing.goclassing.com/</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

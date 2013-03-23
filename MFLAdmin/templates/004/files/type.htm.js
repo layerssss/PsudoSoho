@@ -1,0 +1,1 @@
+﻿root.PageTitle=root.type+'-'+root.lodgeName+'-'+root.TemplatePropertyTitleSuffix;

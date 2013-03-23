@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <input type="hidden" value="$实际值$" /><!--这一个input实际储存数据的值，当然有的页面他的type为text-->
+    <a href="#" title="$实际值$" alt="$实际值$">
+        <img alt="$实际值$" src="$图片地址$" class="$options.cssClassImg$" />
+    </a>
+    <div class="mfl-lodge-icons"><!--打开时，这个div才被创建，关闭之后这个div最终会被销毁-->
+        <span class="mfl-list-item"><!--这一个span在图片列表加载完之后会被重复，每一个图标生成一个这样的span-->
+            <a href="#" class="mfl-lodge-icon mfl-alt-$options.fieldText$" onclick="return false;">
+                <img class="mfl-src-$options.fieldIcon$ mfl-alt-$options.fieldText$ mfl-data-$options.fieldValue$ $options.cssClassImg$" />
+            </a>
+        </span>
+    </div>
+    <!--
+        $...$中的默认值说明(大部分页面的icons都是使用的默认值，除了“模版设定”那个页面)：
+        options={
+            'fieldIcon': 'icon',
+            'fieldText': 'text',
+            'fieldValue': 'icon',
+            'cssClassImg': 'mfl-src-optionIcon'
+        };
+    -->
+</body>
+</html>

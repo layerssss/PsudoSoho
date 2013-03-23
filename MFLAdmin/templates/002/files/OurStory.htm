@@ -1,0 +1,17 @@
+$IncludeText:pre_content$
+                        <div class="kwicks-box" style="padding:30px 40px;">
+                                <h2>我们的故事</h2>
+                                    <p>$MFLText:TemplatePropertyStory$</p>
+                                        $MFLArray?:specialPhotosStory$
+										<div class="typePhotoList clearfix">
+											<h3 class="photoTitle">$MFLArrayHtml:lodgePhotoTitle$</h3>
+											<a class="stroke lightbox-image" href="$MFLArrayText:lodgePhotoUrl$" rel="prettyPhoto[gallery1]" title="$MFLArrayText:lodgePhotoContent$">
+												<img src="$MFLArrayText:lodgePhotoUrl$" alt="$MFLArrayText:lodgePhotoTitle$"/>
+											</a>
+											<p class="photoContent">$MFLArrayText:lodgePhotoContent$</p>
+										</div>
+                                        $MFLArrayEnds:$
+                                        <div class="clearfix"></div>
+                        </div>
+$IncludeText:int_content$
+$IncludeText:post_content$

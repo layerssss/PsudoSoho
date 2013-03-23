@@ -1,0 +1,95 @@
+﻿.rq-datepicker td>a
+{
+
+}
+
+tr.rq-room.loading,
+.rq-datepicker td.loading>a
+{
+    background-color:#eee!important;
+	color:#ddd;
+}
+tr.rq-room.available,
+.rq-datepicker td.available>a,
+.rq-datepicker td.error>a
+{
+
+	background-image:none!important;
+}
+.ui-datepicker-calendar td>a{
+	background:url(../img/pattern_darkness.png) repeat!important;
+}
+.rq-container tr {
+	background:url(../img/pattern_darkness.png) repeat;
+}
+tr.rq-room.error,
+.rq-datepicker td.error>a
+{
+    background-color:#fff;
+	background:none;
+}
+.rq-roomName{vertical-align: middle;}
+.ui-datepicker-current-day {border:1px solid #8FBE21!important;}
+.ui-datepicker-inline{width:auto!important;}
+.rq-head {
+  border-left:1px solid #ddd;
+  border-right:1px solid #ddd;
+  padding:20px;
+  background:#f8f8f8;
+  font-size:15px;
+  color:#999;
+}
+span.rq-sum{
+	padding:2px 7px;margin:0 7px;
+	-webkit-border-radius: 4px; 
+	 -moz-border-radius: 4px; 
+		  border-radius: 4px;           
+    -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;	
+}
+span.rq-availableSum{background:#8FBE21;color:white;}
+span.rq-unavailableSum{background:#E32529;color:white;}
+span.rq-date{padding:2px 5px;color:#333;}
+/**********************************************/
+.rq-widget>table {
+	  border-collapse: collapse;
+	  border-spacing: 0;
+	  width: 100%;
+	  margin-bottom: 18px;
+	  padding: 0;
+	  *border-collapse: collapse;
+	  /* IE7, collapse table to remove spacing */
+	  background-color:white;
+	  font-size: 13px;
+	  border: 1px solid #ddd;
+}
+.rq-widget>table th, .rq-widget>table td {
+  padding: 10px 0px;
+  line-height: 18px;
+  text-align: center;
+  height:32px;
+  overflow:hidden;
+}
+.rq-widget>table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+.rq-widget>table td {
+  vertical-align: middle;
+}
+.rq-widget>table tr + tr td {
+  border-top: 1px solid #ddd;
+}
+#easyTooltip-lightness{
+	z-index:999999;
+	padding:5px;
+	background:#f7f7f7;
+	color:#333;
+}
+#easyTooltip-darkness{
+	z-index:999999;
+	padding:5px;
+	background:#333;
+	color:#f7f7f7;
+}

@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0B57C1A2-7623-42A8-9720-162CFF33E263}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GebimaiService</RootNamespace>
+    <AssemblyName>GebimaiService</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\GebimaiService.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DbLinq">
+      <HintPath>..\..\..\..\..\Desktop\MONO\DbLinq-0.20.1\build.dbg.mono\DbLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="DbLinq.MySql">
+      <HintPath>..\..\..\..\..\Desktop\MONO\DbLinq-0.20.1\build.dbg\DbLinq.MySql.dll</HintPath>
+    </Reference>
+    <Reference Include="ispJs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Desktop\MONO\ispJs\bin\ispJs.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\..\..\Desktop\MONO\mysql-connector-net-6.5.4-src\Source\MySql.Data\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\Desktop\MONO\Json.NET\Net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin.isp.js" />
+    <Content Include="css\bootstrap.docs.css" />
+    <Content Include="css\south-street\images\ui-bg_glass_55_fcf0ba_1x400.png" />
+    <Content Include="css\south-street\images\ui-bg_gloss-wave_100_ece8da_500x100.png" />
+    <Content Include="css\south-street\images\ui-bg_highlight-hard_100_f5f3e5_1x100.png" />
+    <Content Include="css\south-street\images\ui-bg_highlight-hard_100_fafaf4_1x100.png" />
+    <Content Include="css\south-street\images\ui-bg_highlight-hard_15_459e00_1x100.png" />
+    <Content Include="css\south-street\images\ui-bg_highlight-hard_95_cccccc_1x100.png" />
+    <Content Include="css\south-street\images\ui-bg_highlight-soft_25_67b021_1x100.png" />
+    <Content Include="css\south-street\images\ui-bg_highlight-soft_95_ffedad_1x100.png" />
+    <Content Include="css\south-street\images\ui-bg_inset-soft_15_2b2922_1x100.png" />
+    <Content Include="css\south-street\images\ui-icons_808080_256x240.png" />
+    <Content Include="css\south-street\images\ui-icons_847e71_256x240.png" />
+    <Content Include="css\south-street\images\ui-icons_8dc262_256x240.png" />
+    <Content Include="css\south-street\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="css\south-street\images\ui-icons_eeeeee_256x240.png" />
+    <Content Include="css\south-street\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="css\south-street\jquery-ui-1.8.18.custom.css" />
+    <Content Include="Default.htm.isp.js" />
+    <Content Include="Default.htm.master.js" />
+    <Content Include="bootstrap\accordion.less" />
+    <Content Include="bootstrap\alerts.less" />
+    <Content Include="bootstrap\bootstrap.less" />
+    <Content Include="bootstrap\breadcrumbs.less" />
+    <Content Include="bootstrap\button-groups.less" />
+    <Content Include="bootstrap\buttons.less" />
+    <Content Include="bootstrap\carousel.less" />
+    <Content Include="bootstrap\close.less" />
+    <Content Include="bootstrap\code.less" />
+    <Content Include="bootstrap\component-animations.less" />
+    <Content Include="bootstrap\dropdowns.less" />
+    <Content Include="bootstrap\forms.less" />
+    <Content Include="bootstrap\grid.less" />
+    <Content Include="bootstrap\hero-unit.less" />
+    <Content Include="bootstrap\labels.less" />
+    <Content Include="bootstrap\layouts.less" />
+    <Content Include="bootstrap\mixins.less" />
+    <Content Include="bootstrap\modals.less" />
+    <Content Include="bootstrap\navbar.less" />
+    <Content Include="bootstrap\navs.less" />
+    <Content Include="bootstrap\pager.less" />
+    <Content Include="bootstrap\pagination.less" />
+    <Content Include="bootstrap\popovers.less" />
+    <Content Include="bootstrap\progress-bars.less" />
+    <Content Include="bootstrap\reset.less" />
+    <Content Include="bootstrap\responsive.less" />
+    <Content Include="bootstrap\scaffolding.less" />
+    <Content Include="bootstrap\sprites.less" />
+    <Content Include="bootstrap\tables.less" />
+    <Content Include="bootstrap\thumbnails.less" />
+    <Content Include="bootstrap\tooltip.less" />
+    <Content Include="bootstrap\type.less" />
+    <Content Include="bootstrap\utilities.less" />
+    <Content Include="bootstrap\variables.less" />
+    <Content Include="bootstrap\wells.less" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="css\StyleSheets.css" />
+    <Content Include="Dev\Actions.htm.isp.js" />
+    <Content Include="Dev\codex.isp.js" />
+    <Content Include="Dev\Default.htm.isp.js" />
+    <Content Include="Error.jsoon.isp.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="GetMessage.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="img\facebook_signin.png" />
+    <Content Include="img\glyphicons-halflings-white.png" />
+    <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="img\sina_wb_connect_btn.png" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-1.7.1.min.js" />
+    <Content Include="js\jquery-ui-1.8.18.custom.min.js" />
+    <Content Include="js\jquery.textExt.modified.min.js" />
+    <Content Include="list.isp.js" />
+    <Content Include="OAuthFinished.htm" />
+    <Content Include="orders.isp.js" />
+    <Content Include="sender.isp.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="user.isp.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin.jsoon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Auth.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dev.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dev\codex.isp.cs" />
+    <Compile Include="Dev\Devs.cs" />
+    <Compile Include="Error.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetMessage.aspx.cs">
+      <DependentUpon>GetMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetMessage.aspx.designer.cs">
+      <DependentUpon>GetMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ISocialProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="list.jsoon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Logic.cs" />
+    <Compile Include="orders.jsoon.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Public.cs" />
+    <Compile Include="Sender.cs" />
+    <Compile Include="sender.jsoon.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="user.jsoon.cs" />
+    <Compile Include="WeiboProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{73764D53-53DF-427F-86A3-61B19D091E9E}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2493</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://t.service.gebimai.com/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://t.service.gebimai.com/</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

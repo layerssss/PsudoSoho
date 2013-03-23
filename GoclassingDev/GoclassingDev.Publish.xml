@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="ftp://dev.xunnlv.com/dev.goclassing.com/" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="配置文件1" publishMethod="FTP" replaceMatchingFiles="True" userName="tangzx" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATB3WlHuuMkC5oO4ryJCULgAAAAACAAAAAAAQZgAAAAEAACAAAADGINlhgOJ0BRCsXkc0tWlrWbyoarUH4sWVv8cE9bXAKgAAAAAOgAAAAAIAACAAAACb6LWQfL4foFPSiondW1I4cBOMRq2wuLRhQ9YGorlExhAAAAC01PwmwNyVejysTpc6AnvkQAAAAOJxXi+naLW9WrmNjSLIWfZCaFawuAC99Bg30TjPXKvsE2nfZhNCYdKDLVZSiIhjVjXBDusLc+HXMhXp6YNIqOY=" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="06/07/2012 17:48:26" />
+    <file relUrl="bin/fastJSON.pdb" publishTime="04/05/2012 17:30:28" />
+    <file relUrl="bin/ispJs.pdb" publishTime="06/06/2012 11:46:02" />
+    <file relUrl="bin/Jint.dll" publishTime="04/05/2012 17:30:27" />
+    <file relUrl="bin/Newtonsoft.Json.xml" publishTime="02/12/2012 14:10:02" />
+    <file relUrl="bin/GoclassingDev.dll" publishTime="06/07/2012 17:48:11" />
+    <file relUrl="bin/Antlr3.Runtime.dll" publishTime="02/29/2012 09:40:23" />
+    <file relUrl="bin/fastJSON.dll" publishTime="04/05/2012 17:30:28" />
+    <file relUrl="bin/GCServiceBase.dll" publishTime="06/07/2012 17:48:10" />
+    <file relUrl="bin/Newtonsoft.Json.dll" publishTime="02/12/2012 14:10:02" />
+    <file relUrl="bin/Antlr3.Runtime.pdb" publishTime="02/29/2012 09:40:23" />
+    <file relUrl="Global.asax" publishTime="03/13/2012 14:01:54" />
+    <file relUrl="bin/Newtonsoft.Json.pdb" publishTime="02/12/2012 14:10:02" />
+    <file relUrl="bin/GCServiceBase.pdb" publishTime="06/07/2012 17:48:10" />
+    <file relUrl="bin/ispJs.dll" publishTime="06/06/2012 11:46:02" />
+    <file relUrl="bin/GoclassingDev.pdb" publishTime="06/07/2012 17:48:11" />
+    <file relUrl="bin/Jint.pdb" publishTime="04/05/2012 17:30:27" />
+  </publishProfile>
+</publishData>

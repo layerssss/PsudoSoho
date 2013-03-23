@@ -1,0 +1,785 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MFLModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MFLModelStoreContainer">
+          <EntitySet Name="MFL_attribute" EntityType="MFLModel.Store.MFL_attribute" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MFL_attributeOption" EntityType="MFLModel.Store.MFL_attributeOption" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MFL_lodge" EntityType="MFLModel.Store.MFL_lodge" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MFL_lodgeProperty" EntityType="MFLModel.Store.MFL_lodgeProperty" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MFL_portal" EntityType="MFLModel.Store.MFL_portal" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MFL_room" EntityType="MFLModel.Store.MFL_room" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MFL_roomAttribute" EntityType="MFLModel.Store.MFL_roomAttribute" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MFLTC_transaction" EntityType="MFLModel.Store.MFLTC_transaction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MFLUsers_account" EntityType="MFLModel.Store.MFLUsers_account" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MFLUsers_product" EntityType="MFLModel.Store.MFLUsers_product" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_MFL_attribute_MFL_lodge" Association="MFLModel.Store.FK_MFL_attribute_MFL_lodge">
+            <End Role="MFL_lodge" EntitySet="MFL_lodge" />
+            <End Role="MFL_attribute" EntitySet="MFL_attribute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MFL_attributeOption_MFL_attribute" Association="MFLModel.Store.FK_MFL_attributeOption_MFL_attribute">
+            <End Role="MFL_attribute" EntitySet="MFL_attribute" />
+            <End Role="MFL_attributeOption" EntitySet="MFL_attributeOption" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MFL_lodge_MFLUsers_product" Association="MFLModel.Store.FK_MFL_lodge_MFLUsers_product">
+            <End Role="MFLUsers_product" EntitySet="MFLUsers_product" />
+            <End Role="MFL_lodge" EntitySet="MFL_lodge" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MFL_lodgeProperty_MFL_lodge" Association="MFLModel.Store.FK_MFL_lodgeProperty_MFL_lodge">
+            <End Role="MFL_lodge" EntitySet="MFL_lodge" />
+            <End Role="MFL_lodgeProperty" EntitySet="MFL_lodgeProperty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MFL_portal_MFLUsers_product" Association="MFLModel.Store.FK_MFL_portal_MFLUsers_product">
+            <End Role="MFLUsers_product" EntitySet="MFLUsers_product" />
+            <End Role="MFL_portal" EntitySet="MFL_portal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MFL_room_MFL_lodge" Association="MFLModel.Store.FK_MFL_room_MFL_lodge">
+            <End Role="MFL_lodge" EntitySet="MFL_lodge" />
+            <End Role="MFL_room" EntitySet="MFL_room" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MFL_roomAttribute_MFL_attributeOption" Association="MFLModel.Store.FK_MFL_roomAttribute_MFL_attributeOption">
+            <End Role="MFL_attributeOption" EntitySet="MFL_attributeOption" />
+            <End Role="MFL_roomAttribute" EntitySet="MFL_roomAttribute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MFL_roomAttribute_MFL_room" Association="MFLModel.Store.FK_MFL_roomAttribute_MFL_room">
+            <End Role="MFL_room" EntitySet="MFL_room" />
+            <End Role="MFL_roomAttribute" EntitySet="MFL_roomAttribute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MFLUsers_product_MFLUsers_account" Association="MFLModel.Store.FK_MFLUsers_product_MFLUsers_account">
+            <End Role="MFLUsers_account" EntitySet="MFLUsers_account" />
+            <End Role="MFLUsers_product" EntitySet="MFLUsers_product" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="MFL_attribute">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lodge_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="icon" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MFL_attributeOption">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="attribute_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="icon" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MFL_lodge">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="enabled" Type="bit" Nullable="false" />
+          <Property Name="MFLUsers_account_id" Type="int" Nullable="false" />
+          <Property Name="ident" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="capPhoto" Type="bigint" Nullable="false" />
+          <Property Name="avaPhoto" Type="bigint" Nullable="false" />
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="adminPwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="staHistory" Type="int" Nullable="false" />
+          <Property Name="staToday" Type="int" Nullable="false" />
+          <Property Name="staTodayDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MFL_lodgeProperty">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lodge_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="value" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="MFL_portal">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ident" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="lodges" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="product_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MFL_room">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lodge_id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="prize" Type="nvarchar" MaxLength="50" />
+          <Property Name="icon" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MFL_roomAttribute">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="room_id" Type="int" Nullable="false" />
+          <Property Name="attributeOption_id" Type="int" />
+        </EntityType>
+        <EntityType Name="MFLTC_transaction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="submitTime" Type="datetime" Nullable="false" />
+          <Property Name="executionTime" Type="datetime" />
+          <Property Name="data" Type="varbinary(max)" Nullable="false" />
+          <Property Name="submitUser" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="type" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="auditer" Type="nvarchar" MaxLength="50" />
+          <Property Name="error" Type="nvarchar" MaxLength="50" />
+          <Property Name="errorData" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MFLUsers_account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="descriptions" Type="nvarchar(max)" />
+          <Property Name="balance" Type="int" Nullable="false" />
+          <Property Name="pName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="pProvince" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="pCity" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="pSex" Type="bit" Nullable="false" />
+          <Property Name="pTraffic" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="isAdmin" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MFLUsers_product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="initiate_time" Type="datetime" Nullable="false" />
+          <Property Name="type" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="due_time" Type="datetime" Nullable="false" />
+          <Property Name="descriptions" Type="nvarchar(max)" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_MFL_attribute_MFL_lodge">
+          <End Role="MFL_lodge" Type="MFLModel.Store.MFL_lodge" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MFL_attribute" Type="MFLModel.Store.MFL_attribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFL_lodge">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFL_attribute">
+              <PropertyRef Name="lodge_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MFL_attributeOption_MFL_attribute">
+          <End Role="MFL_attribute" Type="MFLModel.Store.MFL_attribute" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MFL_attributeOption" Type="MFLModel.Store.MFL_attributeOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFL_attribute">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFL_attributeOption">
+              <PropertyRef Name="attribute_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MFL_lodge_MFLUsers_product">
+          <End Role="MFLUsers_product" Type="MFLModel.Store.MFLUsers_product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MFL_lodge" Type="MFLModel.Store.MFL_lodge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFLUsers_product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFL_lodge">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MFL_lodgeProperty_MFL_lodge">
+          <End Role="MFL_lodge" Type="MFLModel.Store.MFL_lodge" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MFL_lodgeProperty" Type="MFLModel.Store.MFL_lodgeProperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFL_lodge">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFL_lodgeProperty">
+              <PropertyRef Name="lodge_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MFL_portal_MFLUsers_product">
+          <End Role="MFLUsers_product" Type="MFLModel.Store.MFLUsers_product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MFL_portal" Type="MFLModel.Store.MFL_portal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFLUsers_product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFL_portal">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MFL_room_MFL_lodge">
+          <End Role="MFL_lodge" Type="MFLModel.Store.MFL_lodge" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MFL_room" Type="MFLModel.Store.MFL_room" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFL_lodge">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFL_room">
+              <PropertyRef Name="lodge_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MFL_roomAttribute_MFL_attributeOption">
+          <End Role="MFL_attributeOption" Type="MFLModel.Store.MFL_attributeOption" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MFL_roomAttribute" Type="MFLModel.Store.MFL_roomAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFL_attributeOption">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFL_roomAttribute">
+              <PropertyRef Name="attributeOption_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MFL_roomAttribute_MFL_room">
+          <End Role="MFL_room" Type="MFLModel.Store.MFL_room" Multiplicity="1" />
+          <End Role="MFL_roomAttribute" Type="MFLModel.Store.MFL_roomAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFL_room">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFL_roomAttribute">
+              <PropertyRef Name="room_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MFLUsers_product_MFLUsers_account">
+          <End Role="MFLUsers_account" Type="MFLModel.Store.MFLUsers_account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MFLUsers_product" Type="MFLModel.Store.MFLUsers_product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFLUsers_account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFLUsers_product">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MFLModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MFLEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MFL_attribute" EntityType="MFLModel.MFL_attribute" />
+          <EntitySet Name="MFL_attributeOption" EntityType="MFLModel.MFL_attributeOption" />
+          <EntitySet Name="MFL_lodge" EntityType="MFLModel.MFL_lodge" />
+          <EntitySet Name="MFL_lodgeProperty" EntityType="MFLModel.MFL_lodgeProperty" />
+          <EntitySet Name="MFL_portal" EntityType="MFLModel.MFL_portal" />
+          <EntitySet Name="MFL_room" EntityType="MFLModel.MFL_room" />
+          <EntitySet Name="MFL_roomAttribute" EntityType="MFLModel.MFL_roomAttribute" />
+          <EntitySet Name="MFLTC_transaction" EntityType="MFLModel.MFLTC_transaction" />
+          <EntitySet Name="MFLUsers_account" EntityType="MFLModel.MFLUsers_account" />
+          <EntitySet Name="MFLUsers_product" EntityType="MFLModel.MFLUsers_product" />
+          <AssociationSet Name="FK_MFL_attribute_MFL_lodge" Association="MFLModel.FK_MFL_attribute_MFL_lodge">
+            <End Role="MFL_lodge" EntitySet="MFL_lodge" />
+            <End Role="MFL_attribute" EntitySet="MFL_attribute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MFL_attributeOption_MFL_attribute" Association="MFLModel.FK_MFL_attributeOption_MFL_attribute">
+            <End Role="MFL_attribute" EntitySet="MFL_attribute" />
+            <End Role="MFL_attributeOption" EntitySet="MFL_attributeOption" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MFL_roomAttribute_MFL_attributeOption" Association="MFLModel.FK_MFL_roomAttribute_MFL_attributeOption">
+            <End Role="MFL_attributeOption" EntitySet="MFL_attributeOption" />
+            <End Role="MFL_roomAttribute" EntitySet="MFL_roomAttribute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MFL_lodge_MFLUsers_product" Association="MFLModel.FK_MFL_lodge_MFLUsers_product">
+            <End Role="MFLUsers_product" EntitySet="MFLUsers_product" />
+            <End Role="MFL_lodge" EntitySet="MFL_lodge" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MFL_lodgeProperty_MFL_lodge" Association="MFLModel.FK_MFL_lodgeProperty_MFL_lodge">
+            <End Role="MFL_lodge" EntitySet="MFL_lodge" />
+            <End Role="MFL_lodgeProperty" EntitySet="MFL_lodgeProperty" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MFL_room_MFL_lodge" Association="MFLModel.FK_MFL_room_MFL_lodge">
+            <End Role="MFL_lodge" EntitySet="MFL_lodge" />
+            <End Role="MFL_room" EntitySet="MFL_room" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MFL_portal_MFLUsers_product" Association="MFLModel.FK_MFL_portal_MFLUsers_product">
+            <End Role="MFLUsers_product" EntitySet="MFLUsers_product" />
+            <End Role="MFL_portal" EntitySet="MFL_portal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MFL_roomAttribute_MFL_room" Association="MFLModel.FK_MFL_roomAttribute_MFL_room">
+            <End Role="MFL_room" EntitySet="MFL_room" />
+            <End Role="MFL_roomAttribute" EntitySet="MFL_roomAttribute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MFLUsers_product_MFLUsers_account" Association="MFLModel.FK_MFLUsers_product_MFLUsers_account">
+            <End Role="MFLUsers_account" EntitySet="MFLUsers_account" />
+            <End Role="MFLUsers_product" EntitySet="MFLUsers_product" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="MFL_attribute">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="lodge_id" Nullable="false" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="icon" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MFL_lodge" Relationship="MFLModel.FK_MFL_attribute_MFL_lodge" FromRole="MFL_attribute" ToRole="MFL_lodge" />
+          <NavigationProperty Name="MFL_attributeOption" Relationship="MFLModel.FK_MFL_attributeOption_MFL_attribute" FromRole="MFL_attribute" ToRole="MFL_attributeOption" />
+        </EntityType>
+        <EntityType Name="MFL_attributeOption">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="attribute_id" Nullable="false" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="icon" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MFL_attribute" Relationship="MFLModel.FK_MFL_attributeOption_MFL_attribute" FromRole="MFL_attributeOption" ToRole="MFL_attribute" />
+          <NavigationProperty Name="MFL_roomAttribute" Relationship="MFLModel.FK_MFL_roomAttribute_MFL_attributeOption" FromRole="MFL_attributeOption" ToRole="MFL_roomAttribute" />
+        </EntityType>
+        <EntityType Name="MFL_lodge">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Boolean" Name="enabled" Nullable="false" />
+          <Property Type="Int32" Name="MFLUsers_account_id" Nullable="false" />
+          <Property Type="String" Name="ident" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="capPhoto" Nullable="false" />
+          <Property Type="Int64" Name="avaPhoto" Nullable="false" />
+          <Property Type="Int32" Name="product_id" Nullable="false" />
+          <Property Type="String" Name="adminPwd" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="staHistory" Nullable="false" />
+          <Property Type="Int32" Name="staToday" Nullable="false" />
+          <Property Type="DateTime" Name="staTodayDate" Nullable="false" />
+          <NavigationProperty Name="MFL_attribute" Relationship="MFLModel.FK_MFL_attribute_MFL_lodge" FromRole="MFL_lodge" ToRole="MFL_attribute" />
+          <NavigationProperty Name="MFLUsers_product" Relationship="MFLModel.FK_MFL_lodge_MFLUsers_product" FromRole="MFL_lodge" ToRole="MFLUsers_product" />
+          <NavigationProperty Name="MFL_lodgeProperty" Relationship="MFLModel.FK_MFL_lodgeProperty_MFL_lodge" FromRole="MFL_lodge" ToRole="MFL_lodgeProperty" />
+          <NavigationProperty Name="MFL_room" Relationship="MFLModel.FK_MFL_room_MFL_lodge" FromRole="MFL_lodge" ToRole="MFL_room" />
+        </EntityType>
+        <EntityType Name="MFL_lodgeProperty">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="lodge_id" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="value" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MFL_lodge" Relationship="MFLModel.FK_MFL_lodgeProperty_MFL_lodge" FromRole="MFL_lodgeProperty" ToRole="MFL_lodge" />
+        </EntityType>
+        <EntityType Name="MFL_portal">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ident" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="lodges" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="product_id" Nullable="false" />
+          <NavigationProperty Name="MFLUsers_product" Relationship="MFLModel.FK_MFL_portal_MFLUsers_product" FromRole="MFL_portal" ToRole="MFLUsers_product" />
+        </EntityType>
+        <EntityType Name="MFL_room">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="lodge_id" Nullable="false" />
+          <Property Type="String" Name="name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="prize" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="icon" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MFL_lodge" Relationship="MFLModel.FK_MFL_room_MFL_lodge" FromRole="MFL_room" ToRole="MFL_lodge" />
+          <NavigationProperty Name="MFL_roomAttribute" Relationship="MFLModel.FK_MFL_roomAttribute_MFL_room" FromRole="MFL_room" ToRole="MFL_roomAttribute" />
+        </EntityType>
+        <EntityType Name="MFL_roomAttribute">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="room_id" Nullable="false" />
+          <Property Type="Int32" Name="attributeOption_id" />
+          <NavigationProperty Name="MFL_attributeOption" Relationship="MFLModel.FK_MFL_roomAttribute_MFL_attributeOption" FromRole="MFL_roomAttribute" ToRole="MFL_attributeOption" />
+          <NavigationProperty Name="MFL_room" Relationship="MFLModel.FK_MFL_roomAttribute_MFL_room" FromRole="MFL_roomAttribute" ToRole="MFL_room" />
+        </EntityType>
+        <EntityType Name="MFLTC_transaction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="submitTime" Nullable="false" />
+          <Property Type="DateTime" Name="executionTime" />
+          <Property Type="Binary" Name="data" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="submitUser" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="type" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="auditer" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="error" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="errorData" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MFLUsers_account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="username" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="descriptions" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="balance" Nullable="false" />
+          <Property Type="String" Name="pName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="pProvince" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="pCity" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="pSex" Nullable="false" />
+          <Property Type="String" Name="pTraffic" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isAdmin" Nullable="false" />
+          <NavigationProperty Name="MFLUsers_product" Relationship="MFLModel.FK_MFLUsers_product_MFLUsers_account" FromRole="MFLUsers_account" ToRole="MFLUsers_product" />
+        </EntityType>
+        <EntityType Name="MFLUsers_product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="initiate_time" Nullable="false" />
+          <Property Type="String" Name="type" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="due_time" Nullable="false" />
+          <Property Type="String" Name="descriptions" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+          <NavigationProperty Name="MFL_lodge" Relationship="MFLModel.FK_MFL_lodge_MFLUsers_product" FromRole="MFLUsers_product" ToRole="MFL_lodge" />
+          <NavigationProperty Name="MFL_portal" Relationship="MFLModel.FK_MFL_portal_MFLUsers_product" FromRole="MFLUsers_product" ToRole="MFL_portal" />
+          <NavigationProperty Name="MFLUsers_account" Relationship="MFLModel.FK_MFLUsers_product_MFLUsers_account" FromRole="MFLUsers_product" ToRole="MFLUsers_account" />
+        </EntityType>
+        <Association Name="FK_MFL_attribute_MFL_lodge">
+          <End Type="MFLModel.MFL_lodge" Role="MFL_lodge" Multiplicity="1" />
+          <End Type="MFLModel.MFL_attribute" Role="MFL_attribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFL_lodge">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFL_attribute">
+              <PropertyRef Name="lodge_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MFL_attributeOption_MFL_attribute">
+          <End Type="MFLModel.MFL_attribute" Role="MFL_attribute" Multiplicity="1" />
+          <End Type="MFLModel.MFL_attributeOption" Role="MFL_attributeOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFL_attribute">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFL_attributeOption">
+              <PropertyRef Name="attribute_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MFL_roomAttribute_MFL_attributeOption">
+          <End Type="MFLModel.MFL_attributeOption" Role="MFL_attributeOption" Multiplicity="0..1" />
+          <End Type="MFLModel.MFL_roomAttribute" Role="MFL_roomAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFL_attributeOption">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFL_roomAttribute">
+              <PropertyRef Name="attributeOption_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MFL_lodge_MFLUsers_product">
+          <End Type="MFLModel.MFLUsers_product" Role="MFLUsers_product" Multiplicity="1" />
+          <End Type="MFLModel.MFL_lodge" Role="MFL_lodge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFLUsers_product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFL_lodge">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MFL_lodgeProperty_MFL_lodge">
+          <End Type="MFLModel.MFL_lodge" Role="MFL_lodge" Multiplicity="1" />
+          <End Type="MFLModel.MFL_lodgeProperty" Role="MFL_lodgeProperty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFL_lodge">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFL_lodgeProperty">
+              <PropertyRef Name="lodge_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MFL_room_MFL_lodge">
+          <End Type="MFLModel.MFL_lodge" Role="MFL_lodge" Multiplicity="1" />
+          <End Type="MFLModel.MFL_room" Role="MFL_room" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFL_lodge">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFL_room">
+              <PropertyRef Name="lodge_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MFL_portal_MFLUsers_product">
+          <End Type="MFLModel.MFLUsers_product" Role="MFLUsers_product" Multiplicity="1" />
+          <End Type="MFLModel.MFL_portal" Role="MFL_portal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFLUsers_product">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFL_portal">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MFL_roomAttribute_MFL_room">
+          <End Type="MFLModel.MFL_room" Role="MFL_room" Multiplicity="1" />
+          <End Type="MFLModel.MFL_roomAttribute" Role="MFL_roomAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFL_room">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFL_roomAttribute">
+              <PropertyRef Name="room_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MFLUsers_product_MFLUsers_account">
+          <End Type="MFLModel.MFLUsers_account" Role="MFLUsers_account" Multiplicity="1" />
+          <End Type="MFLModel.MFLUsers_product" Role="MFLUsers_product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MFLUsers_account">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="MFLUsers_product">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MFLModelStoreContainer" CdmEntityContainer="MFLEntities">
+          <EntitySetMapping Name="MFL_attribute">
+            <EntityTypeMapping TypeName="MFLModel.MFL_attribute">
+              <MappingFragment StoreEntitySet="MFL_attribute">
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="lodge_id" ColumnName="lodge_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MFL_attributeOption">
+            <EntityTypeMapping TypeName="MFLModel.MFL_attributeOption">
+              <MappingFragment StoreEntitySet="MFL_attributeOption">
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="attribute_id" ColumnName="attribute_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MFL_lodge">
+            <EntityTypeMapping TypeName="MFLModel.MFL_lodge">
+              <MappingFragment StoreEntitySet="MFL_lodge">
+                <ScalarProperty Name="staTodayDate" ColumnName="staTodayDate" />
+                <ScalarProperty Name="staToday" ColumnName="staToday" />
+                <ScalarProperty Name="staHistory" ColumnName="staHistory" />
+                <ScalarProperty Name="adminPwd" ColumnName="adminPwd" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="avaPhoto" ColumnName="avaPhoto" />
+                <ScalarProperty Name="capPhoto" ColumnName="capPhoto" />
+                <ScalarProperty Name="ident" ColumnName="ident" />
+                <ScalarProperty Name="MFLUsers_account_id" ColumnName="MFLUsers_account_id" />
+                <ScalarProperty Name="enabled" ColumnName="enabled" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MFL_lodgeProperty">
+            <EntityTypeMapping TypeName="MFLModel.MFL_lodgeProperty">
+              <MappingFragment StoreEntitySet="MFL_lodgeProperty">
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="lodge_id" ColumnName="lodge_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MFL_portal">
+            <EntityTypeMapping TypeName="MFLModel.MFL_portal">
+              <MappingFragment StoreEntitySet="MFL_portal">
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="lodges" ColumnName="lodges" />
+                <ScalarProperty Name="ident" ColumnName="ident" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MFL_room">
+            <EntityTypeMapping TypeName="MFLModel.MFL_room">
+              <MappingFragment StoreEntitySet="MFL_room">
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="prize" ColumnName="prize" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="lodge_id" ColumnName="lodge_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MFL_roomAttribute">
+            <EntityTypeMapping TypeName="MFLModel.MFL_roomAttribute">
+              <MappingFragment StoreEntitySet="MFL_roomAttribute">
+                <ScalarProperty Name="attributeOption_id" ColumnName="attributeOption_id" />
+                <ScalarProperty Name="room_id" ColumnName="room_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MFLTC_transaction">
+            <EntityTypeMapping TypeName="MFLModel.MFLTC_transaction">
+              <MappingFragment StoreEntitySet="MFLTC_transaction">
+                <ScalarProperty Name="errorData" ColumnName="errorData" />
+                <ScalarProperty Name="error" ColumnName="error" />
+                <ScalarProperty Name="auditer" ColumnName="auditer" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="submitUser" ColumnName="submitUser" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="executionTime" ColumnName="executionTime" />
+                <ScalarProperty Name="submitTime" ColumnName="submitTime" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MFLUsers_account">
+            <EntityTypeMapping TypeName="MFLModel.MFLUsers_account">
+              <MappingFragment StoreEntitySet="MFLUsers_account">
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+                <ScalarProperty Name="pTraffic" ColumnName="pTraffic" />
+                <ScalarProperty Name="pSex" ColumnName="pSex" />
+                <ScalarProperty Name="pCity" ColumnName="pCity" />
+                <ScalarProperty Name="pProvince" ColumnName="pProvince" />
+                <ScalarProperty Name="pName" ColumnName="pName" />
+                <ScalarProperty Name="balance" ColumnName="balance" />
+                <ScalarProperty Name="descriptions" ColumnName="descriptions" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MFLUsers_product">
+            <EntityTypeMapping TypeName="MFLModel.MFLUsers_product">
+              <MappingFragment StoreEntitySet="MFLUsers_product">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="descriptions" ColumnName="descriptions" />
+                <ScalarProperty Name="due_time" ColumnName="due_time" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="initiate_time" ColumnName="initiate_time" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1" ZoomLevel="86">
+        <EntityTypeShape EntityType="MFLModel.MFL_attribute" Width="1.5" PointX="7.5" PointY="1.375" Height="2.1610522460937531" />
+        <EntityTypeShape EntityType="MFLModel.MFL_attributeOption" Width="1.5" PointX="9.75" PointY="1.375" Height="2.1610522460937531" />
+        <EntityTypeShape EntityType="MFLModel.MFL_lodge" Width="1.5" PointX="5.25" PointY="3.375" Height="3.8802294921875031" />
+        <EntityTypeShape EntityType="MFLModel.MFL_lodgeProperty" Width="1.5" PointX="7.5" PointY="4.25" Height="1.9700325520833388" />
+        <EntityTypeShape EntityType="MFLModel.MFL_portal" Width="1.5" PointX="5.25" PointY="10.125" Height="2.1610522460937531" />
+        <EntityTypeShape EntityType="MFLModel.MFL_room" Width="1.5" PointX="7.5" PointY="7" Height="2.3520719401041674" />
+        <EntityTypeShape EntityType="MFLModel.MFL_roomAttribute" Width="1.5" PointX="12" PointY="4.375" Height="1.9700325520833388" />
+        <EntityTypeShape EntityType="MFLModel.MFLTC_transaction" Width="1.5" PointX="0.75" PointY="0.75" Height="2.7341113281250031" />
+        <EntityTypeShape EntityType="MFLModel.MFLUsers_account" Width="1.5" PointX="0.75" PointY="5.125" Height="3.3071704101562522" />
+        <EntityTypeShape EntityType="MFLModel.MFLUsers_product" Width="1.5" PointX="3" PointY="5.5" Height="2.7341113281250031" />
+        <AssociationConnector Association="MFLModel.FK_MFL_attribute_MFL_lodge" >
+          <ConnectorPoint PointX="6" PointY="3.375" />
+          <ConnectorPoint PointX="6" PointY="2.3749995" />
+          <ConnectorPoint PointX="7.5" PointY="2.3749995" />
+        </AssociationConnector>
+        <AssociationConnector Association="MFLModel.FK_MFL_attributeOption_MFL_attribute" >
+          <ConnectorPoint PointX="9" PointY="2.4555261230468766" />
+          <ConnectorPoint PointX="9.75" PointY="2.4555261230468766" />
+        </AssociationConnector>
+        <AssociationConnector Association="MFLModel.FK_MFL_roomAttribute_MFL_attributeOption" >
+          <ConnectorPoint PointX="10.5" PointY="3.5360522460937531" />
+          <ConnectorPoint PointX="10.5" PointY="5.3600162760416694" />
+          <ConnectorPoint PointX="12" PointY="5.3600162760416694" />
+        </AssociationConnector>
+        <AssociationConnector Association="MFLModel.FK_MFL_lodge_MFLUsers_product" >
+          <ConnectorPoint PointX="4.5" PointY="6.3776147460937516" />
+          <ConnectorPoint PointX="5.25" PointY="6.3776147460937516" />
+        </AssociationConnector>
+        <AssociationConnector Association="MFLModel.FK_MFL_lodgeProperty_MFL_lodge" >
+          <ConnectorPoint PointX="6.75" PointY="5.2350162760416694" />
+          <ConnectorPoint PointX="7.5" PointY="5.2350162760416694" />
+        </AssociationConnector>
+        <AssociationConnector Association="MFLModel.FK_MFL_room_MFL_lodge" >
+          <ConnectorPoint PointX="6" PointY="7.2552294921875031" />
+          <ConnectorPoint PointX="6" PointY="8.3036512161458358" />
+          <ConnectorPoint PointX="7.5" PointY="8.3036512161458358" />
+        </AssociationConnector>
+        <AssociationConnector Association="MFLModel.FK_MFL_portal_MFLUsers_product" >
+          <ConnectorPoint PointX="3.75" PointY="8.2341113281250031" />
+          <ConnectorPoint PointX="3.75" PointY="11.205526123046877" />
+          <ConnectorPoint PointX="5.25" PointY="11.205526123046877" />
+        </AssociationConnector>
+        <AssociationConnector Association="MFLModel.FK_MFL_roomAttribute_MFL_room" >
+          <ConnectorPoint PointX="9" PointY="8.1760359700520837" />
+          <ConnectorPoint PointX="12.75" PointY="8.1760359700520837" />
+          <ConnectorPoint PointX="12.75" PointY="6.3450325520833388" />
+        </AssociationConnector>
+        <AssociationConnector Association="MFLModel.FK_MFLUsers_product_MFLUsers_account" >
+          <ConnectorPoint PointX="2.25" PointY="6.8670556640625016" />
+          <ConnectorPoint PointX="3" PointY="6.8670556640625016" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

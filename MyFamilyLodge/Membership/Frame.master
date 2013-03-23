@@ -1,0 +1,12 @@
+﻿<%@ Master Language="C#" MasterPageFile="../Page.master" AutoEventWireup="true" CodeBehind="Frame.master.cs" Inherits="MyFamilyLodge.Membership.Frame" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="header" runat="server">
+    <asp:ContentPlaceHolder ID="header" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderHeader" runat="server">
+	<h2 id="account-header-s">我的账户</h2>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

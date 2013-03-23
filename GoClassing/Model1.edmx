@@ -1,0 +1,1275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="gc_localtestModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="gc_localtestModelStoreContainer">
+    <EntitySet Name="gc_course" EntityType="gc_localtestModel.Store.gc_course" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gc_feed" EntityType="gc_localtestModel.Store.gc_feed" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gc_friendship" EntityType="gc_localtestModel.Store.gc_friendship" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gc_msg" EntityType="gc_localtestModel.Store.gc_msg" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gc_note" EntityType="gc_localtestModel.Store.gc_note" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gc_paticipate" EntityType="gc_localtestModel.Store.gc_paticipate" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gc_post" EntityType="gc_localtestModel.Store.gc_post" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gc_profile" EntityType="gc_localtestModel.Store.gc_profile" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gc_reply" EntityType="gc_localtestModel.Store.gc_reply" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gc_tag" EntityType="gc_localtestModel.Store.gc_tag" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gc_user" EntityType="gc_localtestModel.Store.gc_user" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gccon_city" EntityType="gc_localtestModel.Store.gccon_city" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gccon_coop" EntityType="gc_localtestModel.Store.gccon_coop" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gccon_ctype1" EntityType="gc_localtestModel.Store.gccon_ctype1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gccon_ctype2" EntityType="gc_localtestModel.Store.gccon_ctype2" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gccon_profilename" EntityType="gc_localtestModel.Store.gccon_profilename" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="gccon_province" EntityType="gc_localtestModel.Store.gccon_province" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="upload_ticket" EntityType="gc_localtestModel.Store.upload_ticket" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_gc_course_gc_user" Association="gc_localtestModel.Store.FK_gc_course_gc_user">
+      <End Role="gc_user" EntitySet="gc_user" />
+      <End Role="gc_course" EntitySet="gc_course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gc_paticipate_gc_course" Association="gc_localtestModel.Store.FK_gc_paticipate_gc_course">
+      <End Role="gc_course" EntitySet="gc_course" />
+      <End Role="gc_paticipate" EntitySet="gc_paticipate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gc_post_gc_course" Association="gc_localtestModel.Store.FK_gc_post_gc_course">
+      <End Role="gc_course" EntitySet="gc_course" />
+      <End Role="gc_post" EntitySet="gc_post" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gc_tag_gc_course" Association="gc_localtestModel.Store.FK_gc_tag_gc_course">
+      <End Role="gc_course" EntitySet="gc_course" />
+      <End Role="gc_tag" EntitySet="gc_tag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gc_feed_gc_user" Association="gc_localtestModel.Store.FK_gc_feed_gc_user">
+      <End Role="gc_user" EntitySet="gc_user" />
+      <End Role="gc_feed" EntitySet="gc_feed" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gc_friendship_gc_user" Association="gc_localtestModel.Store.FK_gc_friendship_gc_user">
+      <End Role="gc_user" EntitySet="gc_user" />
+      <End Role="gc_friendship" EntitySet="gc_friendship" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gc_friendship_gc_user1" Association="gc_localtestModel.Store.FK_gc_friendship_gc_user1">
+      <End Role="gc_user" EntitySet="gc_user" />
+      <End Role="gc_friendship" EntitySet="gc_friendship" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gc_msg_gc_user" Association="gc_localtestModel.Store.FK_gc_msg_gc_user">
+      <End Role="gc_user" EntitySet="gc_user" />
+      <End Role="gc_msg" EntitySet="gc_msg" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gc_note_gc_user" Association="gc_localtestModel.Store.FK_gc_note_gc_user">
+      <End Role="gc_user" EntitySet="gc_user" />
+      <End Role="gc_note" EntitySet="gc_note" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gc_paticipate_gc_user" Association="gc_localtestModel.Store.FK_gc_paticipate_gc_user">
+      <End Role="gc_user" EntitySet="gc_user" />
+      <End Role="gc_paticipate" EntitySet="gc_paticipate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gc_reply_gc_post" Association="gc_localtestModel.Store.FK_gc_reply_gc_post">
+      <End Role="gc_post" EntitySet="gc_post" />
+      <End Role="gc_reply" EntitySet="gc_reply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gc_profile_gc_user" Association="gc_localtestModel.Store.FK_gc_profile_gc_user">
+      <End Role="gc_user" EntitySet="gc_user" />
+      <End Role="gc_profile" EntitySet="gc_profile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gc_reply_gc_user" Association="gc_localtestModel.Store.FK_gc_reply_gc_user">
+      <End Role="gc_user" EntitySet="gc_user" />
+      <End Role="gc_reply" EntitySet="gc_reply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gccon_city_gccon_province" Association="gc_localtestModel.Store.FK_gccon_city_gccon_province">
+      <End Role="gccon_province" EntitySet="gccon_province" />
+      <End Role="gccon_city" EntitySet="gccon_city" />
+    </AssociationSet>
+    <AssociationSet Name="FK_gccon_ctype2_gccon_ctype1" Association="gc_localtestModel.Store.FK_gccon_ctype2_gccon_ctype1">
+      <End Role="gccon_ctype1" EntitySet="gccon_ctype1" />
+      <End Role="gccon_ctype2" EntitySet="gccon_ctype2" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="gc_course">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="type1" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="type2" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="canJoin" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gc_feed">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ftype" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="time" Type="datetime" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gc_friendship">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id1" Type="int" Nullable="false" />
+    <Property Name="user_id2" Type="int" Nullable="false" />
+    <Property Name="accepted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gc_msg">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="fromid" Type="int" Nullable="false" />
+    <Property Name="nexturl" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="read" Type="bit" Nullable="false" />
+    <Property Name="time" Type="datetime" Nullable="false" />
+    <Property Name="mailed" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gc_note">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="privateuser_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="fromuser_id" Type="int" Nullable="false" />
+    <Property Name="content" Type="nvarchar" Nullable="false" MaxLength="300" />
+    <Property Name="time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gc_paticipate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="course_id" Type="int" Nullable="false" />
+    <Property Name="overdue" Type="datetime" Nullable="true" />
+    <Property Name="approved" Type="bit" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gc_post">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tag" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="course_id" Type="int" Nullable="true" />
+    <Property Name="ftype" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="time" Type="datetime" Nullable="false" />
+    <Property Name="sort" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gc_profile">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="sort" Type="int" Nullable="true" />
+    <Property Name="value" Type="nvarchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="gc_reply">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="time" Type="datetime" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="ext" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ftype" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="content" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="post_id" Type="int" Nullable="false" />
+    <Property Name="public" Type="bit" Nullable="false" />
+    <Property Name="filename" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="gc_tag">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tag" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="course_id" Type="int" Nullable="false" />
+    <Property Name="sort" Type="int" Nullable="false" />
+    <Property Name="leftcol" Type="bit" Nullable="false" />
+    <Property Name="canReply" Type="bit" Nullable="false" />
+    <Property Name="canGuestView" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gc_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sex" Type="bit" Nullable="true" />
+    <Property Name="originalusername" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="username" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="admin" Type="bit" Nullable="false" />
+    <Property Name="flagsettings" Type="int" Nullable="false" />
+    <Property Name="mailverified" Type="bit" Nullable="false" />
+    <Property Name="truename" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="uprovince" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ucity" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="timeCreation" Type="datetime" Nullable="false" />
+    <Property Name="timeLastLogon" Type="datetime" Nullable="false" />
+    <Property Name="timeLastPasswordChange" Type="datetime" Nullable="false" />
+    <Property Name="timeLastActivity" Type="datetime" Nullable="false" />
+    <Property Name="pwdQuestion" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="pwdAnswer" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="coop" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="coopSort" Type="int" Nullable="true" />
+    <Property Name="spaceTotal" Type="bigint" Nullable="false" />
+    <Property Name="spaceUsed" Type="bigint" Nullable="false" />
+    <Property Name="msgType" Type="int" Nullable="false" />
+    <Property Name="msgClock" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gccon_city">
+    <Key>
+      <PropertyRef Name="city" />
+    </Key>
+    <Property Name="city" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="province" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="gccon_coop">
+    <Key>
+      <PropertyRef Name="coop" />
+    </Key>
+    <Property Name="coop" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="gccon_ctype1">
+    <Key>
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="type" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="gccon_ctype2">
+    <Key>
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="type" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ctype1_type" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="gccon_profilename">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="defaultSort" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gccon_province">
+    <Key>
+      <PropertyRef Name="province" />
+    </Key>
+    <Property Name="province" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="upload_ticket">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="path" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="expires" Type="datetime" Nullable="false" />
+    <Property Name="limit" Type="int" Nullable="false" />
+    <Property Name="space_user_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_gc_course_gc_user">
+    <End Role="gc_user" Type="gc_localtestModel.Store.gc_user" Multiplicity="1" />
+    <End Role="gc_course" Type="gc_localtestModel.Store.gc_course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gc_user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="gc_course">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gc_paticipate_gc_course">
+    <End Role="gc_course" Type="gc_localtestModel.Store.gc_course" Multiplicity="1" />
+    <End Role="gc_paticipate" Type="gc_localtestModel.Store.gc_paticipate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gc_course">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="gc_paticipate">
+        <PropertyRef Name="course_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gc_post_gc_course">
+    <End Role="gc_course" Type="gc_localtestModel.Store.gc_course" Multiplicity="0..1" />
+    <End Role="gc_post" Type="gc_localtestModel.Store.gc_post" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gc_course">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="gc_post">
+        <PropertyRef Name="course_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gc_tag_gc_course">
+    <End Role="gc_course" Type="gc_localtestModel.Store.gc_course" Multiplicity="1" />
+    <End Role="gc_tag" Type="gc_localtestModel.Store.gc_tag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gc_course">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="gc_tag">
+        <PropertyRef Name="course_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gc_feed_gc_user">
+    <End Role="gc_user" Type="gc_localtestModel.Store.gc_user" Multiplicity="1" />
+    <End Role="gc_feed" Type="gc_localtestModel.Store.gc_feed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gc_user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="gc_feed">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gc_friendship_gc_user">
+    <End Role="gc_user" Type="gc_localtestModel.Store.gc_user" Multiplicity="1" />
+    <End Role="gc_friendship" Type="gc_localtestModel.Store.gc_friendship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gc_user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="gc_friendship">
+        <PropertyRef Name="user_id1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gc_friendship_gc_user1">
+    <End Role="gc_user" Type="gc_localtestModel.Store.gc_user" Multiplicity="1" />
+    <End Role="gc_friendship" Type="gc_localtestModel.Store.gc_friendship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gc_user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="gc_friendship">
+        <PropertyRef Name="user_id2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gc_msg_gc_user">
+    <End Role="gc_user" Type="gc_localtestModel.Store.gc_user" Multiplicity="1" />
+    <End Role="gc_msg" Type="gc_localtestModel.Store.gc_msg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gc_user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="gc_msg">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gc_note_gc_user">
+    <End Role="gc_user" Type="gc_localtestModel.Store.gc_user" Multiplicity="1" />
+    <End Role="gc_note" Type="gc_localtestModel.Store.gc_note" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gc_user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="gc_note">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gc_paticipate_gc_user">
+    <End Role="gc_user" Type="gc_localtestModel.Store.gc_user" Multiplicity="1" />
+    <End Role="gc_paticipate" Type="gc_localtestModel.Store.gc_paticipate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gc_user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="gc_paticipate">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gc_reply_gc_post">
+    <End Role="gc_post" Type="gc_localtestModel.Store.gc_post" Multiplicity="1" />
+    <End Role="gc_reply" Type="gc_localtestModel.Store.gc_reply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gc_post">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="gc_reply">
+        <PropertyRef Name="post_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gc_profile_gc_user">
+    <End Role="gc_user" Type="gc_localtestModel.Store.gc_user" Multiplicity="1" />
+    <End Role="gc_profile" Type="gc_localtestModel.Store.gc_profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gc_user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="gc_profile">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gc_reply_gc_user">
+    <End Role="gc_user" Type="gc_localtestModel.Store.gc_user" Multiplicity="1" />
+    <End Role="gc_reply" Type="gc_localtestModel.Store.gc_reply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gc_user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="gc_reply">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gccon_city_gccon_province">
+    <End Role="gccon_province" Type="gc_localtestModel.Store.gccon_province" Multiplicity="1" />
+    <End Role="gccon_city" Type="gc_localtestModel.Store.gccon_city" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gccon_province">
+        <PropertyRef Name="province" />
+      </Principal>
+      <Dependent Role="gccon_city">
+        <PropertyRef Name="province" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_gccon_ctype2_gccon_ctype1">
+    <End Role="gccon_ctype1" Type="gc_localtestModel.Store.gccon_ctype1" Multiplicity="1" />
+    <End Role="gccon_ctype2" Type="gc_localtestModel.Store.gccon_ctype2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gccon_ctype1">
+        <PropertyRef Name="type" />
+      </Principal>
+      <Dependent Role="gccon_ctype2">
+        <PropertyRef Name="ctype1_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="gc_localtestModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="gc_localtestEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="gc_course" EntityType="gc_localtestModel.gc_course" />
+          <EntitySet Name="gc_feed" EntityType="gc_localtestModel.gc_feed" />
+          <EntitySet Name="gc_friendship" EntityType="gc_localtestModel.gc_friendship" />
+          <EntitySet Name="gc_msg" EntityType="gc_localtestModel.gc_msg" />
+          <EntitySet Name="gc_note" EntityType="gc_localtestModel.gc_note" />
+          <EntitySet Name="gc_paticipate" EntityType="gc_localtestModel.gc_paticipate" />
+          <EntitySet Name="gc_post" EntityType="gc_localtestModel.gc_post" />
+          <EntitySet Name="gc_profile" EntityType="gc_localtestModel.gc_profile" />
+          <EntitySet Name="gc_reply" EntityType="gc_localtestModel.gc_reply" />
+          <EntitySet Name="gc_tag" EntityType="gc_localtestModel.gc_tag" />
+          <EntitySet Name="gc_user" EntityType="gc_localtestModel.gc_user" />
+          <EntitySet Name="gccon_city" EntityType="gc_localtestModel.gccon_city" />
+          <EntitySet Name="gccon_coop" EntityType="gc_localtestModel.gccon_coop" />
+          <EntitySet Name="gccon_ctype1" EntityType="gc_localtestModel.gccon_ctype1" />
+          <EntitySet Name="gccon_ctype2" EntityType="gc_localtestModel.gccon_ctype2" />
+          <EntitySet Name="gccon_profilename" EntityType="gc_localtestModel.gccon_profilename" />
+          <EntitySet Name="gccon_province" EntityType="gc_localtestModel.gccon_province" />
+          <EntitySet Name="upload_ticket" EntityType="gc_localtestModel.upload_ticket" />
+          <AssociationSet Name="FK_gc_course_gc_user" Association="gc_localtestModel.FK_gc_course_gc_user">
+            <End Role="gc_user" EntitySet="gc_user" />
+            <End Role="gc_course" EntitySet="gc_course" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gc_paticipate_gc_course" Association="gc_localtestModel.FK_gc_paticipate_gc_course">
+            <End Role="gc_course" EntitySet="gc_course" />
+            <End Role="gc_paticipate" EntitySet="gc_paticipate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gc_post_gc_course" Association="gc_localtestModel.FK_gc_post_gc_course">
+            <End Role="gc_course" EntitySet="gc_course" />
+            <End Role="gc_post" EntitySet="gc_post" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gc_tag_gc_course" Association="gc_localtestModel.FK_gc_tag_gc_course">
+            <End Role="gc_course" EntitySet="gc_course" />
+            <End Role="gc_tag" EntitySet="gc_tag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gc_feed_gc_user" Association="gc_localtestModel.FK_gc_feed_gc_user">
+            <End Role="gc_user" EntitySet="gc_user" />
+            <End Role="gc_feed" EntitySet="gc_feed" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gc_friendship_gc_user" Association="gc_localtestModel.FK_gc_friendship_gc_user">
+            <End Role="gc_user" EntitySet="gc_user" />
+            <End Role="gc_friendship" EntitySet="gc_friendship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gc_friendship_gc_user1" Association="gc_localtestModel.FK_gc_friendship_gc_user1">
+            <End Role="gc_user" EntitySet="gc_user" />
+            <End Role="gc_friendship" EntitySet="gc_friendship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gc_msg_gc_user" Association="gc_localtestModel.FK_gc_msg_gc_user">
+            <End Role="gc_user" EntitySet="gc_user" />
+            <End Role="gc_msg" EntitySet="gc_msg" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gc_note_gc_user" Association="gc_localtestModel.FK_gc_note_gc_user">
+            <End Role="gc_user" EntitySet="gc_user" />
+            <End Role="gc_note" EntitySet="gc_note" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gc_paticipate_gc_user" Association="gc_localtestModel.FK_gc_paticipate_gc_user">
+            <End Role="gc_user" EntitySet="gc_user" />
+            <End Role="gc_paticipate" EntitySet="gc_paticipate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gc_reply_gc_post" Association="gc_localtestModel.FK_gc_reply_gc_post">
+            <End Role="gc_post" EntitySet="gc_post" />
+            <End Role="gc_reply" EntitySet="gc_reply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gc_profile_gc_user" Association="gc_localtestModel.FK_gc_profile_gc_user">
+            <End Role="gc_user" EntitySet="gc_user" />
+            <End Role="gc_profile" EntitySet="gc_profile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gc_reply_gc_user" Association="gc_localtestModel.FK_gc_reply_gc_user">
+            <End Role="gc_user" EntitySet="gc_user" />
+            <End Role="gc_reply" EntitySet="gc_reply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gccon_city_gccon_province" Association="gc_localtestModel.FK_gccon_city_gccon_province">
+            <End Role="gccon_province" EntitySet="gccon_province" />
+            <End Role="gccon_city" EntitySet="gccon_city" />
+          </AssociationSet>
+          <AssociationSet Name="FK_gccon_ctype2_gccon_ctype1" Association="gc_localtestModel.FK_gccon_ctype2_gccon_ctype1">
+            <End Role="gccon_ctype1" EntitySet="gccon_ctype1" />
+            <End Role="gccon_ctype2" EntitySet="gccon_ctype2" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="gc_course">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="type1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="type2" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+          <Property Type="Boolean" Name="canJoin" Nullable="false" />
+          <NavigationProperty Name="gc_user" Relationship="gc_localtestModel.FK_gc_course_gc_user" FromRole="gc_course" ToRole="gc_user" />
+          <NavigationProperty Name="gc_paticipate" Relationship="gc_localtestModel.FK_gc_paticipate_gc_course" FromRole="gc_course" ToRole="gc_paticipate" />
+          <NavigationProperty Name="gc_post" Relationship="gc_localtestModel.FK_gc_post_gc_course" FromRole="gc_course" ToRole="gc_post" />
+          <NavigationProperty Name="gc_tag" Relationship="gc_localtestModel.FK_gc_tag_gc_course" FromRole="gc_course" ToRole="gc_tag" />
+        </EntityType>
+        <EntityType Name="gc_feed">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ftype" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="text" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="time" Nullable="false" />
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+          <NavigationProperty Name="gc_user" Relationship="gc_localtestModel.FK_gc_feed_gc_user" FromRole="gc_feed" ToRole="gc_user" />
+        </EntityType>
+        <EntityType Name="gc_friendship">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="user_id1" Nullable="false" />
+          <Property Type="Int32" Name="user_id2" Nullable="false" />
+          <Property Type="Boolean" Name="accepted" Nullable="false" />
+          <NavigationProperty Name="gc_user" Relationship="gc_localtestModel.FK_gc_friendship_gc_user" FromRole="gc_friendship" ToRole="gc_user" />
+          <NavigationProperty Name="gc_user1" Relationship="gc_localtestModel.FK_gc_friendship_gc_user1" FromRole="gc_friendship" ToRole="gc_user" />
+        </EntityType>
+        <EntityType Name="gc_msg">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+          <Property Type="Int32" Name="fromid" Nullable="false" />
+          <Property Type="String" Name="nexturl" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="read" Nullable="false" />
+          <Property Type="DateTime" Name="time" Nullable="false" />
+          <Property Type="Boolean" Name="mailed" Nullable="false" />
+          <NavigationProperty Name="gc_user" Relationship="gc_localtestModel.FK_gc_msg_gc_user" FromRole="gc_msg" ToRole="gc_user" />
+        </EntityType>
+        <EntityType Name="gc_note">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="privateuser_id" Nullable="false" />
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+          <Property Type="Int32" Name="fromuser_id" Nullable="false" />
+          <Property Type="String" Name="content" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="time" Nullable="false" />
+          <NavigationProperty Name="gc_user" Relationship="gc_localtestModel.FK_gc_note_gc_user" FromRole="gc_note" ToRole="gc_user" />
+        </EntityType>
+        <EntityType Name="gc_paticipate">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="course_id" Nullable="false" />
+          <Property Type="DateTime" Name="overdue" />
+          <Property Type="Boolean" Name="approved" Nullable="false" />
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+          <NavigationProperty Name="gc_course" Relationship="gc_localtestModel.FK_gc_paticipate_gc_course" FromRole="gc_paticipate" ToRole="gc_course" />
+          <NavigationProperty Name="gc_user" Relationship="gc_localtestModel.FK_gc_paticipate_gc_user" FromRole="gc_paticipate" ToRole="gc_user" />
+        </EntityType>
+        <EntityType Name="gc_post">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="tag" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="course_id" />
+          <Property Type="String" Name="ftype" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="time" Nullable="false" />
+          <Property Type="Int32" Name="sort" Nullable="false" />
+          <NavigationProperty Name="gc_course" Relationship="gc_localtestModel.FK_gc_post_gc_course" FromRole="gc_post" ToRole="gc_course" />
+          <NavigationProperty Name="gc_reply" Relationship="gc_localtestModel.FK_gc_reply_gc_post" FromRole="gc_post" ToRole="gc_reply" />
+        </EntityType>
+        <EntityType Name="gc_profile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="sort" />
+          <Property Type="String" Name="value" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="gc_user" Relationship="gc_localtestModel.FK_gc_profile_gc_user" FromRole="gc_profile" ToRole="gc_user" />
+        </EntityType>
+        <EntityType Name="gc_reply">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="time" Nullable="false" />
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+          <Property Type="String" Name="ext" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ftype" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="content" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="post_id" Nullable="false" />
+          <Property Type="Boolean" Name="public" Nullable="false" />
+          <Property Type="String" Name="filename" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="gc_post" Relationship="gc_localtestModel.FK_gc_reply_gc_post" FromRole="gc_reply" ToRole="gc_post" />
+          <NavigationProperty Name="gc_user" Relationship="gc_localtestModel.FK_gc_reply_gc_user" FromRole="gc_reply" ToRole="gc_user" />
+        </EntityType>
+        <EntityType Name="gc_tag">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="tag" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="course_id" Nullable="false" />
+          <Property Type="Int32" Name="sort" Nullable="false" />
+          <Property Type="Boolean" Name="leftcol" Nullable="false" />
+          <Property Type="Boolean" Name="canReply" Nullable="false" />
+          <Property Type="Boolean" Name="canGuestView" Nullable="false" />
+          <NavigationProperty Name="gc_course" Relationship="gc_localtestModel.FK_gc_tag_gc_course" FromRole="gc_tag" ToRole="gc_course" />
+        </EntityType>
+        <EntityType Name="gc_user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Boolean" Name="sex" />
+          <Property Type="String" Name="originalusername" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="username" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="admin" Nullable="false" />
+          <Property Type="Int32" Name="flagsettings" Nullable="false" />
+          <Property Type="Boolean" Name="mailverified" Nullable="false" />
+          <Property Type="String" Name="truename" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="uprovince" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ucity" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="timeCreation" Nullable="false" />
+          <Property Type="DateTime" Name="timeLastLogon" Nullable="false" />
+          <Property Type="DateTime" Name="timeLastPasswordChange" Nullable="false" />
+          <Property Type="DateTime" Name="timeLastActivity" Nullable="false" />
+          <Property Type="String" Name="pwdQuestion" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="pwdAnswer" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="coop" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="coopSort" />
+          <Property Type="Int64" Name="spaceTotal" Nullable="false" />
+          <Property Type="Int64" Name="spaceUsed" Nullable="false" />
+          <Property Type="Int32" Name="msgType" Nullable="false" />
+          <Property Type="Int32" Name="msgClock" Nullable="false" />
+          <NavigationProperty Name="gc_course" Relationship="gc_localtestModel.FK_gc_course_gc_user" FromRole="gc_user" ToRole="gc_course" />
+          <NavigationProperty Name="gc_feed" Relationship="gc_localtestModel.FK_gc_feed_gc_user" FromRole="gc_user" ToRole="gc_feed" />
+          <NavigationProperty Name="gc_friendship" Relationship="gc_localtestModel.FK_gc_friendship_gc_user" FromRole="gc_user" ToRole="gc_friendship" />
+          <NavigationProperty Name="gc_friendship1" Relationship="gc_localtestModel.FK_gc_friendship_gc_user1" FromRole="gc_user" ToRole="gc_friendship" />
+          <NavigationProperty Name="gc_msg" Relationship="gc_localtestModel.FK_gc_msg_gc_user" FromRole="gc_user" ToRole="gc_msg" />
+          <NavigationProperty Name="gc_note" Relationship="gc_localtestModel.FK_gc_note_gc_user" FromRole="gc_user" ToRole="gc_note" />
+          <NavigationProperty Name="gc_paticipate" Relationship="gc_localtestModel.FK_gc_paticipate_gc_user" FromRole="gc_user" ToRole="gc_paticipate" />
+          <NavigationProperty Name="gc_profile" Relationship="gc_localtestModel.FK_gc_profile_gc_user" FromRole="gc_user" ToRole="gc_profile" />
+          <NavigationProperty Name="gc_reply" Relationship="gc_localtestModel.FK_gc_reply_gc_user" FromRole="gc_user" ToRole="gc_reply" />
+        </EntityType>
+        <EntityType Name="gccon_city">
+          <Key>
+            <PropertyRef Name="city" />
+          </Key>
+          <Property Type="String" Name="city" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="province" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="gccon_province" Relationship="gc_localtestModel.FK_gccon_city_gccon_province" FromRole="gccon_city" ToRole="gccon_province" />
+        </EntityType>
+        <EntityType Name="gccon_coop">
+          <Key>
+            <PropertyRef Name="coop" />
+          </Key>
+          <Property Type="String" Name="coop" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gccon_ctype1">
+          <Key>
+            <PropertyRef Name="type" />
+          </Key>
+          <Property Type="String" Name="type" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="gccon_ctype2" Relationship="gc_localtestModel.FK_gccon_ctype2_gccon_ctype1" FromRole="gccon_ctype1" ToRole="gccon_ctype2" />
+        </EntityType>
+        <EntityType Name="gccon_ctype2">
+          <Key>
+            <PropertyRef Name="type" />
+          </Key>
+          <Property Type="String" Name="type" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ctype1_type" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="gccon_ctype1" Relationship="gc_localtestModel.FK_gccon_ctype2_gccon_ctype1" FromRole="gccon_ctype2" ToRole="gccon_ctype1" />
+        </EntityType>
+        <EntityType Name="gccon_profilename">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="defaultSort" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gccon_province">
+          <Key>
+            <PropertyRef Name="province" />
+          </Key>
+          <Property Type="String" Name="province" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="gccon_city" Relationship="gc_localtestModel.FK_gccon_city_gccon_province" FromRole="gccon_province" ToRole="gccon_city" />
+        </EntityType>
+        <EntityType Name="upload_ticket">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Guid" Name="id" Nullable="false" />
+          <Property Type="String" Name="path" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="expires" Nullable="false" />
+          <Property Type="Int32" Name="limit" Nullable="false" />
+          <Property Type="Int32" Name="space_user_id" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_gc_course_gc_user">
+          <End Type="gc_localtestModel.gc_user" Role="gc_user" Multiplicity="1" />
+          <End Type="gc_localtestModel.gc_course" Role="gc_course" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gc_course">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gc_paticipate_gc_course">
+          <End Type="gc_localtestModel.gc_course" Role="gc_course" Multiplicity="1" />
+          <End Type="gc_localtestModel.gc_paticipate" Role="gc_paticipate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gc_course">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gc_paticipate">
+              <PropertyRef Name="course_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gc_post_gc_course">
+          <End Type="gc_localtestModel.gc_course" Role="gc_course" Multiplicity="0..1" />
+          <End Type="gc_localtestModel.gc_post" Role="gc_post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gc_course">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gc_post">
+              <PropertyRef Name="course_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gc_tag_gc_course">
+          <End Type="gc_localtestModel.gc_course" Role="gc_course" Multiplicity="1" />
+          <End Type="gc_localtestModel.gc_tag" Role="gc_tag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gc_course">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gc_tag">
+              <PropertyRef Name="course_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gc_feed_gc_user">
+          <End Type="gc_localtestModel.gc_user" Role="gc_user" Multiplicity="1" />
+          <End Type="gc_localtestModel.gc_feed" Role="gc_feed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gc_feed">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gc_friendship_gc_user">
+          <End Type="gc_localtestModel.gc_user" Role="gc_user" Multiplicity="1" />
+          <End Type="gc_localtestModel.gc_friendship" Role="gc_friendship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gc_friendship">
+              <PropertyRef Name="user_id1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gc_friendship_gc_user1">
+          <End Type="gc_localtestModel.gc_user" Role="gc_user" Multiplicity="1" />
+          <End Type="gc_localtestModel.gc_friendship" Role="gc_friendship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gc_friendship">
+              <PropertyRef Name="user_id2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gc_msg_gc_user">
+          <End Type="gc_localtestModel.gc_user" Role="gc_user" Multiplicity="1" />
+          <End Type="gc_localtestModel.gc_msg" Role="gc_msg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gc_msg">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gc_note_gc_user">
+          <End Type="gc_localtestModel.gc_user" Role="gc_user" Multiplicity="1" />
+          <End Type="gc_localtestModel.gc_note" Role="gc_note" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gc_note">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gc_paticipate_gc_user">
+          <End Type="gc_localtestModel.gc_user" Role="gc_user" Multiplicity="1" />
+          <End Type="gc_localtestModel.gc_paticipate" Role="gc_paticipate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gc_paticipate">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gc_reply_gc_post">
+          <End Type="gc_localtestModel.gc_post" Role="gc_post" Multiplicity="1" />
+          <End Type="gc_localtestModel.gc_reply" Role="gc_reply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gc_post">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gc_reply">
+              <PropertyRef Name="post_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gc_profile_gc_user">
+          <End Type="gc_localtestModel.gc_user" Role="gc_user" Multiplicity="1" />
+          <End Type="gc_localtestModel.gc_profile" Role="gc_profile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gc_profile">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gc_reply_gc_user">
+          <End Type="gc_localtestModel.gc_user" Role="gc_user" Multiplicity="1" />
+          <End Type="gc_localtestModel.gc_reply" Role="gc_reply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gc_user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="gc_reply">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gccon_city_gccon_province">
+          <End Type="gc_localtestModel.gccon_province" Role="gccon_province" Multiplicity="1" />
+          <End Type="gc_localtestModel.gccon_city" Role="gccon_city" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gccon_province">
+              <PropertyRef Name="province" />
+            </Principal>
+            <Dependent Role="gccon_city">
+              <PropertyRef Name="province" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_gccon_ctype2_gccon_ctype1">
+          <End Type="gc_localtestModel.gccon_ctype1" Role="gccon_ctype1" Multiplicity="1" />
+          <End Type="gc_localtestModel.gccon_ctype2" Role="gccon_ctype2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="gccon_ctype1">
+              <PropertyRef Name="type" />
+            </Principal>
+            <Dependent Role="gccon_ctype2">
+              <PropertyRef Name="ctype1_type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="gc_localtestModelStoreContainer" CdmEntityContainer="gc_localtestEntities">
+    <EntitySetMapping Name="gc_course">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gc_course)">
+        <MappingFragment StoreEntitySet="gc_course">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type1" ColumnName="type1" />
+          <ScalarProperty Name="type2" ColumnName="type2" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="canJoin" ColumnName="canJoin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gc_feed">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gc_feed)">
+        <MappingFragment StoreEntitySet="gc_feed">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ftype" ColumnName="ftype" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gc_friendship">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gc_friendship)">
+        <MappingFragment StoreEntitySet="gc_friendship">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id1" ColumnName="user_id1" />
+          <ScalarProperty Name="user_id2" ColumnName="user_id2" />
+          <ScalarProperty Name="accepted" ColumnName="accepted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gc_msg">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gc_msg)">
+        <MappingFragment StoreEntitySet="gc_msg">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="fromid" ColumnName="fromid" />
+          <ScalarProperty Name="nexturl" ColumnName="nexturl" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="read" ColumnName="read" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="mailed" ColumnName="mailed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gc_note">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gc_note)">
+        <MappingFragment StoreEntitySet="gc_note">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="privateuser_id" ColumnName="privateuser_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="fromuser_id" ColumnName="fromuser_id" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="time" ColumnName="time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gc_paticipate">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gc_paticipate)">
+        <MappingFragment StoreEntitySet="gc_paticipate">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="course_id" ColumnName="course_id" />
+          <ScalarProperty Name="overdue" ColumnName="overdue" />
+          <ScalarProperty Name="approved" ColumnName="approved" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gc_post">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gc_post)">
+        <MappingFragment StoreEntitySet="gc_post">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tag" ColumnName="tag" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="course_id" ColumnName="course_id" />
+          <ScalarProperty Name="ftype" ColumnName="ftype" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gc_profile">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gc_profile)">
+        <MappingFragment StoreEntitySet="gc_profile">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gc_reply">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gc_reply)">
+        <MappingFragment StoreEntitySet="gc_reply">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="ext" ColumnName="ext" />
+          <ScalarProperty Name="ftype" ColumnName="ftype" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="post_id" ColumnName="post_id" />
+          <ScalarProperty Name="public" ColumnName="public" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gc_tag">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gc_tag)">
+        <MappingFragment StoreEntitySet="gc_tag">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tag" ColumnName="tag" />
+          <ScalarProperty Name="course_id" ColumnName="course_id" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="leftcol" ColumnName="leftcol" />
+          <ScalarProperty Name="canReply" ColumnName="canReply" />
+          <ScalarProperty Name="canGuestView" ColumnName="canGuestView" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gc_user">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gc_user)">
+        <MappingFragment StoreEntitySet="gc_user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="originalusername" ColumnName="originalusername" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="admin" ColumnName="admin" />
+          <ScalarProperty Name="flagsettings" ColumnName="flagsettings" />
+          <ScalarProperty Name="mailverified" ColumnName="mailverified" />
+          <ScalarProperty Name="truename" ColumnName="truename" />
+          <ScalarProperty Name="uprovince" ColumnName="uprovince" />
+          <ScalarProperty Name="ucity" ColumnName="ucity" />
+          <ScalarProperty Name="timeCreation" ColumnName="timeCreation" />
+          <ScalarProperty Name="timeLastLogon" ColumnName="timeLastLogon" />
+          <ScalarProperty Name="timeLastPasswordChange" ColumnName="timeLastPasswordChange" />
+          <ScalarProperty Name="timeLastActivity" ColumnName="timeLastActivity" />
+          <ScalarProperty Name="pwdQuestion" ColumnName="pwdQuestion" />
+          <ScalarProperty Name="pwdAnswer" ColumnName="pwdAnswer" />
+          <ScalarProperty Name="coop" ColumnName="coop" />
+          <ScalarProperty Name="coopSort" ColumnName="coopSort" />
+          <ScalarProperty Name="spaceTotal" ColumnName="spaceTotal" />
+          <ScalarProperty Name="spaceUsed" ColumnName="spaceUsed" />
+          <ScalarProperty Name="msgType" ColumnName="msgType" />
+          <ScalarProperty Name="msgClock" ColumnName="msgClock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gccon_city">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gccon_city)">
+        <MappingFragment StoreEntitySet="gccon_city">
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="province" ColumnName="province" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gccon_coop">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gccon_coop)">
+        <MappingFragment StoreEntitySet="gccon_coop">
+          <ScalarProperty Name="coop" ColumnName="coop" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gccon_ctype1">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gccon_ctype1)">
+        <MappingFragment StoreEntitySet="gccon_ctype1">
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gccon_ctype2">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gccon_ctype2)">
+        <MappingFragment StoreEntitySet="gccon_ctype2">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="ctype1_type" ColumnName="ctype1_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gccon_profilename">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gccon_profilename)">
+        <MappingFragment StoreEntitySet="gccon_profilename">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="defaultSort" ColumnName="defaultSort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gccon_province">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.gccon_province)">
+        <MappingFragment StoreEntitySet="gccon_province">
+          <ScalarProperty Name="province" ColumnName="province" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="upload_ticket">
+      <EntityTypeMapping TypeName="IsTypeOf(gc_localtestModel.upload_ticket)">
+        <MappingFragment StoreEntitySet="upload_ticket">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="expires" ColumnName="expires" />
+          <ScalarProperty Name="limit" ColumnName="limit" />
+          <ScalarProperty Name="space_user_id" ColumnName="space_user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1" ZoomLevel="60">
+        <EntityTypeShape EntityType="gc_localtestModel.gc_course" Width="1.5" PointX="3" PointY="5.375" Height="2.9251310221354174" />
+        <EntityTypeShape EntityType="gc_localtestModel.gc_feed" Width="1.5" PointX="3" PointY="10.625" Height="2.1610522460937531" />
+        <EntityTypeShape EntityType="gc_localtestModel.gc_friendship" Width="1.5" PointX="3" PointY="13.5" Height="2.1610522460937531" />
+        <EntityTypeShape EntityType="gc_localtestModel.gc_msg" Width="1.5" PointX="3" PointY="16.375" Height="2.734111328124996" />
+        <EntityTypeShape EntityType="gc_localtestModel.gc_note" Width="1.5" PointX="3" PointY="19.875" Height="2.3520719401041674" />
+        <EntityTypeShape EntityType="gc_localtestModel.gc_paticipate" Width="1.5" PointX="8.25" PointY="10.625" Height="2.3520719401041674" />
+        <EntityTypeShape EntityType="gc_localtestModel.gc_post" Width="1.5" PointX="5.25" PointY="6.875" Height="2.7341113281250102" />
+        <EntityTypeShape EntityType="gc_localtestModel.gc_profile" Width="1.5" PointX="3" PointY="23" Height="2.161052246093746" />
+        <EntityTypeShape EntityType="gc_localtestModel.gc_reply" Width="1.5" PointX="7.5" PointY="14" Height="3.1161507161458388" />
+        <EntityTypeShape EntityType="gc_localtestModel.gc_tag" Width="1.5" PointX="5.25" PointY="10.375" Height="2.5430916341145746" />
+        <EntityTypeShape EntityType="gc_localtestModel.gc_user" Width="1.5" PointX="0.75" PointY="10.875" Height="7.318583984375012" />
+        <EntityTypeShape EntityType="gc_localtestModel.gccon_city" Width="1.5" PointX="3" PointY="0.875" Height="1.587993164062496" />
+        <EntityTypeShape EntityType="gc_localtestModel.gccon_coop" Width="1.5" PointX="5.75" PointY="3.75" Height="1.2059537760416674" />
+        <EntityTypeShape EntityType="gc_localtestModel.gccon_ctype1" Width="1.5" PointX="5.75" PointY="1" Height="1.3969734700520746" />
+        <EntityTypeShape EntityType="gc_localtestModel.gccon_ctype2" Width="1.5" PointX="8" PointY="0.875" Height="1.587993164062496" />
+        <EntityTypeShape EntityType="gc_localtestModel.gccon_profilename" Width="1.5" PointX="7.75" PointY="3.75" Height="1.3969734700520746" />
+        <EntityTypeShape EntityType="gc_localtestModel.gccon_province" Width="1.5" PointX="0.75" PointY="1" Height="1.3969734700520744" />
+        <EntityTypeShape EntityType="gc_localtestModel.upload_ticket" Width="1.5" PointX="7.75" PointY="6.75" Height="1.9700325520833246" />
+        <AssociationConnector Association="gc_localtestModel.FK_gc_course_gc_user" >
+          <ConnectorPoint PointX="1.5" PointY="10.875" />
+          <ConnectorPoint PointX="1.5" PointY="6.8375655110677087" />
+          <ConnectorPoint PointX="3" PointY="6.8375655110677087" />
+        </AssociationConnector>
+        <AssociationConnector Association="gc_localtestModel.FK_gc_paticipate_gc_course" >
+          <ConnectorPoint PointX="4.5" PointY="6.03125" />
+          <ConnectorPoint PointX="9.53125" PointY="6.03125" />
+          <ConnectorPoint PointX="9.53125" PointY="10.625" />
+        </AssociationConnector>
+        <AssociationConnector Association="gc_localtestModel.FK_gc_post_gc_course" >
+          <ConnectorPoint PointX="4.5" PointY="7.5875655110677087" />
+          <ConnectorPoint PointX="5.25" PointY="7.5875655110677087" />
+        </AssociationConnector>
+        <AssociationConnector Association="gc_localtestModel.FK_gc_tag_gc_course" >
+          <ConnectorPoint PointX="4.5" PointY="8.3001310221354174" />
+          <ConnectorPoint PointX="4.875" PointY="8.6751310221354174" />
+          <ConnectorPoint PointX="4.875" PointY="11.646545817057287" />
+          <ConnectorPoint PointX="5.25" PointY="11.646545817057287" />
+        </AssociationConnector>
+        <AssociationConnector Association="gc_localtestModel.FK_gc_feed_gc_user" >
+          <ConnectorPoint PointX="2.25" PointY="11.830526123046877" />
+          <ConnectorPoint PointX="3" PointY="11.830526123046877" />
+        </AssociationConnector>
+        <AssociationConnector Association="gc_localtestModel.FK_gc_friendship_gc_user" >
+          <ConnectorPoint PointX="2.25" PointY="14.580526123046877" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="14.580526123046877" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="14.580526123046877" />
+          <ConnectorPoint PointX="3" PointY="14.580526123046877" />
+        </AssociationConnector>
+        <AssociationConnector Association="gc_localtestModel.FK_gc_friendship_gc_user1" >
+          <ConnectorPoint PointX="2.25" PointY="13.977763061523438" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="13.977763061523438" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="13.977763061523438" />
+          <ConnectorPoint PointX="3" PointY="13.977763061523438" />
+        </AssociationConnector>
+        <AssociationConnector Association="gc_localtestModel.FK_gc_msg_gc_user" >
+          <ConnectorPoint PointX="2.25" PointY="17.284291992187505" />
+          <ConnectorPoint PointX="3" PointY="17.284291992187505" />
+        </AssociationConnector>
+        <AssociationConnector Association="gc_localtestModel.FK_gc_note_gc_user" >
+          <ConnectorPoint PointX="1.5" PointY="18.19358398437501" />
+          <ConnectorPoint PointX="1.5" PointY="21.051035970052084" />
+          <ConnectorPoint PointX="1.8229191666666667" PointY="21.051035970052084" />
+          <ConnectorPoint PointX="1.9895858333333332" PointY="21.051035970052084" />
+          <ConnectorPoint PointX="3" PointY="21.051035970052084" />
+        </AssociationConnector>
+        <AssociationConnector Association="gc_localtestModel.FK_gc_paticipate_gc_user" >
+          <ConnectorPoint PointX="2.25" PointY="15.932409057617191" />
+          <ConnectorPoint PointX="2.75" PointY="15.932409057617191" />
+          <ConnectorPoint PointX="2.75" PointY="13.25" />
+          <ConnectorPoint PointX="7.510416666666667" PointY="13.25" />
+          <ConnectorPoint PointX="7.677083333333333" PointY="13.25" />
+          <ConnectorPoint PointX="9" PointY="13.25" />
+          <ConnectorPoint PointX="9" PointY="12.977071940104167" />
+        </AssociationConnector>
+        <AssociationConnector Association="gc_localtestModel.FK_gc_reply_gc_post" >
+          <ConnectorPoint PointX="6.75" PointY="9.1958219401041674" />
+          <ConnectorPoint PointX="7.59375" PointY="9.1958219401041674" />
+          <ConnectorPoint PointX="7.59375" PointY="14" />
+        </AssociationConnector>
+        <AssociationConnector Association="gc_localtestModel.FK_gc_profile_gc_user" >
+          <ConnectorPoint PointX="1.9062525" PointY="18.19358398437501" />
+          <ConnectorPoint PointX="1.9062525" PointY="24.080526123046873" />
+          <ConnectorPoint PointX="3" PointY="24.080526123046873" />
+        </AssociationConnector>
+        <AssociationConnector Association="gc_localtestModel.FK_gc_reply_gc_user" >
+          <ConnectorPoint PointX="2.25" PointY="16.184954528808596" />
+          <ConnectorPoint PointX="7.5" PointY="16.184954528808596" />
+        </AssociationConnector>
+        <AssociationConnector Association="gc_localtestModel.FK_gccon_city_gccon_province" >
+          <ConnectorPoint PointX="2.25" PointY="1.6984867350260373" />
+          <ConnectorPoint PointX="3" PointY="1.6984867350260373" />
+        </AssociationConnector>
+        <AssociationConnector Association="gc_localtestModel.FK_gccon_ctype2_gccon_ctype1" >
+          <ConnectorPoint PointX="7.25" PointY="1.6984867350260373" />
+          <ConnectorPoint PointX="8" PointY="1.6984867350260373" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

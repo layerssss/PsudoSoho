@@ -1,0 +1,2 @@
+"C:\Users\LayersSss\Desktop\MONO\dotless\dotless.Compiler.exe" "C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\Goclassing.com\bootstrap\bootstrap.less" "C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\Goclassing.com\css\bootstrap.css" -m
+"C:\Users\LayersSss\Desktop\MONO\dotless\dotless.Compiler.exe" "C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\Goclassing.com\bootstrap\responsive.less" "C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\Goclassing.com\css\responsive.css" -m

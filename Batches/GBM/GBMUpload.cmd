@@ -1,0 +1,2 @@
+"C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\PassiveUploader\bin\Release\PassiveUploader.exe" -conf GebimaiService.dll.conf
+"C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\PassiveUploader\bin\Release\PassiveUploader.exe" -conf GebimaiService.XML.conf

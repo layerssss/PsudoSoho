@@ -1,0 +1,242 @@
+/******************************************
+                  管理员面板
+  ********************************************/
+html{
+	background: url('img/footer-bg.jpg') repeat;
+}
+body {
+	background:#f7f7f7 url('lodge/pattern.png') repeat top left;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size:12px;
+}
+.logo{width:80px;height:35px;float:left;margin:8px 20px 0 0;background:url(lodge/logo.png) top left no-repeat;text-indent:-999px;}
+.m-color{color:#8FBE21;letter-spacing: 1px;}
+.brand{font-family:"Microsoft Yahei";}
+#admin-content{margin-bottom:30px;}
+#admin-content #admin-main{
+	margin:70px 15px 0 0;
+	padding:30px;
+	float: left;
+	width:623px;
+	border: 1px #E4E4E4 solid;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-color: #fafafa;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#f1f1f1));
+	background-image: -webkit-linear-gradient(top, #fafafa, #f1f1f1);
+	background-image: -moz-linear-gradient(top, #fafafa, #f1f1f1);
+	background-image: -ms-linear-gradient(top, #fafafa, #f1f1f1);
+	background-image: -o-linear-gradient(top, #fafafa, #f1f1f1);
+	background-image: linear-gradient(top, #fafafa, #f1f1f1);
+}
+#admin-content #admin-main h1{
+	font-size:18px;
+	font-family:"Microsoft Yahei";
+	border-bottom:1px dashed #ddd;
+	padding-bottom:10px;
+	font-weight:normal;
+}
+#admin-content #admin-sidebar{
+	margin:70px 0 50px 0;
+	float: left;
+	width:238px;
+	border: 1px #E4E4E4 solid;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-color: #fafafa;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#f1f1f1));
+	background-image: -webkit-linear-gradient(top, #fafafa, #f1f1f1);
+	background-image: -moz-linear-gradient(top, #fafafa, #f1f1f1);
+	background-image: -ms-linear-gradient(top, #fafafa, #f1f1f1);
+	background-image: -o-linear-gradient(top, #fafafa, #f1f1f1);
+	background-image: linear-gradient(top, #fafafa, #f1f1f1);
+}
+
+#easyTooltip
+{
+    z-index: 10001;
+    display: block;
+    padding: 5px;
+    background-color: #74B605;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+}
+/****************************admin-main*************************/
+.room-list-item{
+	margin-bottom:15px;
+	width:100%;
+	height:auto;
+	border:1px #e4e4e4 solid;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-color: #fafafa;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#f1f1f1)); 
+	background-image: -webkit-linear-gradient(top, #fafafa, #f1f1f1); 
+	background-image:    -moz-linear-gradient(top, #fafafa, #f1f1f1); 
+	background-image:     -ms-linear-gradient(top, #fafafa, #f1f1f1); 
+	background-image:      -o-linear-gradient(top, #fafafa, #f1f1f1); 
+	background-image:         linear-gradient(top, #fafafa, #f1f1f1);
+}
+.available{
+	margin-bottom:15px;
+	width:100%;
+	height:auto;
+	border:2px #8FBE21 dashed;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-color: #fafafa;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#f1f1f1)); 
+	background-image: -webkit-linear-gradient(top, #fafafa, #fafafa); 
+	background-image:    -moz-linear-gradient(top, #fafafa, #fafafa); 
+	background-image:     -ms-linear-gradient(top, #fafafa, #fafafa); 
+	background-image:      -o-linear-gradient(top, #fafafa, #fafafa); 
+	background-image:         linear-gradient(top, #fafafa, #fafafa);
+}
+
+.room-list-item>span{display:block;float:left;}
+
+.room-list-item span.roomName{
+	width:100px;
+	height:100%;
+	border-left:1px solid #f9f9f9;
+	padding:10px;
+	color:#999;
+	font-size:15px;
+	text-align:center;
+}
+
+.room-list-item span.list-roomAttributes{
+	width:440px;
+	height:auto;
+	border-right:1px solid #efefef;
+	border-left:1px solid #efefef;
+	padding:25px 10px;
+	color:#545454;
+}
+.room-list-item span.list-roomAttributes>span{
+	margin-right:0;
+	display:inline;
+	position:relative;
+	border-bottom: 1px dashed #EEE;
+	padding: 5px 0;
+}
+	.room-list-item span.list-roomAttributes>span .roomAttributesIcon{
+		background-image:url(lodge/icons_sprite.png);
+		width:32px;
+		height:32px;
+	}
+	.optionName{margin-left:35px;position: absolute;top: 10px;}
+.room-list-item span.edit{
+	width:15px;
+	height:auto;
+	border-left:1px solid #f9f9f9;
+	padding:10px;
+}
+span.edit a img{margin-top:5px;}
+span.statusNum{color:#999;margin-top:5px;display:inline-block;border-top:1px dashed #ccc;border-bottom:1px dashed #ccc;padding:5px 5px;}
+span.availableNum{color:#5C8206!important;}
+
+/****************************对话框*************************/
+.dialog input,.dialog textarea{
+	margin-bottom: 10px;
+	margin-left: 15px;
+	width: 250px;
+}
+.dialog label{width:80px;}
+.dialog div.clearfix{margin-bottom:5px;}
+.dialog input.amount{width:5%;display:block;float:left;margin-right:15px;}
+.dialog div.slider{width:210px;float:left;margin-top:10px;}
+.dialog input[type="radio"]{width:auto;display:inline;}
+.dialog .status {margin-left: 80px;margin-top: 20px;}
+.dialog .status label{width:auto;float:none;}
+.ui-dialog {
+	border:5px solid #eee;
+}
+
+/****************************admin-sidebar*************************/
+#admin-info{padding:12px 15px;border-bottom:1px solid #e7e7e7;}
+#admin-info p{font-size:12px;text-align:center;margin-bottom:0;}
+#admin-info-content{border-bottom:1px solid #e7e7e7;padding:12px 15px;border-top:1px solid #ffffff;}
+.square{float:left;width:60px;height:60px;margin:3px;border:1px solid #e0e0e0;}
+.number{
+	border-bottom:1px solid #e0e0e0;
+	background-color: #fafafa;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#ececec));
+	background-image: -webkit-linear-gradient(top, #f2f2f2, #ececec);
+	background-image: -moz-linear-gradient(top, #f2f2f2, #ececec);
+	background-image: -ms-linear-gradient(top, #f2f2f2, #ececec);
+	background-image: -o-linear-gradient(top, #f2f2f2, #ececec);
+	background-image: linear-gradient(top, #f2f2f2, #ececec);
+	padding:8px 0;
+	text-align:center;
+	color:#97C430;
+}
+.text{text-align:center;font-size:15px;padding:2px 0;color:#8d8d8d;}
+
+/***************日历********************/
+#admin-cal{padding:18px 0;}
+div#navDay{margin-left:13px;}
+a.dirToday,a.preDay,a.nextDay{
+	font-size:15px;background:#8FBE21;color:#fff;
+	padding:5px 5px;
+	margin:0 5px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	line-height:16px;
+	text-align:center;
+	display:block;
+	float:left;
+}
+.refreshBtn{width:30px;height:30px;display:block;margin: -2px 0 0 5px;position:absolute;right:24px;top:4px;background-repeat:no-repeat;}
+.refreshBtn{background-image:url(/style/img/refresh.png);}
+.refreshBtn.refreshing{background-image:url(/style/img/refresh.gif);}
+.refreshBtn.refreshing_black{background-image:url(/style/img/refresh_black.gif);}
+.refreshBtn.black{background-position:0px 0px;}
+
+#datepicker{margin:20px 18px;}
+#datepicker td
+{
+    height:50px;
+}
+#datepicker>.numberFull
+{
+    margin-top:30px;
+	width:30px;
+	text-align:center;
+}
+#datepicker .ui-datepicker-current-day{
+	background:#8FBE21;
+}
+#datepickerNote{padding:0 20px;}
+span.highlightText{
+	background:#8FBE21;color:white;padding:2px 4px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	margin-left:5px;
+}
+/***************登录页面********************/
+#loginPassword{margin:10px 0 0 30px;}
+#loginSubmit{margin:15px 0 0 70px;font-family:"Microsoft Yahei";}
+div.recaptchaDiv{width:50%;margin-left:70px;margin-top: -25px;}
+p.errorMesg{display:none;padding-left:70px;color:red;margin-top: 20px;}
+p.errorMesg span{background:url('/Style/img/cross_circle.png') no-repeat top left;width:16px;height:16px;display:inline-block;margin-right:10px;vertical-align: bottom;}
+
+/***************页脚********************/
+#footer{
+	padding:20px 0;
+	background:#1c1c1c;
+	border-top:1px solid white;
+	background: url('img/footer-bg.jpg') repeat;
+}
+.sitemap_strip {float:left;margin:-20px;padding:0;}
+.sitemap_strip li {float:left;margin-right:10px;}
+
+

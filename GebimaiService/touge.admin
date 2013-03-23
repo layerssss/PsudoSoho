@@ -1,0 +1,609 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>隔壁买管理中心</title>
+    <!-- Le styles -->
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <style type="text/css">
+        body
+        {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+    </style>
+    <link href="/css/responsive.css" rel="stylesheet" />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link href="/css/StyleSheets.css" rel="stylesheet" type="text/css" />
+    <link href="/css/bootstrap.docs.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $('[title]').tooltip({ placement: 'bottom' });
+            $.ajax({
+                url: '/Auth/GetStatus',
+                dataType: 'jsonp',
+                success: function (j) {
+                    if (j.message) {
+                        $('#myModal .modal-body').text(String(j.message));
+                        $('#myModal').modal('show');
+                    }
+                    if (j.me == null) {
+                        $('#slf>li').toggle();
+                        $('#fb_btn').click(function () {
+                            return false;
+                        });
+                        $.ajax({
+                            url: '/Auth/GetLoginUrl',
+                            data: {
+                                provider: 'weibo',
+                                remember: false
+                            },
+                            dataType: 'jsonp',
+                            success: function (j) {
+                                $('#fb_btn').click(function () {
+                                    window.open(j.url, null, 'toolbars=no,left=' + (window.screenX + 100) + ',top=' + (window.screenY + 120) + ',width=' + ($(window).width() - 200) + ',height=500');
+                                    return false;
+                                });
+                            }
+                        });
+                    } else {
+                        $('a.profile').attr('href', '/' + j.me.username + '.user');
+                        if (j.senderInfo) {
+                            $('a.sender').attr('href', '/' + j.senderInfo.alias + '.sender');
+                        }
+                        if (j.adminInfo) {
+                            $('a.admin').attr('href', '/' + j.adminInfo.alias + '.admin');
+                        }
+                        $('#slf a.name').text(j.me.name);
+                        $('#slf img.avatar').attr('src', j.me.avatarUrl);
+                        var f = function () {
+                            $.ajax({
+                                url: '/GetMessage.aspx',
+                                dataType: 'text',
+                                error: function () {
+                                    f();
+                                },
+                                success: function (msg) {
+                                    $('#myModal .modal-body').text(String(msg));
+                                    $('#myModal').modal('show');
+                                    $('#myModal').on('hidden', function () {
+                                        location.href = "User/DismissMessage?redirect=";
+                                    })
+                                    $('title').text("【"+msg+"】");
+                                }
+                            });
+                        };
+                        f();
+                    }
+                }
+            });
+
+        });
+        var oAuthFinished = function () {
+            location.reload();
+        };
+    </script>
+    <script src="js/jquery.textExt.modified.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        // fix sub nav on scroll
+        var $win = $(window)
+      , $nav = $('.subnav')
+      , navTop = $('.subnav').length && $('.subnav').offset().top - 40
+      , isFixed = 0
+
+        processScroll()
+
+        $win.on('scroll', processScroll)
+
+        function processScroll() {
+            var i, scrollTop = $win.scrollTop()
+            if (scrollTop >= navTop && !isFixed) {
+                isFixed = 1
+                $nav.addClass('subnav-fixed')
+            } else if (scrollTop <= navTop && isFixed) {
+                isFixed = 0
+                $nav.removeClass('subnav-fixed')
+            }
+        }
+    });
+</script>
+
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="60">
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                    class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </a><a class="brand" href="/">隔壁买<span class="label label-info">管理中心</span></a>
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="/">首页</a></li>
+                        <li><a target="_blank" href="http://gebimai.com/">隔壁买首页</a> </li>
+                        <li class="divider-vertical"></li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">帮助 <b
+                            class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Help/FAQ">常见问题</a></li>
+                                <li><a href="/Help/Contact">联系我们</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="pull-right nav" id="slf">
+                        <li class=""><a href="/" class="profile">
+                            <img class="avatar" /></a></li>
+                        <li class=""><a href="/" class="profile name">加载中...</a></li>
+                        <li class="">
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><b
+                                class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/" class="profile">我的资料</a></li>
+                                    <li><a href="/Auth/Logout?redirect=%2f">注销</a></li>
+                                </ul>
+                            </li>
+                        </li>
+                        <li class="offline"><a href="#" id="fb_btn"><span>用微博登陆</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        
+<div class="subnav">
+    <ul class="nav nav-pills">
+        <li><a href="#admin-area">区域信息</a></li>
+        <li><a href="#cur-status">当前待付款订单</a></li>
+        <li><a href="#cur-senders">当前正在上班的送货员</a></li>
+        <li><a href="#stock">商品上下架管理</a></li>
+        <li><a href="#manage-senders">快递员管理</a></li>
+        <li><a href="#manage-addresses">可送达楼宇管理</a></li>
+        <li><a href="Admin/JumpOrdersToday">查看今天的所有订单</a></li>
+    </ul>
+</div>
+<div id="admin-container">
+    <section id="admin-area" class="well">
+        <dl>
+            <dt>管理区域：</dt>
+            <dd>
+                暨南大学珠海校区</dd>
+        </dl>
+    </section>
+    <!-- END OF SIDEBAR -->
+    <section id="cur-status" class="well">
+            <h4 id="cur-status-header" class="well-header">
+                当前待付款订单</h4>
+
+                
+            <div class="row-fluid">
+                <div class="span1">
+                    ID:</div>
+                <div class="span2">
+                    支付宝地址:</div>
+                <div class="span1">
+                    总额:</div>
+                <div class="span3">
+                    商品:</div>
+                <div class="span1">
+                    数量:</div>
+                <div class="span4">
+                    操作:</div>
+            </div>
+                
+            </table>
+        </section>
+    <section id="cur-senders" class="well">
+            <h4 id="cur-senders-header" class="well-header">
+                当前正在上班的送货员<a href="Admin/Refresh?redirect=" class="btn btn-info"><i class="icon-refresh icon-white"></i></a></h4>
+                <div class="row-fluid" class="span2">
+                    <div class="span2">
+                        代号
+                    </div>
+                    <div class="span2">
+                        开始上班时间
+                    </div>
+                    <div class="span2">
+                        下班时间
+                    </div>
+                    <div class="span2">
+                        当前可接受订单的时间
+                    </div>
+                    <div class="span4">
+                        可以接受的地址
+                    </div>
+                </div>
+                
+        </section>
+    <!-- END OF CUR-STATUS -->
+    <section id="stock" class="well">
+            <h4 id="stock-header" class="well-header">
+                商品上下架管理</h4>
+                <form action="Admin/AddStock?redirect=" method="post" class="row-fluid">
+                <div class="span3">
+                        <input type="text" name="barcode" placeholder="输入条形码或者展示地址" /></div><div class="span7">
+                        <input type="text" name="price" placeholder="输入单价" />
+                        <input type="text" name="importprice" placeholder="输入进价" />
+                        <button class="btn btn-success" type="submit">
+                            上架</button></div>
+                </form>
+                
+                <div class="row-fluid">
+                    <div class="span1">
+                        <a target="_blank" class="thumbnail" href="http://gebimai.com/goods/553">
+                            <img src="http://gebimai.com/wp-content/uploads/2012/04/可比克薯片烧烤味110g-300x300.jpg" style="width:100%;max-width:100px;" /></a>
+                    </div>
+                    <div class="span4">
+                        <a target="_blank" href="http://gebimai.com/goods/553">可比克薯片烧烤味110g</a>
+                    </div>
+                    <div class="span3">
+                        <a target="_blank" href="http://gebimai.com/goods/553">80 角/件</a>/
+                        
+                        <a target="_blank" href="http://gebimai.com/goods/553">69 角/件</a>
+                    </div>
+                    <div class="span4">
+                        <a href="Admin/DelStock?redirect=&barcode=1000000000096" class="btn btn-primary">
+                            下架</a>
+                    </div>
+                </div>
+                
+                <div class="row-fluid">
+                    <div class="span1">
+                        <a target="_blank" class="thumbnail" href="http://gebimai.com/goods/550">
+                            <img src="http://gebimai.com/wp-content/uploads/2012/04/可比克薯片原味110g-300x300.jpg" style="width:100%;max-width:100px;" /></a>
+                    </div>
+                    <div class="span4">
+                        <a target="_blank" href="http://gebimai.com/goods/550">可比克薯片原味110g</a>
+                    </div>
+                    <div class="span3">
+                        <a target="_blank" href="http://gebimai.com/goods/550">80 角/件</a>/
+                        
+                        <a target="_blank" href="http://gebimai.com/goods/550">69 角/件</a>
+                    </div>
+                    <div class="span4">
+                        <a href="Admin/DelStock?redirect=&barcode=1000000000095" class="btn btn-primary">
+                            下架</a>
+                    </div>
+                </div>
+                
+                <div class="row-fluid">
+                    <div class="span1">
+                        <a target="_blank" class="thumbnail" href="http://gebimai.com/goods/547">
+                            <img src="http://gebimai.com/wp-content/uploads/2012/04/可比克薯片香辣味110g-300x300.jpg" style="width:100%;max-width:100px;" /></a>
+                    </div>
+                    <div class="span4">
+                        <a target="_blank" href="http://gebimai.com/goods/547">可比克薯片香辣味110g</a>
+                    </div>
+                    <div class="span3">
+                        <a target="_blank" href="http://gebimai.com/goods/547">80 角/件</a>/
+                        
+                        <a target="_blank" href="http://gebimai.com/goods/547">69 角/件</a>
+                    </div>
+                    <div class="span4">
+                        <a href="Admin/DelStock?redirect=&barcode=1000000000094" class="btn btn-primary">
+                            下架</a>
+                    </div>
+                </div>
+                
+                <div class="row-fluid">
+                    <div class="span1">
+                        <a target="_blank" class="thumbnail" href="http://gebimai.com/goods/541">
+                            <img src="http://gebimai.com/wp-content/uploads/2012/04/盼盼薯片家庭装118g-300x225.jpg" style="width:100%;max-width:100px;" /></a>
+                    </div>
+                    <div class="span4">
+                        <a target="_blank" href="http://gebimai.com/goods/541">盼盼薯片家庭装118g</a>
+                    </div>
+                    <div class="span3">
+                        <a target="_blank" href="http://gebimai.com/goods/541">35 角/件</a>/
+                        
+                        <a target="_blank" href="http://gebimai.com/goods/541">29 角/件</a>
+                    </div>
+                    <div class="span4">
+                        <a href="Admin/DelStock?redirect=&barcode=1000000000092" class="btn btn-primary">
+                            下架</a>
+                    </div>
+                </div>
+                
+                <div class="row-fluid">
+                    <div class="span1">
+                        <a target="_blank" class="thumbnail" href="http://gebimai.com/goods/519">
+                            <img src="http://gebimai.com/wp-content/uploads/2012/04/凤凰园野山椒鸡爪两只装50Gx2-300x225.jpg" style="width:100%;max-width:100px;" /></a>
+                    </div>
+                    <div class="span4">
+                        <a target="_blank" href="http://gebimai.com/goods/519">凤凰园野山椒鸡爪两只装50Gx2</a>
+                    </div>
+                    <div class="span3">
+                        <a target="_blank" href="http://gebimai.com/goods/519">40 角/件</a>/
+                        
+                        <a target="_blank" href="http://gebimai.com/goods/519">31 角/件</a>
+                    </div>
+                    <div class="span4">
+                        <a href="Admin/DelStock?redirect=&barcode=1000000000087" class="btn btn-primary">
+                            下架</a>
+                    </div>
+                </div>
+                
+                <div class="row-fluid">
+                    <div class="span1">
+                        <a target="_blank" class="thumbnail" href="http://gebimai.com/goods/516">
+                            <img src="http://gebimai.com/wp-content/uploads/2012/04/椒骄酒鬼鱼仔70g-300x225.jpg" style="width:100%;max-width:100px;" /></a>
+                    </div>
+                    <div class="span4">
+                        <a target="_blank" href="http://gebimai.com/goods/516">椒骄酒鬼鱼仔70g</a>
+                    </div>
+                    <div class="span3">
+                        <a target="_blank" href="http://gebimai.com/goods/516">40 角/件</a>/
+                        
+                        <a target="_blank" href="http://gebimai.com/goods/516">34 角/件</a>
+                    </div>
+                    <div class="span4">
+                        <a href="Admin/DelStock?redirect=&barcode=1000000000086" class="btn btn-primary">
+                            下架</a>
+                    </div>
+                </div>
+                
+                <div class="row-fluid">
+                    <div class="span1">
+                        <a target="_blank" class="thumbnail" href="http://gebimai.com/goods/460">
+                            <img src="http://gebimai.com/wp-content/uploads/2012/04/好丽友薯愿红酒牛排味104g-300x300.jpg" style="width:100%;max-width:100px;" /></a>
+                    </div>
+                    <div class="span4">
+                        <a target="_blank" href="http://gebimai.com/goods/460">好丽友薯愿红酒牛排味104g</a>
+                    </div>
+                    <div class="span3">
+                        <a target="_blank" href="http://gebimai.com/goods/460">90 角/件</a>/
+                        
+                        <a target="_blank" href="http://gebimai.com/goods/460">79 角/件</a>
+                    </div>
+                    <div class="span4">
+                        <a href="Admin/DelStock?redirect=&barcode=1000000000070" class="btn btn-primary">
+                            下架</a>
+                    </div>
+                </div>
+                
+                <div class="row-fluid">
+                    <div class="span1">
+                        <a target="_blank" class="thumbnail" href="http://gebimai.com/goods/457">
+                            <img src="http://gebimai.com/wp-content/uploads/2012/04/好丽友薯愿薯片香烤原味104g-300x300.jpg" style="width:100%;max-width:100px;" /></a>
+                    </div>
+                    <div class="span4">
+                        <a target="_blank" href="http://gebimai.com/goods/457">好丽友薯愿香烤原味104g</a>
+                    </div>
+                    <div class="span3">
+                        <a target="_blank" href="http://gebimai.com/goods/457">90 角/件</a>/
+                        
+                        <a target="_blank" href="http://gebimai.com/goods/457">79 角/件</a>
+                    </div>
+                    <div class="span4">
+                        <a href="Admin/DelStock?redirect=&barcode=1000000000069" class="btn btn-primary">
+                            下架</a>
+                    </div>
+                </div>
+                
+                <div class="row-fluid">
+                    <div class="span1">
+                        <a target="_blank" class="thumbnail" href="http://gebimai.com/goods/504">
+                            <img src="http://gebimai.com/wp-content/uploads/2012/04/美之享劲爆鸭脖五只装18Gx5-300x225.jpg" style="width:100%;max-width:100px;" /></a>
+                    </div>
+                    <div class="span4">
+                        <a target="_blank" href="http://gebimai.com/goods/504">美之享劲爆鸭脖五只装18Gx5</a>
+                    </div>
+                    <div class="span3">
+                        <a target="_blank" href="http://gebimai.com/goods/504">50 角/件</a>/
+                        
+                        <a target="_blank" href="http://gebimai.com/goods/504">46 角/件</a>
+                    </div>
+                    <div class="span4">
+                        <a href="Admin/DelStock?redirect=&barcode=1000000000082" class="btn btn-primary">
+                            下架</a>
+                    </div>
+                </div>
+                
+                <div class="row-fluid">
+                    <div class="span1">
+                        <a target="_blank" class="thumbnail" href="http://gebimai.com/goods/480">
+                            <img src="http://gebimai.com/wp-content/uploads/2012/04/洽洽凉茶瓜子150g-300x300.jpg" style="width:100%;max-width:100px;" /></a>
+                    </div>
+                    <div class="span4">
+                        <a target="_blank" href="http://gebimai.com/goods/480">洽洽凉茶瓜子150g</a>
+                    </div>
+                    <div class="span3">
+                        <a target="_blank" href="http://gebimai.com/goods/480">60 角/件</a>/
+                        
+                        <a target="_blank" href="http://gebimai.com/goods/480">48 角/件</a>
+                    </div>
+                    <div class="span4">
+                        <a href="Admin/DelStock?redirect=&barcode=1000000000076" class="btn btn-primary">
+                            下架</a>
+                    </div>
+                </div>
+                
+                <div class="row-fluid">
+                    <div class="span1">
+                        <a target="_blank" class="thumbnail" href="http://gebimai.com/goods/510">
+                            <img src="http://gebimai.com/wp-content/uploads/2012/04/馋大嘴盐焗鸡筋-300x225.jpg" style="width:100%;max-width:100px;" /></a>
+                    </div>
+                    <div class="span4">
+                        <a target="_blank" href="http://gebimai.com/goods/510">馋大嘴盐焗鸡筋</a>
+                    </div>
+                    <div class="span3">
+                        <a target="_blank" href="http://gebimai.com/goods/510">20 角/件</a>/
+                        
+                        <a target="_blank" href="http://gebimai.com/goods/510">14 角/件</a>
+                    </div>
+                    <div class="span4">
+                        <a href="Admin/DelStock?redirect=&barcode=1000000000084" class="btn btn-primary">
+                            下架</a>
+                    </div>
+                </div>
+                
+                <div class="row-fluid">
+                    <div class="span1">
+                        <a target="_blank" class="thumbnail" href="http://gebimai.com/goods/507">
+                            <img src="http://gebimai.com/wp-content/uploads/2012/04/飘飘香口味蹄筋60g-300x225.jpg" style="width:100%;max-width:100px;" /></a>
+                    </div>
+                    <div class="span4">
+                        <a target="_blank" href="http://gebimai.com/goods/507">飘飘香口味蹄筋60g</a>
+                    </div>
+                    <div class="span3">
+                        <a target="_blank" href="http://gebimai.com/goods/507">2 角/件</a>/
+                        
+                        <a target="_blank" href="http://gebimai.com/goods/507">14 角/件</a>
+                    </div>
+                    <div class="span4">
+                        <a href="Admin/DelStock?redirect=&barcode=1000000000083" class="btn btn-primary">
+                            下架</a>
+                    </div>
+                </div>
+                
+     </section>
+    <!-- END OF STOCK -->
+    <section id="manage-senders" class="well">
+        <h4 id="manage-senders-header" class="well-header">
+            送货员管理</h4>
+        <div class="row">
+            <div class="span4">
+                <form action="Admin/AddSender?redirect=" method="post">
+                <label for="alias">
+                    代号（英文字母）：</label>
+                <input type="text" name="alias" class="span4" />
+                <label for="weiboName">
+                    微博昵称</label>
+                <input type="text" name="weiboName" class="span4" />
+                <label for="interval">
+                    不同楼宇之间时间间隔（分钟）</label><input type="text" name="interval" class="span4" />
+                <label for="intervalConnected">
+                    同一楼宇之间时间间隔（分钟）</label><input type="text" name="intervalConnected" class="span4" />
+                <label for="addresses">
+                    可送达的楼宇</label>
+                <textarea name="addresses" id="addresses" class="span4"></textarea>
+                <script type="text/javascript">
+                    $(function () {
+                        $('#addresses').textext({
+                            plugins: 'tags autocomplete ajax arrow prompt',
+                            prompt: 'Add one...',
+                            ajax: {
+                                url: 'Public/GetAddresses?area=%e6%9a%a8%e5%8d%97%e5%a4%a7%e5%ad%a6%e7%8f%a0%e6%b5%b7%e6%a0%a1%e5%8c%ba',
+                                dataType: 'json',
+                                cacheResults: true
+                            }, autocomplete: {
+                                position: 'above'
+                            }
+                        });
+                    });
+                </script>
+                <br>
+                <button class="btn btn-success" type="submit">
+                    增加送货员</button>
+                </form>
+            </div>
+            <div class="span5 existed-senders">
+                <h5 class="well-sub-header">
+                    送货员</h5>
+                
+                <span class="label label-info" title="不同楼宇：60分钟；同一楼宇：5分钟">touge<a href="Admin/DelSender?redirect=&alias=touge"
+                    class="close">&times;</a></span>
+                
+                <span class="label label-info" title="不同楼宇：30分钟；同一楼宇：5分钟">hujichen<a href="Admin/DelSender?redirect=&alias=hujichen"
+                    class="close">&times;</a></span>
+                
+                <span class="label label-info" title="不同楼宇：60分钟；同一楼宇：5分钟">liuxu<a href="Admin/DelSender?redirect=&alias=liuxu"
+                    class="close">&times;</a></span>
+                
+                <span class="label label-info" title="不同楼宇：30分钟；同一楼宇：2分钟">liuyueming<a href="Admin/DelSender?redirect=&alias=liuyueming"
+                    class="close">&times;</a></span>
+                
+            </div>
+        </div>
+    </section>
+    <section id="manage-addresses" class="well">
+        <h4 id="manage-addresses-header" class="well-header">
+            可送达楼宇管理</h4>
+        <div class="row">
+            <div class="span4">
+                <form action="Admin/AddAddress?redirect=" method="post">
+                <label for="address">
+                    楼宇名称：</label>
+                <input type="text" name="address" class="span4" id="address" />
+                <br>
+                <button class="btn btn-success" type="submit">
+                    增加可送达楼宇</button>
+                </form>
+            </div>
+            <div class="span5 existed-senders">
+                <h5 class="well-sub-header">
+                    现在的可送达楼宇</h5>
+                
+                <span class="label label-info">珠海宿舍1栋<a href="Admin/DelAddress?redirect=&address=珠海宿舍1栋"
+                    class="close">&times;</a></span>
+                
+                <span class="label label-info">珠海宿舍2栋<a href="Admin/DelAddress?redirect=&address=珠海宿舍2栋"
+                    class="close">&times;</a></span>
+                
+                <span class="label label-info">珠海宿舍3栋(男生)<a href="Admin/DelAddress?redirect=&address=珠海宿舍3栋(男生)"
+                    class="close">&times;</a></span>
+                
+                <span class="label label-info">珠海宿舍3栋(女生)<a href="Admin/DelAddress?redirect=&address=珠海宿舍3栋(女生)"
+                    class="close">&times;</a></span>
+                
+                <span class="label label-info">珠海宿舍4栋(男生)<a href="Admin/DelAddress?redirect=&address=珠海宿舍4栋(男生)"
+                    class="close">&times;</a></span>
+                
+                <span class="label label-info">珠海宿舍4栋(女生)<a href="Admin/DelAddress?redirect=&address=珠海宿舍4栋(女生)"
+                    class="close">&times;</a></span>
+                
+                <span class="label label-info">珠海宿舍5栋(男生)<a href="Admin/DelAddress?redirect=&address=珠海宿舍5栋(男生)"
+                    class="close">&times;</a></span>
+                
+                <span class="label label-info">珠海宿舍5栋(女生)<a href="Admin/DelAddress?redirect=&address=珠海宿舍5栋(女生)"
+                    class="close">&times;</a></span>
+                
+                <span class="label label-info">珠海宿舍6栋<a href="Admin/DelAddress?redirect=&address=珠海宿舍6栋"
+                    class="close">&times;</a></span>
+                
+                <span class="label label-info">珠海宿舍7栋<a href="Admin/DelAddress?redirect=&address=珠海宿舍7栋"
+                    class="close">&times;</a></span>
+                
+                <span class="label label-info">珠海宿舍8栋<a href="Admin/DelAddress?redirect=&address=珠海宿舍8栋"
+                    class="close">&times;</a></span>
+                
+                <span class="label label-info">珠海宿舍9栋<a href="Admin/DelAddress?redirect=&address=珠海宿舍9栋"
+                    class="close">&times;</a></span>
+                
+            </div>
+        </div>
+    </section>
+</div>
+
+        <hr>
+        <footer>
+        <p>&copy; gebimai.com 2012</p>
+        </footer>
+    </div>
+    <!-- /container -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3>
+                亲，这样不行啊~~</h3>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+            <a href="#" data-dismiss="modal" class="btn btn-primary">确定(Esc)</a>
+        </div>
+    </div>
+    <!-- Le javascript
+================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type src="/js/bootstrap.min.js"></script>
+</body>
+</html>

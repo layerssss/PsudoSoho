@@ -1,0 +1,206 @@
+﻿*
+{
+    margin: 0;
+    padding: 0;
+}
+.mfl-mouse-loading
+{
+    position:absolute;
+    display:none;
+    width:32px;
+    height:32px;
+    z-index:100000;
+}
+
+
+#main
+{
+    width: 920px;
+    margin: 0 auto;
+
+}
+
+#leftNav
+{
+    position: fixed !important;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    z-index: 800;
+    width:auto !important;
+    width:138px;
+}
+#leftNav a,#leftNavHandle
+{
+    display: block;
+    font-size: 0.8em;
+    line-height: 1.5;
+    margin: 3px;
+    padding: 1px;
+    width:130px;
+}
+#toolbar
+{
+    position: fixed !important;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1000;
+    padding: 4px;
+}
+#toolbar a
+{
+    display: block;
+    padding: 1px;
+    float: left;
+    margin: 2px;
+}
+.wizard
+{
+    position: fixed !important;
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    background-color: #eee;
+    width: 400px;
+    overflow: hidden;
+    z-index: 1000;
+	border: 7px solid rgba(0,0,0,0.1);
+	-webkit-border-radius: 3px;
+}
+.wizard .wizard-title
+{
+    padding: 10px;
+    cursor: move;
+}
+.wizard-title .closeBtn{float:right;cursor:pointer;}
+
+.wizard .wizard-progress
+{
+    height: 20px;
+    position: absolute;
+    bottom: 20px;
+    width: 220px;
+    left: 90px;
+}
+.wizard .wizard-text
+{
+    padding: 10px;
+    overflow: hidden;
+    line-height: 1.5;
+	height:130px;
+}
+a.wizard-prev, a.wizard-next
+{
+    display: block;
+    padding: 5px;
+    position: absolute;
+    bottom: 20px;
+	font-size:1em;
+    text-align: center;
+}
+a.wizard-prev
+{
+    left: 20px;
+}
+a.wizard-next
+{
+    right: 20px;
+}
+.mfl-lodge-title
+{
+}
+.mfl-src-attributeIcon, .mfl-src-optionIcon, .mfl-src-roomIcon
+{
+    width: 32px;
+    height: 32px;
+
+}
+.mfl-lodge-attribute .mfl-lodge-icon img,
+.mfl-lodge-newAttribute .mfl-lodge-icon img
+{
+    border: 1px dashed #fff;
+	margin-right:10px;
+}
+.mfl-lodge-attribute .mfl-lodge-icon:hover img,
+.mfl-lodge-newAttribute .mfl-lodge-icon:hover img
+{
+    border-color: #eee;
+	background-color:#f5f5f5;
+}
+.mfl-lodge-attribute .mfl-lodge-icon-selected img, 
+.mfl-lodge-newAttribute .mfl-lodge-icon-selected img,
+.mfl-lodge-attribute .mfl-lodge-icon-selected:hover img,
+.mfl-lodge-newAttribute .mfl-lodge-icon-selected:hover img
+{
+    border-color: #A6D733;
+}
+.mfl-lodge-attribute .mfl-lodge-icons,
+.mfl-lodge-newAttribute .mfl-lodge-icons
+{
+	margin: 20px 0 20px 0;
+	border: 2px dashed #EEE;
+	padding: 15px;
+}
+
+.mfl-lodge-page
+{
+    padding: 2px;
+    border: 1px solid #e5e5e5;
+    margin: 10px;
+    background-color: #FFFFFF;
+    padding:15px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	position:relative;
+}
+.mfl-src-lodgePhotoUrlThumb, .mfl-src-roomPhotoUrlThumb
+{
+    width: 100px;
+    height: 100px;
+}
+.ui-effects-transfer
+{
+    border: 5px dotted gray;
+}
+
+.templateIcon
+{
+    width: 200px;
+    height: 170px;
+}
+.mfl-lodge-template .mfl-currentPage .mfl-list-item .mfl-templatesList
+{
+    height: 80px;
+}
+.mfl-class-optionIcon{
+	background-image:none!important;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+}
+.optionIcon-160px{
+    background-color: #aaa;
+}
+.optionIcon-128px
+{
+    background-color: #80BECE!important;
+}
+.optionIcon-96px
+{
+    background-color: #73A308!important;
+}
+.optionIcon-64px
+{
+    background-color: #F58299!important;
+}
+.optionIcon-32px
+{
+    background-color: #D2BB80!important;
+}
+.optionIcon0px
+{
+    background-color: #9D80BF!important;
+}

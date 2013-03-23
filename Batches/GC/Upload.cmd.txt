@@ -1,0 +1,2 @@
+copy C:\Users\LayersSss\Desktop\goclassing\GCPublishing.zip GCPublishing.zip /Y>temp.txt
+"D:\Program Files\curl\curl.exe" -o "temp.txt" -F "Filedata=@GCPublishing.zip" 

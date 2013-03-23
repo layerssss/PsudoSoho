@@ -1,0 +1,23 @@
+/************ sf-menu *********************/
+	
+.sf-menu {position:relative; padding:14px 0 0 0; width:225px;}
+.sf-menu li {display:block; position:relative;}
+
+.sf-menu li a {text-decoration:none;display:inline-block; height:45px; padding:0 26px 0 21px; background:url(../img/bg-menu.jpg) 0 0 no-repeat #262626; color:#bebebe; font-size:21px; line-height:1.2em; position:relative; overflow:hidden; z-index:5;}
+.sf-menu p{position:relative; z-index:5; top:11px; color:#bebebe;font-size:18px;font-family:'Microsoft YaHei';}
+.sf-menu strong{position:absolute; z-index:4; top:0; left:0; width:100%; height:0; background:url(../img/bg-submenu.jpg) 0 0 repeat-x #a0a0a0;}
+.sf-menu li.current a,.sf-menu li.current-true a{background:url(../img/bg-submenu.jpg) 0 0 repeat-x #a0a0a0 !important;}
+.sf-menu a:hover p,.sf-menu li.sfHover a p {color:#262626}
+.sf-menu li.current a p,.sf-menu li.current-true a p{color:#262626}
+
+.sf-menu li ul{display:none;}
+.sf-menu li:hover ul, .sf-menu li.sfHover ul{position:absolute; left:120px; top:0px; z-index:999; background:none; padding:0; width:800px; height:45px;}
+.sf-menu li:hover ul li, .sf-menu li.sfHover ul li{float:left; margin-right:1px; color:#262626; height:45px;display:block;width:auto;white-space:pre;overflow:hidden;}
+.sf-menu li li a{height:45px; color:#262626; padding:0 18px 0 18px; background:url(../img/bg-submenu.jpg) 0 0 repeat-x #a0a0a0;}
+.sf-menu li li a p{position:relative; top:11px; left:0; color:#262626; text-align:left; display:block; font-size:22px; line-height:1.2em; background:none;}
+.sf-menu li li a span{position:absolute; width:100%; z-index:4; top:0; left:0; background:url(../img/bg-menu.jpg) center 0 no-repeat;}
+
+.sf-menu li.sfHover li a p{color:#262626;font-size:16px;}
+.sf-menu li.sfHover li a:hover p,.sf-menu li.sfHover li.sfHover a p,.sf-menu li.sfHover li.current a p {color:#bebebe; position:relative; z-index:5;}
+
+

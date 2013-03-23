@@ -1,0 +1,1 @@
+﻿<div class="mfl-notify"><span class="mfl-infoTag"></span>$NullMessage$</div>

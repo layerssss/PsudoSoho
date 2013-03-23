@@ -1,0 +1,98 @@
+$MFLRender:$<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>$MFLText:lodgeName$</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="$MFLText:baseUrl$assets/001/css/reset.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="$MFLText:baseUrl$assets/001/css/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="$MFLText:baseUrl$assets/001/css/prettyPhoto.css" type="text/css" media="screen">
+	<script type="text/javascript" src="$MFLText:baseUrl$assets/shared/js/modernizr.js"></script>
+	<script type="text/javascript" language="javascript">
+        var adminBaseUrl='$MFLText:adminBaseUrl$';
+		var bg=new Array();
+		$MFLArray?:specialPhotosBg$
+        bg.push('$MFLArrayText:lodgePhotoUrl$');
+		$MFLArrayEnds:$
+	</script>
+	<script src="$MFLText:baseUrl$assets/001/js/jquery-1.6.2.min.js" type="text/javascript"></script>
+    <script src="$MFLText:baseUrl$assets/001/js/bgSlider.js" type="text/javascript"></script>
+    <script src="$MFLText:baseUrl$assets/001/js/superfish.js" type="text/javascript"></script>
+    <script src="$MFLText:baseUrl$assets/001/js/jquery.prettyPhoto.js" type="text/javascript"></script>
+	<script src="$MFLText:baseUrl$assets/001/js/custom.js" type="text/javascript"></script>
+	<!--[if lt IE 7]>
+   		<div style=' clear: both; text-align:center; position: relative;'> 
+        	<a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" alt="" /></a>
+        </div> 
+	<![endif]-->
+</head>
+<body id="page1">
+<div class="main">
+<!--==============================header=================================-->
+    <header>
+        <h1><a class="logo" href="index.htm" style="background-image:url('$MFLText:specialPhotoLogo0$');">$MFLText:lodgeName$</a></h1> 
+    </header>
+<!--==============================content================================-->
+<section id="content">
+   <div class="container_24">
+       <div class="padding">
+           <div class="wrapper">
+               <div class="col-1">
+               		<nav>
+                       <ul class="sf-menu sf-js-enabled">
+                            <li><a href="index.htm"><p>旅馆介绍</p><strong></strong></a></li>
+                            <li><a href="#"><p>房间介绍</p><strong></strong></a>
+                                <ul>$MFLArray?:lodgeRooms$
+                                   <li><a href="room$MFLArrayText:roomId$.htm"><p>$MFLArrayText:roomName$</p><span></span></a></li>$MFLArrayEnds:$
+                                </ul>
+                            </li>
+                            $MFLArray?:lodgePhotoTypes$
+                            <li class="current-$MFLArrayText:typeCurrent$"><a href="$MFLArrayHtml:typePinyin$.htm"><p>$MFLArrayText:type$</p><strong></strong></a></li>
+                            $MFLArrayEnds:$
+                            <li><a href="Reservation.htm"><p>房间预订</p><strong></strong></a></li>
+                            <li><a href="Location.htm"><p>交通位置</p><strong></strong></a></li>
+                        </ul>
+                    </nav>
+               </div>
+               <div class="col-2">
+               		<div class="box">
+                    	<div class="box-padding">
+                        	<div class="box-1">
+                                <div class="wrapper bg-bottom">
+                                    <div class="box-padding-1">
+                                        <h2>$MFLText:type$</h2>
+                                        $MFLArray?:lodgeTypeAlbum$
+										<div class="typePhotoList">
+											<h3 class="photoTitle">$MFLArrayHtml:lodgePhotoTitle$</h3>
+											<a class="stroke lightbox-image" href="$MFLArrayText:lodgePhotoUrl$" rel="prettyPhoto[gallery1]" title="$MFLArrayText:lodgePhotoContent$">
+												<img src="$MFLArrayText:lodgePhotoUrlMedium$" alt="$MFLArrayText:lodgePhotoTitle$">
+											</a>
+											<p class="photoContent">$MFLArrayText:lodgePhotoContent$</p>
+										</div>
+                                        $MFLArrayEnds:$
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+           </div>
+       </div>
+   </div>    
+</section>
+</div>
+<!--==============================footer=================================-->
+<footer>
+	<div class="main">
+        <div class="extra-box title">
+            <dl class="contact">
+                <dt>$MFLHtml:lodgeContact$</dt>
+            </dl>
+        </div>
+        <div class="wrapper copyRight">
+            <div class="text-bot"><span class="color-3">$MFLHtml:lodgeName$</span> &nbsp; © 2011 <span class="line">|</span>由<a href="$MFLText:MFLBaseUrl$">寻旅·筑家</a>强力驱动&nbsp;|&nbsp;<a href="$MFLText:MFLBaseUrl$Help/Terms.aspx">Privacy Policy</a></div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>$MFLRenderEnds:$

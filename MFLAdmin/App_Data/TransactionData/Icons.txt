@@ -1,0 +1,14 @@
+﻿icon,0,电视
+icon,1,电脑
+icon,2,空调
+icon,3,洗衣机
+icon,4,卫浴
+icon,5,无线网络
+icon,6,冰箱
+icon,7,床
+icon,8,牙刷
+icon,9,楼层
+icon,10,早餐
+icon,11,衣柜
+icon,12,厨房
+icon,13,阳台

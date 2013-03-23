@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" MasterPageFile="../Page.master" AutoEventWireup="true" CodeBehind="Frame.master.cs" Inherits="MyFamilyLodge.FrameAbout" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="header" runat="server">
+    <asp:ContentPlaceHolder ID="header" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderHeader" runat="server">
+			<h2 id="about-header-s" >关于我们</h2>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<div id="about-content">
+		<div class="container">
+			<div class="row">
+
+				<div class="span12">
+					<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+				</div>
+				<div class="span4">
+					<div id="about-sidebar">
+						<div id="about-sidebar-nav" class="sidebar-module">
+							<ul>
+								<li><a href="/About/">关于我们</a></li>
+								<li><a href="/About/Commisions.aspx">我们的使命</a></li>
+								<li><a href="/About/Team.aspx">团队成员</a></li>
+								<li><a href="/About/Contact.aspx">联系我们</a></li>
+								<li><a href="/About/Jobs.aspx">职业机会</a></li>
+							</ul>
+						</div>
+						<div id="about-sidebar-info" class="sidebar-module">
+							<div class="tip-box">
+								<h2>寻旅.筑家</h2>
+							</div>
+							<div class="tip-body">
+								<dl>
+									<dt>服务支持：</dt>
+									<dd><a href="mailto:support@myfamilylodge.com">support@myfamilylodge.com</a></dd>
+									<dt>销售服务：</dt>
+									<dd><a href="mailto:sales@myfamilylodge.com">sales@myfamilylodge.com</a></dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- END FOR Container -->
+	</div><!-- END FOR About Content -->
+</asp:Content>

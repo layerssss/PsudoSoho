@@ -1,0 +1,8 @@
+﻿User-agent: *
+Disallow: /Course/
+Disallow: /Auth/
+Disallow: /Error/
+Disallow: /bootstrap/
+Disallow: /master/
+Disallow: /inline/
+Allow: /

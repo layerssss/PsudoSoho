@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GetMirrorIp.aspx.cs" Inherits="GoClassing.GetMirrorIp" %>

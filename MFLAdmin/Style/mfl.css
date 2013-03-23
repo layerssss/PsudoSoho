@@ -1,0 +1,18 @@
+﻿body {
+}
+.mfl-list-itemTemplate
+{
+}
+a img
+{
+    border-style:none;
+}
+.tooltip{ position: absolute; top: 0; left: 0; z-index: 3; display: none; }
+.mfl-hidden
+{
+    display:none;
+}
+notExistedTag
+{
+    font-style: italic;
+}

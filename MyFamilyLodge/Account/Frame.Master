@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Frame.master.cs" Inherits="MyFamilyLodge.Account.Frame" %><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>我的账户-寻旅.筑家</title>
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Le styles -->
+    
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="/css/custom.css" media="screen"/>
+    <script type="text/javascript">
+        var showError = function (msg) {
+            alert(msg);
+        };
+    </script>
+    <asp:ContentPlaceHolder ID="header" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+	<div class="topbar">
+		<div class="topbar-inner">
+			<div class="container">
+				<a href="/" class="logo">MFL</a>
+                <span class="brand">我的账户</span>
+				<ul class="nav">
+					<li><a href="/Account/Default.aspx">账户摘要</a></li>
+					<li><a href="/Account/Lodges.aspx">旅馆列表</a></li>
+					<li><a href="/Account/Transactions.aspx">我的操作</a></li>
+					<li><a href="/Account/Wizards/Charge.aspx">账户充值</a></li>
+					<li><a href="/Account/Settings.aspx">账户设置</a></li>
+                    <%if (MFLUsers_account.isAdmin)
+                      { %>
+                      <li><a href="/Account/Admin/">管理业务</a></li>
+                    <%} %>
+				</ul>
+				<form method="post" class="pull-right">
+                    <span class="welcomeMesg">欢迎回来，<%=MFLUsers_account.username %></span>
+					<button name="submit" value="退出" type="submit" class="btn primary topbar-login">退出</button>
+				</form>
+			</div>
+		</div>
+	</div>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        fdsafds
+        </asp:ContentPlaceHolder>
+    </div>
+	<div id="footer">
+		<div class="container">
+			<p><a href="/">寻旅.筑家</a>. Copyright &#169; 2011&#8211;2011 by xunnlv.com. All rights reserved. </p><br/>
+			<ul class="sitemap_strip unstyled"> 
+				  <li><a href="/Blog/">团队博客</a></li> 
+				  <li><a href="/About/">关于我们</a></li> 
+				  <li><a href="/About/Contact.aspx">联系我们</a></li> 
+				  <li><a href="/About/Jobs.aspx">工作招聘</a></li> 
+				  <li><a href="/Help/Terms.aspx">使用条款</a></li> 
+			</ul> 
+		</div> 
+	</div>
+    <script type="text/javascript">
+
+        $(function () {
+            $('.nav>li:has(a[href="' + location.pathname + '"])').addClass('active');
+        });
+    </script>
+</body>
+</html>

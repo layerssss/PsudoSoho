@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Root.Master" AutoEventWireup="true" CodeBehind="Home.master.cs"
+    Inherits="GoClassing.Home.Home" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="/Styles/home.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/ftypes.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        $(function () {
+            {
+                var p1hoverd;
+                $("#ctype1Panel").hide().css({
+                    "position": "absolute",
+                    "zIndex": 10000,
+                    "backgroundColor": "#fff",
+                    "border": "2px solid #ccc",
+                    "width": 147
+                }).css({ "borderTop": "0 none", "borderRight": "0 none" }).hover(function () {
+                    p1hoverd = true;
+                }, function () {
+                    $("#ctype1Panel").hide();
+                    p1hoverd = false;
+                });
+                $(".allcourses").hover(function () {
+                    $("#ctype1Panel").show()
+                }, function () {
+                    setTimeout(function () {
+                        if (!p1hoverd) {
+                            $("#ctype1Panel").hide();
+                            p1hoverd = false;
+                        }
+                    }, 10);
+                });
+            } 
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="header" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="left">
+        <div class="links-header">
+            <a href="/Home/" class="ftype ftype-info" title="我的动态">我的动态</a>
+             <a href="/Home/Friends/" class="ftype" style="background-position:0 -132px;"  title="我的好友">我的好友</a> 
+            <a href="/Home/Courses/" class="ftype" style="background-position:0 -18px;" title="我的课程">我的课程</a>
+        </div>
+        <div class="links-header">
+            <a href="/T/All/" class="ftype" style="background-position:0 -132px;" title="所有用户">所有用户</a>
+            <a href="/C/All/" onclick="" class="ftype ftype-course allcourses" title="所有课程">所有课程</a>
+            <asp:Panel ID="ctype1Panel" runat="server" ClientIDMode="Static">
+            </asp:Panel>
+        </div>
+        
+        <h3 class="links-header">
+            在线好友</h3>
+        <div class="links-header">
+        <%
+            this.m.RenderToStream(Response.OutputStream);
+             %>
+             <div class="clearfix"></div>
+        </div>
+    </div>
+    <div id="right"><asp:ContentPlaceHolder ID="right" runat="server">
+    </asp:ContentPlaceHolder>
+    </div>
+    
+    
+    <div id="middle"><div id="notifications"></div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <div style="clear:both;"></div>
+    </div>
+</asp:Content>

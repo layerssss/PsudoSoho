@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>$title$</title>
+    <link href="$baseUrl$Styles/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <link href="$baseUrl$Styles/root.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="header">
+        <div id="header-content">
+            <a href="$baseUrl$" title="上课网">
+                <img src="$baseUrl$Styles/header-logo.png" alt="Goclassing" /></a>
+        </div>
+    </div>
+    <div id="main">
+
+    $GCMsgRender:$
+    $GCMsgArray:msgs$
+    <div class="mfl-list-item ui-widget-content" style="height:50px; padding:3px;">
+<span class="floatright" style="font-size:0.9em;color:#aaa;">$GCMsgArrayText:time$</span>
+<div class="teacher" style="height:70px">
+    <a href="$baseUrl$/T/$GCMsgArrayText:fromUsername$"><img src="$baseUrl$/Avatars/$GCMsgArrayText:fromId$.small.jpg" /></a>
+    <span class="mfl-tags-fromCoop mfl-tags-coop">$GCMsgArrayTags:fromCoop$<a href="$baseUrl$/$GCMsgArrayTagsText:$/" title="$GCMsgArrayTagsText:$"><img alt="$GCMsgArrayTagsText:$" title="$GCMsgArrayTagsText:$" src="$baseUrl$/Styles/Tags/$GCMsgArrayTagsText:$.gif" /></a>$GCMsgArrayTagsEnds:$</span>
+    <span class="mfl-teacherTruename">$GCMsgArrayHtml:fromTruename$</span> </div>
+<a href="$baseUrl$/?ReturnUrl=%2FMessage.aspx%3Fid%3D$GCMsgArrayText:id$">$GCMsgArrayText:content$</a>
+</div>
+    $GCMsgArrayEnds:msgs$
+    该消息为系统自动发出，请勿回复，如果你想退订此消息或者限制此类消息的频率，请点击:<br /><a href="$baseUrl$?ReturnUrl=%2FHome%2FSecurity%2F%23Mailing">$baseUrl$?ReturnUrl=%2FHome%2FSecurity%2F%23Mailing</a>
+$GCMsgRenderEnds:$
+    <div id="foot">
+            <a href="$baseUrl$Help/">使用帮助</a> <a href="$baseUrl$Privacy/">隐私声明</a>
+            <div class="floatright">
+                版权所有 上课网  Goclassing.com © 2011</div>
+        </div>
+    </div>
+</body>
+</html>

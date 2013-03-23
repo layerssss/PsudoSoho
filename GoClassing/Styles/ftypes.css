@@ -1,0 +1,120 @@
+﻿.ftype-private
+{
+    background-position: 0 -1375px;
+}
+.ftype-share
+{
+    background-position: 0 -158px;
+}
+.ftype-doc
+{
+    background-position: 0 -610px;
+}
+.ftype-pdf
+{
+    background-position: 0 -680px;
+}
+.ftype-xsl
+{
+    background-position: 0 -631px;
+}
+.ftype-ppt
+{
+    background-position: 0 -657px;
+}
+.ftype-video
+{
+    background-position: 0 -781px;
+}
+.ftype-assign
+{
+    background-position: 0 -286px;
+}
+.ftype-sound
+{
+    background-position: 0 -1353px;
+}
+.ftype-discuz
+{
+    background-position: 0 -1223px;
+}
+.ftype-notify
+{
+    background-position: 0 -855px;
+}
+.ftype-course
+{
+    background-position:0 -16px;
+}
+.ftype-text
+{
+    background-position:0 -402px;
+}
+.ftype-processing
+{
+    background-position:0 -456px;
+}
+.ftype-ctype1
+{
+    background-position:0 -830px;
+}
+.ftype-ctype2
+{
+    background-position: 0 -1130px;
+}
+.ftype-ctype3
+{
+    background-position: 0 -342px;
+}
+.ftype-friend
+{
+    background-position:0 -132px;
+}
+.ftype-upload
+{
+    background-position:0 -509px;
+}
+.ftype-module
+{
+       background-position:0 -90px;
+}
+.ftype-home
+{
+       background-position:0 -232px;
+}
+.ftype-info,.mfl-infoTag
+{
+    background-position:0 -1309px;
+}
+.ftype-search
+{
+    background-position: 0 -1154px;
+}
+.ftype-unknown
+{
+    background-position:0 -430px;
+}
+.ftype,.mfl-infoTag
+{
+    padding-left:20px;
+    background-image:url('icons_sprite.png');
+    background-repeat:no-repeat;
+    overflow:hidden;
+    white-space:nowrap;
+}
+.ftype.ftype-removed
+{
+    padding-left:0px;
+    background-image:none;
+}
+.ftype.ftype-removed img
+{
+    border:none;
+}
+.mfl-infoTag
+{
+    float:left;
+    
+    display:block;
+    height:20px;
+}

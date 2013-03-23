@@ -1,0 +1,48 @@
+$IncludeText:pre_content$
+                <div class="row2">
+                	<div class="wrapper">
+                    	<div class="grid_14 alpha">
+                        	<div class="slider">
+                            <ul class="items">
+								$MFLArray?:specialPhotosSlide$
+								<li> 
+								<img src="$MFLArrayText:lodgePhotoUrlLarge$"  alt="$MFLArrayText:lodgePhotoTitle$" /> </a>
+								</li>
+								$MFLArrayEnds:$
+                             </ul>
+                             </div>
+                        </div>
+                        <div class="grid_5">
+                        	<a href="#"><img src="$MFLText:specialPhotoFeature0$" alt=""></a>
+                        </div>
+                        <div class="grid_5">
+                        	<a href="#"><img src="$MFLText:specialPhotoFeature1$" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</header>
+		<!-- content -->
+		<section id="content">
+			<div class="container_24">
+                <div class="wrapper">
+                    <div class="grid_14 alpha">
+                        <div class="box1">
+                            <div class="padding">
+                                <div class="title">$MFLText:lodgeName$ 欢迎你！</div>
+                                <div class="box-text">
+									$MFLHtml:lodgeDescription$
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid_10">
+                        <div class="pad-left">
+                            <div class="title1 title1-top"><img src="$MFLText:baseUrl$assets/004/images/marker.gif" alt="" class="img-right">我们的位置</div>
+							<a href="Location.htm">
+									<img src="http://api.map.baidu.com/staticimage?width=360&height=370&zoom=12&center=$MFLText:lodgeLongtitude$,$MFLText:lodgeLatitude$&markers=$MFLText:lodgeLongtitude$,$MFLText:lodgeLatitude$" class="map" />
+									</a>
+                        </div>    
+                    </div>
+                </div> 
+$IncludeText:post_content$

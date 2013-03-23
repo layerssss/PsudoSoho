@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Blank.master.cs" Inherits="GoClassing.Blank" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link rel="SHORTCUT ICON" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="Bookmark" href="/favicon.ico" type="image/x-icon"/>
+    <link href="/Styles/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/ftypes.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/root.css" rel="stylesheet" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <input type="submit" name="S1" style="float: right; visibility: hidden; width: 1px;
+        position: absolute;" />
+    <div id="header">
+        <div id="header-content">
+            <div class="floatright" style="position: relative; width: 200px;">
+            </div>
+            <a href="/" title="上课网">
+                <img src="/styles/header-logo.png" title="上课网" alt="上课网" /></a>
+        </div>
+    </div>
+    <div id="main">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <div id="foot">
+            <a href="../Help/">使用帮助</a> <a href="../Privacy/">隐私声明</a>
+            <div class="floatright">
+                版权所有 上课网 Goclassing.com © 2011</div>
+        </div>
+    </div>
+    </form>
+
+
+    <!--<%Response.Write(Request.ServerVariables["REMOTE_ADDR"]);%>-->
+    <iframe src="about:blank" id="mfl-hidden-iframe" style="display: none" name="mfl-hidden-iframe">
+    </iframe>
+</body>
+</html>

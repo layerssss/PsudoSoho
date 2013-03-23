@@ -1,0 +1,24 @@
+	<h2>$MFLText:roomName$</h2>			
+	<div class="roomAttributes">
+		<div class="roomAttributesInner">
+			<ul>
+				$MFLArray?:roomAttributes$
+				<li>
+				<span class="icon"><img src="$MFLText:baseUrl$assets/shared/img/blank.gif" style="width:32px;height:32px;background-image:url('$MFLText:adminBaseUrl$/Style/lodge/icons_sprite.png');$MFLArrayText:attributeIcon$" /></span>
+				<span class="attributeName">$MFLArrayText:attributeName$:
+				</span>
+				<span class="optionName">
+				$MFLArrayText:optionName$</span>
+				</li>
+				$MFLArrayEnds:$
+			</ul>
+		</div>
+	</div>
+	<div class="room-gallery">
+	$MFLArray?:roomAlbum$
+	<div class="roomPhotoList clearfix">
+		<a class="stroke lightbox-image" href="$MFLArrayText:roomPhotoUrl$" rel="prettyPhoto[gallery1]" title="$MFLArrayText:roomPhotoContent$">
+			<img src="$MFLArrayText:roomPhotoUrlSmall$" alt="$MFLArrayText:roomPhotoTitle$"/>
+		</a>
+	</div>
+	$MFLArrayEnds:$

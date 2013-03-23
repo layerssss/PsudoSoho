@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8A60AF80-A09B-4E97-B634-E3837560F2F0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MFLAdmin</RootNamespace>
+    <AssemblyName>MFLAdmin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Noesis.Javascript">
+      <HintPath>..\..\..\..\..\Desktop\Dlls\Noesis.Javascript.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="404.htm" />
+    <Content Include="App_Data\comments\compiled.js" />
+    <Content Include="App_Data\comments\root.js" />
+    <Content Include="App_Data\comments\RootDumper.js" />
+    <Content Include="App_Data\RootDumper.js" />
+    <Content Include="App_Data\templateScripts\room.htm.js" />
+    <Content Include="App_Data\templateScripts\roomQuery.js" />
+    <Content Include="App_Data\TransactionData\Icons.txt" />
+    <Content Include="Default.aspx" />
+    <Content Include="GCPicBrokerProvider.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="lodgeIconMarkupsSample.htm" />
+    <Content Include="Lodge\Data.aspx" />
+    <Content Include="Lodge\Default.aspx" />
+    <Content Include="Lodge\GetTestJson.aspx" />
+    <Content Include="Lodge\Test.htm" />
+    <Content Include="Lodge\WebForm1.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Messages\dummy.txt" />
+    <Content Include="Scripts\easyTooltip.js" />
+    <Content Include="Scripts\jquery-1.6.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.15.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="Scripts\jquery.ui.datepicker-zh-CN.js" />
+    <Content Include="Scripts\JScript1.js" />
+    <Content Include="Scripts\mfl-admin.js" />
+    <Content Include="Scripts\mfl-lodge-icon.js" />
+    <Content Include="Scripts\mfl-lodge-pages.js" />
+    <Content Include="Scripts\mfl-lodge.js" />
+    <Content Include="Scripts\mfl.js" />
+    <None Include="Service References\LodgeService\webservice1.disco" />
+    <Content Include="State.aspx" />
+    <Content Include="Style\custom-theme\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Style\custom-theme\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Style\custom-theme\images\ui-bg_glass_30_8fbe21_1x400.png" />
+    <Content Include="Style\custom-theme\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Style\custom-theme\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Style\custom-theme\images\ui-bg_glass_75_f3f5f0_1x400.png" />
+    <Content Include="Style\custom-theme\images\ui-bg_highlight-soft_30_8fbe21_1x100.png" />
+    <Content Include="Style\custom-theme\images\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="Style\custom-theme\images\ui-icons_222222_256x240.png" />
+    <Content Include="Style\custom-theme\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Style\custom-theme\images\ui-icons_454545_256x240.png" />
+    <Content Include="Style\custom-theme\images\ui-icons_888888_256x240.png" />
+    <Content Include="Style\custom-theme\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Style\custom-theme\jquery-ui-1.8.16.custom.css" />
+    <Content Include="Style\img\cross_circle.png" />
+    <Content Include="Style\img\footer-bg.jpg" />
+    <Content Include="Style\img\refresh.gif" />
+    <Content Include="Style\img\refresh.png" />
+    <Content Include="Style\img\refresh_black.gif" />
+    <Content Include="Style\lodge\search.png" />
+    <Content Include="Style\lodge\toggle.png" />
+    <Content Include="Style\lodge\wizard-disabler.png" />
+    <Content Include="Style\mfl-admin-style.css" />
+    <Content Include="Style\noPreview.png" />
+    <Content Include="Style\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Style\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Style\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Style\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Style\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Style\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Style\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Style\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Style\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Style\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Style\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Style\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Style\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Style\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Style\ui-lightness\jquery-ui-1.8.16.custom.css" />
+    <Content Include="templates\001\files\index.htm" />
+    <Content Include="templates\001\files\Location.htm" />
+    <Content Include="templates\001\files\Reservation.htm" />
+    <Content Include="templates\001\files\room.htm" />
+    <Content Include="templates\001\files\type.htm" />
+    <Content Include="templates\001\previewIcon.png" />
+    <Content Include="templates\001\previewUrl.txt" />
+    <Content Include="templates\001\properties.txt" />
+    <Content Include="templates\001\specialPhotoTypes.txt" />
+    <Content Include="templates\002\files\index.htm" />
+    <Content Include="templates\002\files\Location.htm" />
+    <Content Include="templates\002\files\Location.htm.js" />
+    <Content Include="templates\002\files\OurStory.htm" />
+    <Content Include="templates\002\files\OurStory.htm.js" />
+    <Content Include="templates\002\files\Reservation.htm" />
+    <Content Include="templates\002\files\room.htm" />
+    <Content Include="templates\002\files\room.htm.js" />
+    <Content Include="templates\002\files\root.js" />
+    <Content Include="templates\002\files\type.htm" />
+    <Content Include="templates\002\files\type.htm.js" />
+    <Content Include="templates\002\previewIcon.png" />
+    <Content Include="templates\002\previewUrl.txt" />
+    <Content Include="templates\002\properties.txt" />
+    <Content Include="templates\002\specialPhotoTypes.txt" />
+    <Content Include="templates\003\files\index.htm" />
+    <Content Include="templates\003\files\Location.htm" />
+    <Content Include="templates\003\files\OurStory.htm" />
+    <Content Include="templates\003\files\Reservation.htm" />
+    <Content Include="templates\003\files\room.htm" />
+    <Content Include="templates\003\files\room.htm.js" />
+    <Content Include="templates\003\files\root.js" />
+    <Content Include="templates\003\files\type.htm" />
+    <Content Include="templates\003\files\type.htm.js" />
+    <Content Include="templates\003\previewIcon.png" />
+    <Content Include="templates\003\previewUrl.txt" />
+    <Content Include="templates\003\properties.txt" />
+    <Content Include="templates\003\specialPhotoTypes.txt" />
+    <Content Include="templates\004\files\index.htm" />
+    <Content Include="templates\004\files\Location.htm" />
+    <Content Include="templates\004\files\Reservation.htm" />
+    <Content Include="templates\004\files\reservation.htm.js" />
+    <Content Include="templates\004\files\room.htm" />
+    <Content Include="templates\004\files\room.htm.js" />
+    <Content Include="templates\004\files\root.js" />
+    <Content Include="templates\004\files\type.htm" />
+    <Content Include="templates\004\files\type.htm.js" />
+    <Content Include="templates\004\previewIcon.png" />
+    <Content Include="templates\004\previewUrl.txt" />
+    <Content Include="templates\004\properties.txt" />
+    <Content Include="templates\004\specialPhotoTypes.txt" />
+    <Content Include="templates\005\files\index.htm" />
+    <Content Include="templates\005\files\index.htm.js" />
+    <Content Include="templates\005\files\room.htm" />
+    <Content Include="templates\005\files\room.htm.js" />
+    <Content Include="templates\005\files\type.htm" />
+    <Content Include="templates\005\files\type.htm.js" />
+    <Content Include="templates\005\previewIcon.png" />
+    <Content Include="templates\005\previewUrl.txt" />
+    <Content Include="templates\005\properties.txt" />
+    <Content Include="templates\005\specialPhotoTypes.txt" />
+    <Content Include="templates\NotSelected\files\default.htm" />
+    <Content Include="templates\NotSelected\previewIcon.png" />
+    <Content Include="templates\NotSelected\previewUrl.txt" />
+    <Content Include="templates\NotSelected\properties.txt" />
+    <Content Include="templates\NotSelected\specialPhotoTypes.txt" />
+    <Content Include="WebService.asmx" />
+    <None Include="Service References\LodgeService\configuration91.svcinfo" />
+    <None Include="Service References\LodgeService\configuration.svcinfo" />
+    <None Include="Service References\LodgeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Style\loading.gif" />
+    <Content Include="Style\blank.gif" />
+    <Content Include="Style\lodge\add.png" />
+    <Content Include="Style\lodge\bg-form-field.gif" />
+    <Content Include="Style\lodge\button.png" />
+    <Content Include="Style\lodge\cross.png" />
+    <Content Include="Style\lodge\cross_circle.png" />
+    <Content Include="Style\lodge\cross_grey_small.png" />
+    <Content Include="Style\lodge\exclamation.png" />
+    <Content Include="Style\lodge\icons_sprite.png" />
+    <Content Include="Style\lodge\information.png" />
+    <Content Include="Style\lodge\logo.png" />
+    <Content Include="Style\lodge\menu_sprite.png" />
+    <Content Include="Style\lodge\pattern.png" />
+    <Content Include="Style\lodge\pencil.png" />
+    <Content Include="Style\lodge\tick_circle.png" />
+    <Content Include="Style\mfl-lodge-style.css" />
+    <Content Include="Scripts\mfl-lodge-wizard.js" />
+    <Content Include="Style\mfl-lodge.css" />
+    <Content Include="Style\mfl.css" />
+    <Content Include="Style\south-street\images\ui-bg_glass_55_fcf0ba_1x400.png" />
+    <Content Include="Style\south-street\images\ui-bg_gloss-wave_100_ece8da_500x100.png" />
+    <Content Include="Style\south-street\images\ui-bg_highlight-hard_100_f5f3e5_1x100.png" />
+    <Content Include="Style\south-street\images\ui-bg_highlight-hard_100_fafaf4_1x100.png" />
+    <Content Include="Style\south-street\images\ui-bg_highlight-hard_15_459e00_1x100.png" />
+    <Content Include="Style\south-street\images\ui-bg_highlight-hard_95_cccccc_1x100.png" />
+    <Content Include="Style\south-street\images\ui-bg_highlight-soft_25_67b021_1x100.png" />
+    <Content Include="Style\south-street\images\ui-bg_highlight-soft_95_ffedad_1x100.png" />
+    <Content Include="Style\south-street\images\ui-bg_inset-soft_15_2b2922_1x100.png" />
+    <Content Include="Style\south-street\images\ui-icons_808080_256x240.png" />
+    <Content Include="Style\south-street\images\ui-icons_847e71_256x240.png" />
+    <Content Include="Style\south-street\images\ui-icons_8dc262_256x240.png" />
+    <Content Include="Style\south-street\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Style\south-street\images\ui-icons_eeeeee_256x240.png" />
+    <Content Include="Style\south-street\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Style\south-street\jquery-ui-1.8.15.custom.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Site.Master" />
+    <None Include="Service References\LodgeService\webservice1.wsdl" />
+    <None Include="templates\002\files\int_content.Include" />
+    <None Include="templates\002\files\post_content.Include" />
+    <None Include="templates\002\files\pre_content.Include" />
+    <None Include="templates\003\files\post_content.Include" />
+    <None Include="templates\003\files\pre_content.Include" />
+    <None Include="templates\004\files\post_content.Include" />
+    <None Include="templates\004\files\pre_content.Include" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GCPicBrokerProvider.aspx.cs">
+      <DependentUpon>GCPicBrokerProvider.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GCPicBrokerProvider.aspx.designer.cs">
+      <DependentUpon>GCPicBrokerProvider.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Lodge\Data.aspx.cs">
+      <DependentUpon>Data.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lodge\Data.aspx.designer.cs">
+      <DependentUpon>Data.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lodge\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lodge\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lodge\GetTestJson.aspx.cs">
+      <DependentUpon>GetTestJson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lodge\GetTestJson.aspx.designer.cs">
+      <DependentUpon>GetTestJson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lodge\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lodge\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PinyinConverter.cs" />
+    <Compile Include="PinyinGlossary.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\LodgeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="State.aspx.cs">
+      <DependentUpon>State.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="State.aspx.designer.cs">
+      <DependentUpon>State.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService.asmx.cs">
+      <DependentUpon>WebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Messages\RenderCache\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\GCPicBroker\GCPicBroker.csproj">
+      <Project>{69B4436E-2CBC-4E1D-A78D-6B0F0999FB13}</Project>
+      <Name>GCPicBroker</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\GCServiceBase\GCServiceBase.csproj">
+      <Project>{0D574436-630B-4E01-B14B-396E1FEF8251}</Project>
+      <Name>GCServiceBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\MFLJson\MFLJson.csproj">
+      <Project>{8B6A0DA1-C625-4A8F-80CE-F1072E457DA1}</Project>
+      <Name>MFLJson</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\MFL\MFL.csproj">
+      <Project>{522865D6-1325-4527-A671-6964D96CC236}</Project>
+      <Name>MFL</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\YupooAPI.NET\YupooAPI.NET.csproj">
+      <Project>{FD72D2F5-1FF2-4288-B4B7-ED82D1CD8A5E}</Project>
+      <Name>YupooAPI.NET</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\LodgeService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>44950</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/MFLAdmin</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://testing.admin.xunnlv.com/</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

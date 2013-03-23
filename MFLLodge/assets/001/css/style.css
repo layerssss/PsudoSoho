@@ -1,0 +1,299 @@
+@import"superfish.css";
+/* Getting the new tags to behave */
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {display:block;}
+mark, rp, rt, ruby, summary, time {display:inline;}
+
+/* ===============清理浮动================= */
+.clearfix:after {
+	visibility:hidden;
+	display:block;
+	font-size:0;
+	content:" ";
+	clear:both;
+	height:0;
+}
+.clearfix {
+	zoom:1;
+}
+/*======================= Global properties ================= */
+html {width:100%;}
+
+body { 	 
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px; 
+	color:#515050;
+	min-width:960px;
+	background:#151515;
+	height:100%;
+	padding:0px 0 0 0;
+}
+
+.main {
+	width:960px; 	
+	padding:0px 0 0 0;
+	margin:0 auto;
+	line-height:1.3846em;
+	position:relative;
+	background: none;
+	z-index:2;
+}
+
+.bg-bottom {
+	width:100%; 
+	background:url(../img/line-1.png) 0 bottom repeat-x;
+}
+
+
+a {color:#8c8c8c; outline:none;}
+a:hover {text-decoration:none;}
+
+.clear {
+	clear:both; 
+	width:100%; 
+	line-height:0; 
+	font-size:0;
+}
+
+.col-1, .col-2, .col-3{float:left;}
+.column-1, .column-2, .column-3 {float:left;}  
+
+.wrapper {width:100%; overflow:hidden; position:relative;}
+.extra-box {overflow:hidden;}
+
+/*********************************header*************************************/
+header {
+	height:192px; 
+	width:100%; 
+	position:relative; 
+	z-index:1; 
+	background:none; 
+	padding:0px 0 0 0;
+}
+
+h1 {
+	padding:57px 0 0 29px; 
+	position:relative;
+}
+.logo {
+	display:block; 
+	width:265px; 
+	height:130px; 
+	text-indent:-5000px; 
+}
+
+/*********************************content*************************************/
+#content {
+	width:100%; 
+	padding:0px 0px 0px 0px; 
+	z-index:2; 
+	position:relative;
+}
+.padding{
+	padding:0 0 101px 40px;
+}
+.col-1 {
+	width:150px; 
+	position:relative; 
+	z-index:2; 
+	margin-right:72px;
+}
+.col-2 {
+	width:690px; 
+	position:relative; 
+	z-index:1;
+}
+.col-3 {
+	width:155px; 
+}
+
+h2,h3 {
+	font-family:'Microsoft YaHei';
+	font-size:20px; 
+	line-height:1.3em; 
+	color:#eee; 
+	margin:0 0 10px 0; 
+	letter-spacing:3px;
+	padding:5px 15px;
+	background:#555;
+	display:inline-block;
+}
+h3{font-size:14px;}
+
+/***************** boxex *******************************/
+.box {
+	width:100%; 
+	background:url(../img/bg-box.png) 0 0 repeat; 
+	position:relative;
+}
+.box-1 {
+	width:100%; 
+	background:url(../img/bg-box-1.png) 0 0 repeat;
+	position:relative;
+}
+
+.box-padding {padding:15px 15px 15px 15px;}
+.box-padding-1 {padding:44px 41px 41px 39px;}
+.box-padding-2 {padding:38px 41px 82px 39px;}
+.box-padding-3 {padding:48px 41px 26px 39px;}
+.box-padding-4 {padding:37px 41px 63px 39px;}
+.box-padding-5 {padding:48px 41px 10px 39px;}
+.box-padding-6 {padding:7px 41px 5px 39px;}
+.box-padding-7 {padding:48px 39px 26px 39px;}
+.box-padding-8 {padding:37px 41px 48px 39px;}
+.box-padding-9 {padding:48px 41px 119px 39px;}
+.box-padding-10 {padding:38px 41px 74px 39px;}
+.box-padding-11 {padding:48px 41px 41px 39px;}
+.box-padding-12 {padding:48px 41px 21px 40px;}
+.box-padding-13 {padding:20px 41px 66px 40px;}
+.box-padding-14 {padding:38px 35px 76px 33px;}
+
+/****************************footer************************/
+footer {
+	width:100%; 
+	padding:62px 0px 82px 0px; 
+	background:url(../img/bg-footer.gif) 0 0 repeat-x #151515; 
+	position:relative; 
+	z-index:2;
+}
+
+.text-bot {
+	line-height:1.2em; 
+	color:#b1b1b1; 
+	padding:0px 0px 0px 2px; 
+	text-align:left; 
+	text-transform:uppercase;
+}
+.text-bot span.line{
+	margin: 0px 9px 0 5px; 
+	color:#393939;
+}
+.text-bot a {
+	color:#393939; 
+	text-decoration:none;
+}
+.text-bot a:hover {
+	text-decoration:underline;
+}
+
+.contact {
+	line-height:18px; 
+	color:#3f3f3f; 
+	text-transform:uppercase; 
+	padding:0 0 0 2px;
+}
+.contact dd span {
+	float:left; 
+	width:68px;
+}
+.copyRight{margin-top:20px;}
+/*************Lightbox image***************/
+.lightbox-image {
+	position:relative;
+	overflow:hidden;
+	display:inline-block;
+	z-index:1;
+}
+
+.lightbox-image img {
+	position:relative;
+	z-index:2;
+	background:#f1f1f1;
+}
+
+.lightbox-image span {
+	display:block;
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background:url(../img/magnify.png) no-repeat 50% 50%;
+	z-index:1;
+	}
+
+/***************** stroke *******************/
+.stroke {
+	position:relative;
+	overflow:hidden;
+	display:inline-block;
+	z-index:1;
+}
+.stroke:hover {
+	box-shadow:-6px -6px 0 #fff, -6px 6px 0 #fff, 6px -6px 0 #fff, 6px 6px 0 #fff;
+	-moz-box-shadow:-6px -6px 0 #fff, -6px 6px 0 #fff, 6px -6px 0 #fff, 6px 6px 0 #fff;
+	-webkit-box-shadow:-6px -6px 0 #fff, -6px 6px 0 #fff, 6px -6px 0 #fff, 6px 6px 0 #fff;
+	border-radius:2px;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	z-index:99;
+}
+.stroke:hover img{
+	border-radius:0px !important;
+	-moz-border-radius:0px !important;
+	-webkit-border-radius:0px !important;
+}
+
+/***************** 旅馆相册缩略图 *******************/
+li.thumbnail{
+overflow:hidden;
+width:180px;height:180px;
+display:block;float:left;
+margin:10px 10px 10px 0;border:3px solid #eee;
+}
+
+/***************** TYPE相册缩略图 *******************/
+div.typePhotoList a{overflow:hidden;width:580px;height:480px;}
+div.typePhotoList {padding:20px 0;margin-bottom:40px;border-bottom:1px dashed #eee;}
+h3.photoTitle{
+padding:0;
+margin-bottom:10px;background:#777;
+  -webkit-border-radius: 3px; 
+     -moz-border-radius: 3px; 
+          border-radius: 3px;       
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+p.photoContent{margin:10px 0;padding:10px 0;}
+
+/***************** 单个房间ROOM *******************/
+div.roomAttributes{}
+div.roomAttributes ul li{
+	padding:18px 10px;
+	margin-bottom:5px;
+    border:1px #e4e4e4 solid;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #f8f8f8;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f4f4f4)); 
+    background-image: -webkit-linear-gradient(top, #f8f8f8, #f4f4f4); 
+    background-image:    -moz-linear-gradient(top, #f8f8f8, #f4f4f4); 
+    background-image:     -ms-linear-gradient(top, #f8f8f8, #f4f4f4); 
+    background-image:      -o-linear-gradient(top, #f8f8f8, #f4f4f4); 
+    background-image:         linear-gradient(top, #f8f8f8, #f4f4f4);
+}
+
+div.roomAttributes ul li span.icon{
+    width:43px;
+    border-right:1px solid #efefef;
+    padding:10px;
+}
+div.roomAttributes ul li span.attributeName{
+	width:55px;
+    border-right:1px solid #efefef;
+    border-left:1px solid #f9f9f9;
+    padding:10px;
+    color:#5c8206;
+    font-size:15px;
+    text-align:center;
+}
+div.roomAttributes ul li span.optionName{
+	width:55px;
+    border-right:1px solid #efefef;
+    border-left:1px solid #f9f9f9;
+    padding:10px;
+    color:#5c8206;
+    font-size:15px;
+    text-align:center;
+}
+/************Reservation样式*************/
+.resv-note>div{margin-bottom:20px;}

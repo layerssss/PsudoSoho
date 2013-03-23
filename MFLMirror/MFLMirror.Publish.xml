@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="ftp://222.186.191.104/wwwroot/" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="配置文件1" publishMethod="FTP" replaceMatchingFiles="True" userName="tangzx" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATB3WlHuuMkC5oO4ryJCULgAAAAACAAAAAAAQZgAAAAEAACAAAADMG8nQuuUeG83Z9J1q+3AofyKs0tRqa8qVZyVGD6qWaAAAAAAOgAAAAAIAACAAAAA+DVzel34ut5wtI8Vd+RN1DIe2ZhA2ZGz5ANDd0zllOBAAAADlutLApfZ6N9GOt8BCfFrAQAAAADTppDw861pjaX71GFGtq4leg8BcvKqsDpZomn68EuJIhfBlXT+rliDKfP5SCG1Q/RTR/AJ6N63/a42XeYteuxw=" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="03/18/2012 00:11:25" />
+    <file relUrl="localhost/Default.aspx" publishTime="12/23/2011 10:06:54" />
+    <file relUrl="WebServices.asmx" publishTime="12/23/2011 10:06:55" />
+    <file relUrl="bin/GCPicBroker.pdb" publishTime="03/17/2012 19:27:02" />
+    <file relUrl="bin/MFLMirror.pdb" publishTime="03/17/2012 19:27:08" />
+    <file relUrl="GetIp.aspx" publishTime="12/23/2011 10:06:55" />
+    <file relUrl="bin/YupooAPI.NET.dll" publishTime="03/17/2012 19:26:56" />
+    <file relUrl="bin/GCServiceBase.dll" publishTime="03/17/2012 19:26:57" />
+    <file relUrl="bin/YupooAPI.NET.pdb" publishTime="03/17/2012 19:26:56" />
+    <file relUrl="localhost/PageNotFound.aspx" publishTime="12/23/2011 10:06:54" />
+    <file relUrl="Global.asax" publishTime="12/23/2011 10:06:55" />
+    <file relUrl="bin/GCServiceBase.pdb" publishTime="03/17/2012 19:26:56" />
+    <file relUrl="Default.aspx" publishTime="12/23/2011 10:06:55" />
+    <file relUrl="bin/MFLMirror.dll" publishTime="03/17/2012 19:27:08" />
+    <file relUrl="bin/GCPicBroker.dll" publishTime="03/17/2012 19:27:02" />
+  </publishProfile>
+</publishData>

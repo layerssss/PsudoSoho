@@ -1,0 +1,80 @@
+$IncludeText:pre_content$
+                        <div class="kwicks-box">
+                        	<div class="wrapper">
+                            	<ul class="kwicks horizontal" >
+                                    $MFLArray?:specialPhotosSlide$<li class="m1"><a href="$MFLArrayText:lodgePhotoUrl$" rel="prettyPhoto[gallery2]" title="$MFLArrayText:lodgePhotoContent$">
+														<img src="$MFLArrayText:lodgePhotoUrlLarge$"  alt="$MFLArrayText:lodgePhotoTitle$">
+													</a></li>
+                                    $MFLArrayEnds:$
+                                </ul>
+                            </div>    
+                        </div>
+                    $IncludeText:int_content$
+                <div class="container_24">
+                            <div class="wrapper indent1">
+
+                            	<div class="grid_7 alpha">
+                                	<div class="box2">
+                                    	<div class="padding">
+                                        <div class="pad-left1">
+                                        	<div class="box2-title">我们的故事</div>
+                                            <div class="box2-border"></div>
+                                            <span class="font italic family text-left">
+                                            $MFLHtml:TemplatePropertyStory$
+                                            </span>
+                                        </div>    
+                                            <div class="wrapper">
+                                             <div class="link1"><a href="OurStory.htm"><em><em>更多..</em></em></a></div>
+                                            </div> 
+                                        </div>
+                                        
+                                    	<div class="padding">
+                                        <div class="">
+                                        	<div class="pad-left1 box2-title">旅馆展示</div>
+                                            <div class="box2-border"></div>
+                                            <ul id="lodgeAlbum">
+											$MFLArray?:lodgeAlbum$
+											<li class="thumbnail lightbox-image">
+													<a href="$MFLArrayText:lodgePhotoUrl$" rel="prettyPhoto[gallery1]" title="$MFLArrayText:lodgePhotoContent$">
+														<img src="$MFLArrayText:lodgePhotoUrlSmall$"  alt="$MFLArrayText:lodgePhotoTitle$">
+													</a>
+											</li>
+											$MFLArrayEnds:$
+										</ul>
+                                        </div>    
+                                            <div class="wrapper">
+                                             <div class="link1"><a href="ZhaoPianZhanshi.htm"><em><em>更多..</em></em></a></div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid_17">
+                                	<div class="border1"></div>
+
+                                    <div class="pad-left">
+                                    	<div class="wrapper">
+                                        	<div class="grid_10">
+                                            	<h2 style="font-style: italic;">$MFLText:lodgeName$</h2>
+                                                <span class="text-pad">
+                                                $MFLHtml:lodgeDescription$
+                                            </div>
+                                            <div class="grid_6 location">
+                                                 <div class="wrapper img-pad">
+                                                	<img src="$MFLText:baseUrl$assets/002/images/marker.gif" alt="" class="img-indent">
+                                                    <div class="extra-wrap1">
+                                                        <div class="title">
+                                                            <a href="Location.htm">旅馆位置</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a href="Location.htm"><img src="http://api.map.baidu.com/staticimage?width=250&height=350&zoom=12&center=$MFLText:lodgeLongtitude$,$MFLText:lodgeLatitude$&markers=$MFLText:lodgeLongtitude$,$MFLText:lodgeLatitude$" /></a>
+                                                
+                                            <div class="wrapper">
+                                             <div class="link1"><a href="Location.htm"><em><em>查看周边交通..</em></em></a></div>
+                                            </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+$IncludeText:post_content$

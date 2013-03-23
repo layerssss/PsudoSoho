@@ -1,0 +1,14 @@
+    <!--==============================footer=================================-->
+        <footer>
+            <div class="container">
+            	<span class="color-3">$MFLHtml:lodgeName$</span>
+				&nbsp; © 2011 由<a href="$MFLText:MFLBaseUrl$">&nbsp;&nbsp;寻旅·筑家&nbsp;&nbsp;</a>强力驱动&nbsp;|&nbsp;
+				<a href="$MFLText:MFLBaseUrl$Help/Terms.aspx">Privacy Policy</a>
+                <ul class="list-services">
+					<li><a title="新浪微博" href="$MFLText:TemplatePropertySinaWeibo$"><img src="$MFLText:baseUrl$assets/003/images/sina_32x32.png" alt="" /></a></li>
+                    <li><a title="腾讯微博" href="$MFLText:TemplatePropertyTencentWeibo$"><img src="$MFLText:baseUrl$assets/003/images/tqq_32x32.png" alt="" /></a></li>
+                </ul>
+        	</div>
+		</footer>
+</body>
+</html>

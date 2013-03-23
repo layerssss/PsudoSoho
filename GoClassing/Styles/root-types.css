@@ -1,0 +1,18 @@
+﻿.types-list a
+{
+    display:block;
+    float:left;
+    width:200px;
+    height:70px;
+}
+.types-list a span
+{
+    padding-left:20px;
+    background-image:url('icons_sprite.png');
+    background-repeat:no-repeat;
+}
+.types-list a span.ftype-ctype
+{
+    line-height:2;
+    font-size:1.5em;
+}

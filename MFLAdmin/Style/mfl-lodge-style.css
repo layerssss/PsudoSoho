@@ -1,0 +1,657 @@
+﻿/******************************************************/
+
+html{
+		background:#f7f7f7 url('lodge/pattern.png') repeat top left;
+}
+body {
+	background:#f7f7f7 url('lodge/pattern.png') repeat top left;
+	color:#333;
+	font-family:'微软雅黑','Georgia', 'Trebuchet MS', serif;
+	font-size:12px;
+}
+textarea{padding:5px;margin:10px auto;width:800px;height:100px;}
+a{text-decoration:none;color: #0069D6;}
+h1{font-size:20px;color:#A6D733;border-bottom:1px dashed #ccc;padding-bottom:5px;margin-bottom:10px;}
+
+
+#easyTooltip
+{
+    z-index: 10001;
+    display: block;
+    padding: 5px;
+    background-color: #D1870A;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+}
+/*************** Forms ***************/
+form label {
+	display: inline-block;
+	padding: 0 0 5px;
+	margin:5px 15px 5px 0;
+}
+
+form input,
+form select,
+form textarea{
+	padding: 6px;
+	font-size: 13px;
+	background: #fff url('lodge/bg-form-field.gif') top left repeat-x;
+	border: 1px solid #d5d5d5;
+	color: #333;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+    }
+				
+form input{margin-right:15px;}
+            
+form .small-input {
+	width: 160px !important;
+	}
+                
+form .medium-input {
+	width: 50% !important;
+	}
+                
+form .large-input {
+	width: 97.5% !important;
+	font-size: 16px !important;
+	padding: 8px !important;
+	}
+                
+form textarea {
+	width: 97.5% !important;
+	font-family: Arial, Helvetica, sans-serif;
+	height:200px;
+	}
+/******  清理浮动 *******/
+.clearfix:after {
+	visibility:hidden;
+	display:block;
+	font-size:0;
+	content:" ";
+	clear:both;
+	height:0;
+}
+.clearfix {
+	zoom:1;
+}
+/*---------------顶部导航-------------------*/
+#wizard li a{
+	padding:2px 11px;
+	margin-left:5px;
+	border-radius:10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	margin-top:9px;
+	text-shadow:none;
+}
+.wizardNavDisabler{background:url('lodge/wizard-disabler.png') repeat-x;width:100%;height:100%;position:absolute;top:0;left:0;}
+/*---------------面包屑-------------------*/
+
+#nav{margin-top:50px;}
+.wizard-disabledNav{color:#999;cursor:default;}
+.mfl-nav-loading{color:#444;}
+
+/*---------------首页 menu-------------------*/
+.mfl-lodge-root{
+    padding: 0;
+    border: none;
+    margin: 0;
+    background-color: transparent;
+}
+.mfl-lodge-root .menu,.info,.preview{
+    border: 1px solid #e5e5e5;
+    margin: 10px;
+    background-color: #FFFFFF;
+    padding:15px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.mfl-lodge-root .info {width:200px;float:left;}
+.mfl-lodge-root .info p{display:inline;}
+.mfl-lodge-root .info ul{list-style:none;}
+.mfl-lodge-root .info ul li{margin-bottom:5px;color:#606060;letter-spacing:3px;clear:both;}
+
+.mfl-lodge-root .preview {
+	float:left;
+	width:615px;
+}
+.mfl-lodge-root .info ul li a.mfl-refresh-btn{float:right;}
+.mfl-lodge-root>.menu>a{
+	width:110px;
+	height:110px;
+	text-indent:-9999px;
+	display:block;
+	float:left;
+	margin-right:14px;
+	margin-right:13px\9;
+}
+.mfl-lodge-root a:last-child{margin-right:0;}
+
+.mfl-lodge-root a.attributes{background:url('lodge/menu_sprite.png') no-repeat left top;}
+.mfl-lodge-root a.attributes:hover{background:url('lodge/menu_sprite.png') no-repeat left -110px;}
+
+.mfl-lodge-root a.rooms{background:url('lodge/menu_sprite.png') no-repeat -110px top;}
+.mfl-lodge-root a.rooms:hover{background:url('lodge/menu_sprite.png') no-repeat -110px -110px;}
+
+.mfl-lodge-root a.lodgeAlbum{background:url('lodge/menu_sprite.png') no-repeat -220px top;}
+.mfl-lodge-root a.lodgeAlbum:hover{background:url('lodge/menu_sprite.png') no-repeat -220px -110px;}
+
+.mfl-lodge-root a.properties{background:url('lodge/menu_sprite.png') no-repeat -330px top;}
+.mfl-lodge-root a.properties:hover{background:url('lodge/menu_sprite.png') no-repeat -330px -110px;}
+
+.mfl-lodge-root a.template{background:url('lodge/menu_sprite.png') no-repeat -440px top;}
+.mfl-lodge-root a.template:hover{background:url('lodge/menu_sprite.png') no-repeat -440px -110px;}
+
+.mfl-lodge-root a.admin{background:url('lodge/menu_sprite.png') no-repeat -550px top;}
+.mfl-lodge-root a.admin:hover{background:url('lodge/menu_sprite.png') no-repeat -550px -110px;}
+
+.mfl-lodge-root a.traffic{background:url('lodge/menu_sprite.png') no-repeat -660px top;}
+.mfl-lodge-root a.traffic:hover{background:url('lodge/menu_sprite.png') no-repeat -660px -110px;}
+
+/* ---------------首页日历------------ */
+.preview table {border-collapse:collapse;border-radius:2px;}
+.preview table td{padding:5px 27px;border:1px solid #eee;text-align:center;white-space:nowrap}
+.preview p{color:#A6D733;text-align:center;font-size:15px;}
+
+/* ---------------bootstrap------------ */
+.container {
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+.container:before, .container:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+.container:after {
+  clear: both;
+}
+.topbar {
+  height: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  overflow: visible;
+}
+.topbar .nav a {
+  color: #bfbfbf;
+  font-size:15px;
+}
+
+.topbar .brand {
+  float: left;
+  display: block;
+  margin-top:8px;
+  margin-right:15px;
+}
+
+.topbar-inner, .topbar .fill {
+  background-color: #222;
+  background-color: #222222;
+  background-repeat: repeat-x;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(top, #333333, #222222);
+}
+.topbar div > ul, .nav {
+  display: block;
+  float: left;
+  margin: 0 10px 0 0;
+  position: relative;
+  left: 0;
+}
+.topbar div > ul > li, .nav > li {
+  display: block;
+  float: left;
+}
+.topbar div > ul a, .nav a {
+  display: block;
+  float: none;
+  padding: 10px 3px 11px;
+  line-height: 19px;
+  text-decoration: none;
+  font:0.9em;
+}
+.nav a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+.topbar div > ul .active > a, .nav .active > a {
+  background-color: #222;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.topbar div > ul.secondary-nav, .nav.secondary-nav {
+  float: right;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.breadcrumb {
+  margin: 0 0 10px;
+  padding: 7px 14px;
+  background-color: #f5f5f5;
+  background-repeat: repeat-x;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 0 #ffffff;
+    -moz-box-shadow: inset 0 1px 0 #ffffff;
+    box-shadow: inset 0 1px 0 #ffffff;
+    background-image: linear-gradient(top, #ffffff, #f5f5f5);
+}
+.breadcrumb li {
+  display: inline;
+  text-shadow: 0 1px 0 #ffffff;
+
+}
+.breadcrumb .divider {
+  padding: 0 5px;
+  color: #bfbfbf;
+}
+.breadcrumb .active a {
+  color: #404040;
+}
+
+/*********************logo*************************/
+
+.brand{width:80px;height:30px;text-indent:-9999px;background:url(lodge/logo.png) no-repeat top left;}
+
+/*********************模板样式**********************/
+.mfl-lodge-template .mfl-lodge-icons{margin-bottom:20px;}
+.mfl-lodge-template .mfl-lodge-icons span{display:inline-block;margin:5px 5px 5px 0;border:1px solid #ddd;}
+
+/*********************列表样式**********************/
+.mfl-lodge-attributes-list>.mfl-list-item,
+.mfl-lodge-rooms>.mfl-list-item,
+.mfl-lodge-options-list>.mfl-list-item,
+.mfl-roomAttributesList>.mfl-list-item,
+.mfl-lodge-rooms>.mfl-roomList>.mfl-list-item
+{
+	margin-right:10px;
+	margin-bottom:7px;
+	width:418px;
+	float:left;
+	
+	border:1px #e4e4e4 solid;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	
+	background-color: #fafafa;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#f1f1f1)); 
+	background-image: -webkit-linear-gradient(top, #fafafa, #f1f1f1); 
+	background-image:    -moz-linear-gradient(top, #fafafa, #f1f1f1); 
+	background-image:     -ms-linear-gradient(top, #fafafa, #f1f1f1); 
+	background-image:      -o-linear-gradient(top, #fafafa, #f1f1f1); 
+	background-image:         linear-gradient(top, #fafafa, #f1f1f1);
+	
+	}
+/*********************特性列表**********************/
+.mfl-lodge-attributes-list .mfl-list-item{zoom:1;}
+.mfl-lodge-attributes-list span{display:block;float:left;}
+
+.mfl-lodge-attributes-list .mfl-list-item span.icon{
+	width:43px;
+	height:80px;
+	border-right:1px solid #efefef;
+	padding:10px;
+}
+.mfl-lodge-attributes-list .mfl-list-item span.icon img{margin:25px 5px;}
+.mfl-lodge-attributes-list .mfl-list-item span.mfl-attributeName{
+	width:55px;
+	height:80px;
+	border-right:1px solid #efefef;
+	border-left:1px solid #f9f9f9;
+	padding:10px;
+	color:#5c8206;
+	font-size:15px;
+	text-align:center;
+}
+.mfl-lodge-attributes-list .mfl-list-item span.mfl-attribute-options{
+	width:218px;
+	height:80px;
+	border-right:1px solid #efefef;
+	border-left:1px solid #f9f9f9;
+	padding:10px;
+	color:#545454;
+
+}
+.mfl-lodge-attributes-list .mfl-list-item span.mfl-attribute-options>span.mfl-roomAttributeOptionName{
+	color:#fff;
+	padding:3px 8px;
+	margin-right:5px;
+	margin-bottom:3px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	white-space:nowrap;
+}
+.mfl-lodge-attributes-list .mfl-list-item span.edit
+{
+	width:15px;
+	height:80px;
+	border-left:1px solid #f9f9f9;
+	padding:10px;
+}
+span.edit a img{margin-top:5px;}
+.mfl-lodge-options-list>.mfl-list-item>form>span.edit{float:right;}
+.mfl-lodge-options-list>.mfl-list-item{
+	width:410px;
+	margin-top:10px;
+	margin-bottom:0;
+}
+.mfl-lodge-options-list>.mfl-list-item>form>span.option-content>input {
+	width:330px;
+}
+
+/***********************LodgeIcons插件*****************/
+.spiritIcon
+{
+    background-image:url('lodge/icons_sprite.png');
+    width:32px;
+    height:32px;
+	vertical-align:middle;
+}
+.mfl-attribute-enabled-false
+{
+}
+
+/***********************房间列表***********************/
+.mfl-lodge-rooms span,
+.mfl-roomAttributesList>.mfl-list-item>span
+{display:block;float:left;}
+.mfl-roomAttributesList>.mfl-list-item {width:405px;}
+.mfl-roomAttributesList>.mfl-list-item span.icon{
+	width:43px;
+	height:80px;
+	border-right:1px solid #efefef;
+	padding:10px;
+}
+.mfl-roomAttributesList>.mfl-list-item span.icon img{margin:25px 5px;}
+.mfl-lodge-rooms .mfl-list-item span.mfl-roomName{
+	width:55px;
+	height:80px;
+	border-right:1px solid #efefef;
+	border-left:1px solid #f9f9f9;
+	padding:10px;
+	color:#5c8206;
+	font-size:12px;
+	text-align:center;
+}
+.mfl-roomAttributesList>.mfl-list-item span.mfl-attributeName{
+	width:20px;
+	height:80px;
+	border-right:1px solid #efefef;
+	border-left:1px solid #f9f9f9;
+	padding:10px;
+	color:#5c8206;
+	font-size:12px;
+	text-align:center;
+}
+.mfl-roomAttributesList>.mfl-list-item>span.mfl-lodge-icon-textWrapper{
+	width:55px;
+	height:80px;
+	border-right:1px solid #efefef;
+	border-left:1px solid #f9f9f9;
+	padding:10px;
+	color:#5c8206;
+	font-size:12px;
+	text-align:center;
+}
+.mfl-roomAttributesList>.mfl-list-item>span.mfl-lodge-icon-textWrapper>.mfl-optionName{
+	color:#fff;
+	display:block;
+	padding:5px;
+}
+.mfl-lodge-rooms .mfl-list-item span.mfl-list-roomAttributes{
+	width:280px;
+	height:80px;
+	border-right:1px solid #efefef;
+	border-left:1px solid #f9f9f9;
+	padding:10px;
+	color:#545454;
+}
+.mfl-lodge-rooms .mfl-list-item span.mfl-list-roomAttributes>span{
+	margin-right:5px;
+}
+.mfl-lodge-rooms .mfl-list-item span.edit{
+	width:15px;
+	height:80px;
+	border-left:1px solid #f9f9f9;
+	padding:10px;
+}
+span.edit a img{margin-top:5px;}
+.mfl-roomAttributesList>.mfl-list-item>.mfl-lodge-icons{width:200px;float:left;padding:10px;}
+.mfl-roomAttributesList>.mfl-list-item>.mfl-lodge-icons>.mfl-list-item{
+	float:left;
+	margin-right:5px;
+	margin-bottom:3px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	}
+.mfl-roomAttributesList>.mfl-list-item>.mfl-lodge-icons>.mfl-list-itemTemplate{	
+	display:block;
+	}
+.mfl-roomAttributesList>.mfl-list-item>.mfl-lodge-icons>.mfl-list-item>a>span{	
+	white-space:nowrap;
+	line-height: 1.9em;
+	}
+.mfl-roomAttributesList>.mfl-list-item>.mfl-lodge-icons>.mfl-list-item>a{color:white;padding:3px 7px;}
+
+/******************相册样式***********************/
+.mfl-lodge-room div.photo{
+	height:100px;
+	height:100px;
+	position:relative;
+	float:left;
+	margin:0 11px 15px 0;
+	border:4px solid #d9d9d9;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.mfl-lodge-lodgeAlbum div.photo{
+	width:100px;
+	height:125px;
+	position:relative;
+	float:left;
+	margin:0 15px 15px 0;
+	border:4px solid #d9d9d9;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.mfl-href-roomPhotoId,.mfl-href-lodgePhotoId{position:relative;}
+.mfl-data-roomPhotoId,.mfl-data-lodgePhotoId{position:absolute;bottom:5px;right:5px;}
+.mfl-lodge-lodgeAlbum div.lodgePhotoType{background:#d9d9d9;width:70px;height:15px;padding:5px 15px;text-align:left;overflow:hidden;}
+
+.mfl-lodge-lodgeAlbum table{
+	  border-collapse: collapse;
+	  border-spacing: 0;
+	  width: 100%;
+	  margin-bottom: 18px;
+	  padding: 0;
+	  border-collapse: separate;
+	  *border-collapse: collapse;
+	  /* IE7, collapse table to remove spacing */
+	  font-size: 13px;
+	  border-bottom:1px solid #ddd;
+}
+.mfl-lodge-lodgeAlbum table th,.mfl-lodge-lodgeAlbum table td {
+  line-height: 2.2em;
+  padding:2px 0;
+  padding-left:20px;
+  text-align: left;
+  border-top:1px solid #ddd;
+  
+}
+.mfl-lodge-lodgeAlbum table td:first-child{border-right:1px dashed #ddd;padding-right:20px;}
+.mfl-lodge-lodgeAlbum table tr:last-child{border-bottom:1px solid #ddd;}
+.mfl-lodge-lodgeAlbum table div.ui-progressbar{height:10px;}
+.mfl-lodge-lodgeAlbum table td.col1{width:100px;}
+.mfl-lodge-lodgeAlbum table td .need,.mfl-lodge-lodgeAlbum table td .already{display:inline-block!important;display:inline;padding:0 5px;margin:0 5px;}
+.mfl-lodge-lodgeAlbum h3,.mfl-lodge-lodgeAlbum h2{line-height:40px;color:#666;}
+/******************单张照片样式***********************/
+.mfl-lodgePhotoList>.mfl-list-item>form,
+.mfl-roomPhotoList>.mfl-list-item>form
+{margin:0;padding:0;}
+.mfl-lodgePhotoList>.mfl-list-item>form>div>label,
+.mfl-roomPhotoList>.mfl-list-item>form>div>label
+{vertical-align:top;}
+.mfl-lodgePhotoList>.mfl-list-item>form>img,
+.mfl-roomPhotoList>.mfl-list-item>form>img{	
+	border:3px solid #d9d9d9;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	width:200px;
+	height:200px;
+	float:left;
+	margin-right:20px;
+}
+.mfl-lodgePhotoList>.mfl-list-item>form>div.photoInfo,
+.mfl-roomPhotoList>.mfl-list-item>form>div.photoInfo{float:left;width:640px;}
+.mfl-lodgePhotoList>.mfl-list-item>form>div.photoInfo>textarea,
+.mfl-roomPhotoList>.mfl-list-item>form>div.photoInfo>textarea{width:530px!important;}
+
+.mfl-val-lodgePhotoType{background:url('lodge/toggle.png') left top no-repeat;}
+.mfl-val-lodgePhotoType:focus{background:url('lodge/toggle.png') left -30px no-repeat;}
+
+/***************************************************/
+.mfl-roomAttributesList,
+.mfl-roomAlbumList{margin-top:10px;}
+.mfl-lodge-attributes-list>.mfl-list-item a span,
+.mfl-lodge-rooms .mfl-list-item a span{
+	margin-left:20px;
+}
+.mfl-lodge-page form{padding:5px;margin:10px;}
+form.attributeForm {margin-bottom:0;padding:0;}
+div.divWrapper{margin:10px;margin-top:10px;clear:both;}
+
+/*************** 按钮样式 ***************/
+.add{
+	background:url('lodge/add.png') no-repeat left;
+	text-align:left;
+	padding-top:12px;
+	padding-left:20px;
+	width:160px;
+	height:38px;
+	display:block;
+	text-decoration:none;
+	color:#fff;
+	font-family:"微软雅黑";
+	font-size:18px;
+	text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
+	}
+.save{
+	background:url('lodge/button.png') no-repeat left;
+	text-align:center;
+	line-height:170%;
+	width:81px;
+	height:32px;
+	text-decoration:none;
+	color:#fff;
+	font-family:"微软雅黑";
+	font-size:16px;
+	text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
+	float:right;
+	position:absolute;
+	right:20px;
+	top:10px;
+	}
+.info .save
+{
+    position:static;
+}
+a.save:hover{
+	background-position:right;}
+a.locate{
+	float:right;
+	margin-top:0;
+	*margin-top:-35px;
+	margin-bottom:0;
+	*margin-bottom:0;
+	}
+.address{width:400px;}	
+.AttributeSave,.RoomSave,.PasswordSave,.locate{*margin-top:-35px;}
+/*************** Notifications ***************/
+
+.notification {
+	position: relative;
+	margin:5px 0;
+	padding: 0;
+	border: 1px solid;
+	background-position: 10px 11px !important;
+	background-repeat: no-repeat !important;
+	font-size: 13px;
+	width: 99.8%;
+	margin-bottom:15px;
+	 -moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	}
+                
+
+.attention {
+	background: #fffbcc url('lodge/exclamation.png') 10px 11px no-repeat;
+	border-color: #e6db55;
+	color: #666452;
+	}
+
+.information {
+	background: #dbe3ff url('lodge/information.png');
+	border-color: #a2b4ee;
+	color: #585b66;
+	}
+
+.success {
+	background: #d5ffce url('lodge/tick_circle.png');
+	border-color: #9adf8f;
+	color: #556652;
+	}
+
+.error {
+	background: #ffcece url('lodge/cross_circle.png');
+	border-color: #df8f8f;
+	color: #665252;
+	}
+
+.notification div {
+	display:block;
+	font-style:normal;
+	padding: 10px 10px 10px 36px;
+	line-height: 1.5em;
+	}
+
+.notification .close {
+	color:#990000;
+	font-size:9px;
+	position:absolute;
+	right:5px;
+	top:5px;
+	}
+
+
+/************footer****************/
+#footer {
+	border-top: 1px solid #ccc;
+	margin: 40px 0 0 0;
+	padding: 20px 0;
+	font-size: 12px;
+	position:relative;
+	bottom:0;
+	width:100%;
+	}

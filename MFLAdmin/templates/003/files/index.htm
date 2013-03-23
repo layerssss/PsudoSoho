@@ -1,0 +1,73 @@
+$IncludeText:pre_content$
+                <div id="js">
+                    <!-- Start Advanced Gallery Html Containers -->
+                    <div id="controls"></div>
+                    <div id="gallery" class="content">
+                      <div class="slideshow-container">
+                        <div id="slideshow" class="slideshow"></div>
+                      </div>
+                    </div>
+                    <div id="thumbs" class="navigation">
+                      <ul class="thumbs noscript">
+					    $MFLArray?:specialPhotosSlide$
+						<li> 
+							<a class="thumb" href="$MFLArrayText:lodgePhotoUrl$"  title="$MFLArrayText:lodgePhotoContent$"> 
+							<img src="$MFLArrayText:lodgePhotoUrlSmall$" alt="$MFLArrayText:lodgePhotoTitle$" /> </a>
+						</li>
+						$MFLArrayEnds:$
+                      </ul>
+                    </div>
+                    <!-- END Advanced Gallery Html Containers -->
+                  </div>
+            </div>
+        </header>
+    <!--==============================content================================-->
+        <section id="content">
+            <div class="bg">
+                <div class="main container_16">
+                    <div class="wrapper p7">
+                        <article class="grid_7 suffix_1">
+                        	<h3>$MFLText:lodgeName$ 欢迎你！</h3>
+                            <div>$MFLHtml:lodgeDescription$</div>
+                        </article>
+                        <article class="grid_8">
+                        	<div class="wrapper">
+                            	<figure class="img-indent4">
+                                	<img src="$MFLText:baseUrl$assets/003/images/story.jpg" alt="" />
+                                </figure>
+                                <div class="extra-wrap">
+                                	<h3>我们的故事</h3>
+                                    <p>$MFLText:TemplatePropertyStory$</p>
+                                    <a class="button2 p0" href="OurStory.htm">More</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="wrapper">
+                        <div class="grid_8">
+                            <div class="wrapper border-bot">
+                                <img class="img-indent2" src="$MFLText:baseUrl$assets/003/images/map.png" width="16px" height="20px"  alt="" />
+                                <div class="extra-wrap">
+                                    <h3>我们的位置</h3>
+									<a href="Location.htm">
+									<img src="http://api.map.baidu.com/staticimage?width=420&height=200&zoom=12&center=$MFLText:lodgeLongtitude$,$MFLText:lodgeLatitude$&markers=$MFLText:lodgeLongtitude$,$MFLText:lodgeLatitude$" class="map" />
+									</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid_8">
+                            <div class="wrapper">
+                                <img class="img-indent2" src="$MFLText:baseUrl$assets/003/images/phone.png" width="20px" height="20px" alt="" />
+                                <div class="extra-wrap">
+                                    <h3>联系我们</h3>
+                                </div>
+                            </div>
+                            <dl class="contact">
+								<dt>$MFLHtml:lodgeContact$</dt>
+							</dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+$IncludeText:post_content$

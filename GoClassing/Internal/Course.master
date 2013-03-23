@@ -1,0 +1,465 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Root.Master" AutoEventWireup="true" CodeBehind="Course.master.cs" Inherits="GoClassing.Internal.Course1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<script src="/Scripts/mfl-edit.js" type="text/javascript"></script>
+    <style type="text/css">
+        #middle
+        {
+            margin-left: 200px;
+            margin-right: 0px;
+            padding: 5px 5px 0 5px;
+            border: none;
+        }
+        #members
+        {
+            margin-right: 150px;
+        }
+        #newMembers
+        {
+            width: 150px;
+            float: right;
+        }
+        #left
+        {
+            border-right: 1px solid #ccc;
+            width: 200px;
+        }
+        
+        #colRight, #colLeft
+        {
+            width: 49%;
+        }
+        #colRight
+        {
+            float: right;
+        }
+        #colLeft
+        {
+            float: left;
+        }
+        .courseUrl
+        {
+            white-space: nowrap;
+            overflow: hidden;
+            display: block;
+            padding: 2px;
+            border: 1px solid #ccc;
+            background-color: #eee;
+        }
+        .courseUrl:hover
+        {
+            width: 300px;
+            position: relative;
+            z-index: 1000;
+        }
+        #left label
+        {
+            color: #888;
+            font-size: 0.9em;
+        }
+        .op .ui-widget-header, .tag .ui-widget-header, #middle3 .ui-widget-header
+        {
+            padding: 2px;
+        }
+        
+        .tag .ui-widget-header span, #middle3 .ui-widget-header
+        {
+            padding: 0px;
+            line-height: 2;
+        }
+        .op .ui-widget-content, .tag .ui-widget-content, #middle3 .ui-widget-content
+        {
+            padding: 3px;
+        }
+        .op.ui-widget, .tag.ui-widget, #left .tagSettings
+        {
+            margin-bottom: 10px;
+        }
+        .tagSettings
+        {
+            padding: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .tag .tagSettings
+        {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 40px;
+            z-index: 10000;
+        }
+        .tag
+        {
+            position: relative;
+            z-index:0;
+        }
+        #middle3 .reply-list .mfl-list-item
+        {
+            background-color:#fff;
+        }
+        #op
+        {
+            position:absolute;
+            z-index:1000;
+            width:230px;
+        }
+        #op h3
+        {
+            padding:10px 20px;
+        }
+        #op .ui-widget-content
+        {
+            padding:10px 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        var last = "";
+        var cid;
+        var btn = null;
+        var initPage = function (o) {
+            $('<div id="op" class="ui-widget op" style="display: none;"><h3 class="ui-widget-header"></h3><div class="ui-widget-content"><label for=""></label>:<br /><input type="text" /><br /><br /><buttonset><a class="ok" href="#">确定</a><a href="#" class="cancel" onclick="btn=null;$(\'#op\').slideUp();return false;">取消</a><br /></buttonset></div></div>')
+            .prependTo('body');
+
+            var overlay = $('<div></div>').addClass('ui-widget-overlay').appendTo('body');
+            setInterval(function () {
+                if ($("#op").css("display") == "block") {
+                    if (btn) {
+                        $("#op").position({
+                            my: 'right top',
+                            at: 'right top',
+                            of: btn
+                        });
+                    }
+                    overlay.css({ height: $('body').height() > $(window).height() ? $('body').height() : $(window).height(), zIndex: 999 }).fadeIn();
+
+                } else {
+                    overlay.fadeOut(function () {
+                        $("#op").css({ top: 0, left: 0 });
+                    });
+                }
+            }, 100);
+            cid = o.id;
+            $('.tag').each(function (i, v) {
+                $('<span class="floatright mfl-btn"></span>').insertBefore($(v).find('h3 span.tagName')).button({ icons: { primary: 'ui-icon-wrench'} }).click(function () {
+                    var t = this;
+                    $('.tag .tagSettings').slideUp().parent().css('zIndex', 0);
+                    $(t).parent().parent().css('zIndex',10001).children('.tagSettings').stop().slideToggle();
+                });
+            });
+            if (!o.isMemberOf && !o.isCreatorOf) {
+                $('<span>申请加入该课程</span>').button({
+                    icons: {
+                        primary: 'ui-icon-plus'
+                    }
+                }).appendTo('#left .tagSettings').click(function () {
+                    MFLAjax({
+                        action: 'JoinCourse',
+                        query: {
+                            courseId: o.id
+                        },
+                        loadingJ: $(this),
+                        success: function () {
+                            MFLNotify('已提交申请，等待课程主讲批准。');
+                        }
+                    });
+                });
+            }
+            if (o.isCreatorOf) {
+                $('#op buttonset .ok').button({
+                    icons: {
+                        primary: 'ui-icon-check'
+                    }
+                });
+                $('#op buttonset .cancel').button({
+                    icons: {
+                        primary: 'ui-icon-cancel'
+                    }
+                });
+                $('#op').mflSubmit({
+                    submit: function () {
+                        $('#op buttonset .ok').trigger('click');
+                        return false;
+                    }
+                });
+                $('<span >在左栏增加新分类</span>').prependTo('#colLeft').button().click(function () {
+                    btn = this;
+                    $('#op').slideUp(function () {
+                        $('#op h3').text('在左栏增加新分类');
+                        $('#op label').text('分类名').attr('for', 'tag');
+                        $('#op input').val('').attr('id', 'tag').datepicker('destroy');
+                        $('#op  .ok').unbind('click').bind('click', function () {
+                            MFLAjax({
+                                action: "AddTag",
+                                query: {
+                                    courseId: o.id,
+                                    tag: $('#op input').val(),
+                                    leftCol: true
+                                },
+                                validationFormJ: $('#op'),
+                                loadingJ: $('#op buttonset'),
+                                success: function () {
+                                    $('#op').slideUp(function () {
+                                        location.reload();
+                                    });
+                                }
+                            });
+                            return false;
+                        });
+                        $('#op').slideDown();
+                    });
+                });
+                $('<span >在右栏增加新分类</span>').prependTo('#colRight').button().click(function () {
+                    btn = this;
+                    $('#op').slideUp(function () {
+                        $('#op h3').text('在右栏增加新分类');
+                        $('#op label').text('分类名').attr('for', 'tag');
+                        $('#op input').val('').attr('id', 'tag').datepicker('destroy');
+                        $('#op  .ok').unbind('click').bind('click', function () {
+                            MFLAjax({
+                                action: "AddTag",
+                                query: {
+                                    courseId: o.id,
+                                    tag: $('#op input').val()
+                                },
+                                validationFormJ: $('#op'),
+                                loadingJ: $('#op buttonset'),
+                                success: function () {
+                                    $('#op').slideUp(function () {
+                                        location.reload();
+                                    });
+                                }
+                            });
+                            return false;
+                        });
+                        $('#op').slideDown();
+                    });
+                });
+                $('.tag').each(function (i, v) {
+                    $('<span class="floatright mfl-btn"></span>').insertBefore($(v).find('h3 span.tagName')).button({ icons: { primary: 'ui-icon-plus'} }).click(function () {
+                        btn = this;
+                        $('#op').slideUp(function () {
+                            $('#op h3').text('在“' + $(v).find('h3 span').text() + '”增加新条目');
+                            $('#op label').text('标题').attr('for', 'title');
+                            $('#op input').val('').attr('id', 'title').datepicker('destroy');
+                            $('#op  .ok').unbind('click').bind('click', function () {
+                                MFLAjax({
+                                    action: "AddPost",
+                                    query: {
+                                        courseId: o.id,
+                                        tag: $(v).find('h3 span').text(),
+                                        title: $('#op input').val()
+                                    },
+                                    validationFormJ: $('#op'),
+                                    loadingJ: $('#op buttonset'),
+                                    success: function () {
+                                        $('#op').slideUp(function () {
+                                            location.reload();
+                                        });
+                                    }
+                                });
+                                return false;
+                            });
+                            $('#op').slideDown();
+                        });
+                    });
+                });
+                $('.tagSettings span').each(function () {
+                    var txt = $(this).text();
+                    $(this).text('');
+                    $(this).button({
+                        icons: {
+                            primary: 'ui-icon-' + (txt == '是' ? 'check' : 'cancel')
+                        },
+                        label: txt
+                    }).click(function () {
+                        $(this).button('option', {
+                            label: $(this).button('option', 'label') == '是' ? '否' : '是',
+                            icons: {
+                                primary: 'ui-icon-' + ($(this).button('option', 'label') == '是' ? 'cancel' : 'check')
+                            }
+                        });
+                        updateList(o.id);
+                    });
+                });
+                $("#del").show();
+                $('#colLeft,#colRight,#del .ui-widget-content').sortable({
+                    connectWith: '#colLeft,#colRight,#del .ui-widget-content',
+                    handle: 'h3',
+                    cursor: 'move',
+                    items: '.tag',
+                    revert: true,
+                    stop: function () {
+                        $("#del .tag").remove();
+                        updateList(o.id);
+                    }
+                }).find('h3').css({ 'cursor': 'move' });
+                $('.tag ul,#del .ui-widget-content').sortable({
+                    connectWith: '.tag ul,#del .ui-widget-content',
+                    handle: 'span.ftype',
+                    cursor: 'move',
+                    items: 'li',
+                    revert: true,
+                    stop: function () {
+                        $("#del li").remove();
+                        updateList(o.id);
+                    }
+                }).find('li span.ftype').css({ 'cursor': 'move' });
+                $('#del .ui-widget-content,#members,#newMembers').droppable({
+                    hoverClass: 'ui-state-highlight',
+                    drop: function (e, u) {
+                        var t = $(u.draggable);
+                        if (t.is('#middle3 .reply-list .mfl-list-item')) {
+                            MFLAjax({
+                                action: "DelCourseReply",
+                                query: {
+                                    courseId: o.id,
+                                    postId: pid,
+                                    replyId: t.find('.mfl-alt-id').attr('title')
+                                },
+                                loadingJ: $('.loading'),
+                                success: function () {
+                                    location.reload();
+                                }
+                            });
+                        }
+                        if (t.hasClass('teacher')) {
+                            if ($(this).is('#newMembers')) {
+                                MFLAjax({
+                                    action: "DeproveCourseJoin",
+                                    query: {
+                                        courseId: o.id,
+                                        userId: t.find('.mfl-alt-id').attr('title')
+                                    },
+                                    validationFormJ: $('#op'),
+                                    loadingJ: $('#op buttonset'),
+                                    success: function () {
+                                        $('#op').slideUp(function () {
+                                            location.reload();
+                                        });
+                                    }
+                                });
+                            }
+                            if ($(this).is('#del .ui-widget-content')) {
+                                MFLAjax({
+                                    action: "DelCourseMember",
+                                    query: {
+                                        courseId: o.id,
+                                        userId: t.find('.mfl-alt-id').attr('title')
+                                    },
+                                    validationFormJ: $('#op'),
+                                    loadingJ: $('#op buttonset'),
+                                    success: function () {
+                                        $('#op').slideUp(function () {
+                                            location.reload();
+                                        });
+                                    }
+                                });
+                            }
+                            if ($(this).is('#members')) {
+                                btn = this;
+                                $('#op').slideUp(function () {
+                                    $('#op h3').text('将“' + t.find('.mfl-truename .truename').text() + '”设置为成员');
+                                    $('#op label').text('过期').attr('for', 'due');
+                                    $('#op input').val('无').attr('id', 'due').datepicker({
+                                        showOn: 'both',
+                                        buttonImage: "/Styles/icon_calendar.gif",
+                                        buttonImageOnly: true
+                                    });
+                                    var due = t.find('.mfl-due');
+                                    if (due.length) {
+                                        $('#op input').val(due.text());
+                                    }
+                                    $('#op  .ok').unbind('click').bind('click', function () {
+                                        MFLAjax({
+                                            action: "AproveCourseJoin",
+                                            query: {
+                                                courseId: o.id,
+                                                userId: t.find('.mfl-alt-id').attr('title'),
+                                                due: $('#op input').val()
+                                            },
+                                            validationFormJ: $('#op'),
+                                            loadingJ: $('#op buttonset'),
+                                            success: function () {
+                                                $('#op').slideUp(function () {
+                                                    location.reload();
+                                                });
+                                            }
+                                        });
+                                        return false;
+                                    });
+                                    $('#op').slideDown();
+                                });
+                            }
+                        }
+                    }
+                });
+            }
+        };
+        var updateList = function (courseId) {
+            var left = null;
+            var right = null;
+            while (left == null || right == null) {
+                left = "";
+                if ($('#col' + (right != null ? 'Left' : 'Right') + ' .tag').length) {
+                    $('#col' + (right != null ? 'Left' : 'Right') + ' .tag').each(function () {
+                        var tag = encodeURI($(this).find("span.tagName").text());
+                        tag += ',';
+                        tag += encodeURI($(this).find("span.canReply").button('option', 'label') == '是');
+                        tag += ',';
+                        tag += encodeURI($(this).find("span.canGuestView").button('option', 'label') == '是');
+                        $(this).find("li").each(function () {
+                            tag += ',';
+                            tag += encodeURI($(this).find('a').attr('href').substring(9));
+                        });
+                        left += tag + ' ';
+                    });
+                }
+                if (right == null) {
+                    right = left;
+                    left = null;
+                }
+            }
+            MFLAjax({
+                action: "UpdateCourse",
+                loadingJ: $('.loading'),
+                type: "post",
+                query: {
+                    left: left,
+                    right: right,
+                    courseId: courseId,
+                    canJoin: $('span.canJoin').button('option', 'label') == '是'
+                },
+                success: function () {
+                }
+            });
+        };
+        var reloadMembers = function (cid, callback) {
+            if (callback) {
+                callback();
+            }
+        };
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+            
+    <div id="left" style="overflow: visible !important; overflow: hidden;">
+        <%
+            this.mLeft.RenderToStream(Response.OutputStream);
+        %>
+        <div class="loading"></div>
+    </div>
+    
+    <div id="middle">
+        <div id="del" class="ui-widget op" style="display: none;">
+            <h3 class="ui-widget-header">
+                删除</h3>
+            <div class="ui-widget-content" style="padding: 20px 30px; height: 50px; overflow: hidden;
+                font-size: 0.9em; color: #888;">
+                将要删除的分类、条目或成员拖放到此</div>
+        </div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>

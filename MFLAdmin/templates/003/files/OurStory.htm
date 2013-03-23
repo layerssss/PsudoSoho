@@ -1,0 +1,44 @@
+$IncludeText:pre_content$
+                <div id="js">
+                    <!-- Start Advanced Gallery Html Containers -->
+                    <div id="controls"></div>
+                    <div id="gallery" class="content">
+                      <div class="slideshow-container">
+                        <div id="slideshow" class="slideshow"></div>
+                      </div>
+                    </div>
+                    <div id="thumbs" class="navigation">
+                      <ul class="thumbs noscript">
+					    $MFLArray?:specialPhotosStory$
+						<li> 
+							<a class="thumb" name="leaf" href="$MFLArrayText:lodgePhotoUrl$" title="$MFLArrayText:lodgePhotoContent$"> 
+							<img src="$MFLArrayText:lodgePhotoUrlSmall$" alt="$MFLArrayText:lodgePhotoTitle$" /> </a>
+						</li>
+						$MFLArrayEnds:$
+                      </ul>
+                    </div>
+                    <!-- END Advanced Gallery Html Containers -->
+                  </div>
+            </div>
+        </header>
+    <!--==============================content================================-->
+        <section id="content">
+            <div class="bg">
+                <div class="main container_16">
+                   <h2>我们的故事</h2>
+				   <p>$MFLText:TemplatePropertyStory$</p>
+					$MFLArray?:specialPhotosStory$
+					<div class="typePhotoList clearfix">
+						<h3 class="photoTitle">$MFLArrayHtml:lodgePhotoTitle$</h3>
+						<a class="stroke lightbox-image" href="$MFLArrayText:lodgePhotoUrl$" rel="prettyPhoto[gallery1]" title="$MFLArrayText:lodgePhotoContent$">
+							<img src="$MFLArrayText:lodgePhotoUrl$" alt="$MFLArrayText:lodgePhotoTitle$"/>
+						</a>
+						<p class="photoContent">$MFLArrayHtml:lodgePhotoContent$</p>
+					</div>
+					$MFLArrayEnds:$
+					<div class="clearfix"></div> 
+
+                </div>
+            </div>
+        </section>
+$IncludeText:post_content$

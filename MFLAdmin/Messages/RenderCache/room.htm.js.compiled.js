@@ -1,0 +1,794 @@
+//MFL模版渲染机数据与处理脚本编译结果
+//由MFL渲染机自动生成 2011/11/28 12:26:32
+
+var target;
+var root={
+    "baseUrl":"http://testing.hotel.xunnlv.com/",
+    "adminBaseUrl":"http://testing.admin.xunnlv.com/",
+    "MFLBaseUrl":"http://testing.build.xunnlv.com/",
+    "lodgeName":"心悦小筑",
+    "lodgeLongtitude":118.152183,
+    "lodgeLatitude":24.440808,
+    "lodgeTraffic":"远方而来的客人怎样到达我的旅馆呢？在这里描述一下吧。",
+    "lodgeContact":"　　联系人：心悦\n　　电话：0592-2062089\n　　手机：18950104227　\n　　QQ：1945176070\n　　E-mail： 1945176070 at qq.com\n　　详细地址：福建厦门思明区环岛路塔头311号5号别墅",
+    "lodgeDescription":"       厦门心悦小筑客栈是栋独立的园林别墅小屋，面积有1亩地，庭院很宽敞，环境幽静。客栈拥有21间不同风格的房间，有海景房、田园房、沙漠房、露台房等特色房，每间独具特色。有标准双床房、大床房可供选择。客栈于2011年4月8日正式运营。\n　　步行5分钟就能到海里游泳，这里的沙滩是全厦门最干净、最美丽的沙滩。附近就是海韵台、玩月坡、数星园、椰风寨、台湾民俗文化村等5个休闲游乐区。平日，这里车水马龙，游人穿梭，或举行沙滩健身活动，或搏击海浪。每当夜幕降临，尤其是夏令季节，星星灯火，这里人们三五成群，情人们则依偎在一块，聆听大海潮音，感受海洋气息。没事在木栈道的海边散散步吹吹风；往西离厦大、鼓浪屿约7公里，往东离会展中心看金门约4公里，出门就是环岛路的带状风景区，沿途处处美景，美不胜收。",
+    "lodgeOrder":"客人应该怎样订房呢？在这里说明一下吧。",
+    "lodgeTemplateName":"002",
+    "TemplatePropertyStory":"在这里用几段话简单地介绍一下我们旅馆的来历或者旅馆名称的来历，这两段话将放置在首页左下角。",
+    "TemplatePropertyServices":"在这里用一句或两句话提一下旅馆服务的特别之处，这两段话将放置在首页右下角。",
+    "TemplatePropertyWeibo":"http://weibo.com/myfamilylodge",
+    "TemplatePropertyTitleSuffix":"家庭旅馆,别墅旅馆,旅馆,住宿,XX住宿",
+    "lodgeAlbum":[
+        {
+            "lodgePhotoId":4,
+            "lodgePhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BoGnp/pptFw.jpg",
+            "lodgePhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BoGnp/small/",
+            "lodgePhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BoGnp/medium/",
+            "lodgePhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BoGnp/thumb/",
+            "lodgePhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BoGnp/large/",
+            "lodgePhotoTitle":"别墅外景",
+            "lodgePhotoContent":"",
+            "lodgePhotoType":"照片展示",
+            "lodgePhotoSize":"0B"
+        },
+        {
+            "lodgePhotoId":5,
+            "lodgePhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bq4BL/rjiSm.jpg",
+            "lodgePhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bq4BL/small/",
+            "lodgePhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bq4BL/medium/",
+            "lodgePhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bq4BL/thumb/",
+            "lodgePhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bq4BL/large/",
+            "lodgePhotoTitle":"2楼阳台",
+            "lodgePhotoContent":"",
+            "lodgePhotoType":"照片展示",
+            "lodgePhotoSize":"0B"
+        },
+        {
+            "lodgePhotoId":7,
+            "lodgePhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bu4C2/FXOee.jpg",
+            "lodgePhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bu4C2/small/",
+            "lodgePhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bu4C2/medium/",
+            "lodgePhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bu4C2/thumb/",
+            "lodgePhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bu4C2/large/",
+            "lodgePhotoTitle":"公共洗手间",
+            "lodgePhotoContent":"",
+            "lodgePhotoType":"照片展示",
+            "lodgePhotoSize":"0B"
+        },
+        {
+            "lodgePhotoId":9,
+            "lodgePhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bx8LM/34Ohy.jpg",
+            "lodgePhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bx8LM/small/",
+            "lodgePhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bx8LM/medium/",
+            "lodgePhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bx8LM/thumb/",
+            "lodgePhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bx8LM/large/",
+            "lodgePhotoTitle":"客栈前台",
+            "lodgePhotoContent":"",
+            "lodgePhotoType":"照片展示",
+            "lodgePhotoSize":"0B"
+        },
+        {
+            "lodgePhotoId":11,
+            "lodgePhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BApLz/fSRP2.jpg",
+            "lodgePhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BApLz/small/",
+            "lodgePhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BApLz/medium/",
+            "lodgePhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BApLz/thumb/",
+            "lodgePhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BApLz/large/",
+            "lodgePhotoTitle":"一路上有你",
+            "lodgePhotoContent":"",
+            "lodgePhotoType":"照片展示",
+            "lodgePhotoSize":"0B"
+        },
+        {
+            "lodgePhotoId":14,
+            "lodgePhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BFDJC/IX4cD.jpg",
+            "lodgePhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BFDJC/small/",
+            "lodgePhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BFDJC/medium/",
+            "lodgePhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BFDJC/thumb/",
+            "lodgePhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BFDJC/large/",
+            "lodgePhotoTitle":"壮壮的家",
+            "lodgePhotoContent":"",
+            "lodgePhotoType":"照片展示",
+            "lodgePhotoSize":"0B"
+        }
+    ],
+    "lodgeRooms":[
+        {
+            "roomName":"101绿色田园",
+            "roomPrize":"130",
+            "roomId":35,
+            "roomIcon":"",
+            "roomCurrent":false
+        },
+        {
+            "roomName":"201沙漠绿洲",
+            "roomPrize":"￥200元",
+            "roomId":36,
+            "roomIcon":"",
+            "roomCurrent":false
+        },
+        {
+            "roomName":"202晨曦之花",
+            "roomPrize":"￥140元",
+            "roomId":37,
+            "roomIcon":"",
+            "roomCurrent":false
+        },
+        {
+            "roomName":"203懒惰格调",
+            "roomPrize":"￥200元",
+            "roomId":38,
+            "roomIcon":"",
+            "roomCurrent":false
+        },
+        {
+            "roomName":"204休闲时光",
+            "roomPrize":"￥150元",
+            "roomId":39,
+            "roomIcon":"",
+            "roomCurrent":false
+        },
+        {
+            "roomName":"205同桌的你",
+            "roomPrize":"￥98元",
+            "roomId":40,
+            "roomIcon":"",
+            "roomCurrent":false
+        },
+        {
+            "roomName":"301无敌海景房",
+            "roomPrize":"￥200元",
+            "roomId":41,
+            "roomIcon":"",
+            "roomCurrent":true
+        }
+    ],
+    "lodgePhotoTypes":[
+        {
+            "type":"照片展示",
+            "typeCurrent":false,
+            "typePinyin":"ZhaoPianZhanShi"
+        },
+        {
+            "type":"Logo（265x130）",
+            "typeCurrent":false,
+            "typePinyin":"Logo（265x1"
+        },
+        {
+            "type":"旅馆特色",
+            "typeCurrent":false,
+            "typePinyin":"LvGuanTeSe"
+        },
+        {
+            "type":"周边景色",
+            "typeCurrent":false,
+            "typePinyin":"ZhouBianJingSe"
+        }
+    ],
+    "specialPhotosSlide":[
+        {
+            "lodgePhotoId":2,
+            "lodgePhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BlLjX/bwtCC.jpg",
+            "lodgePhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BlLjX/small/",
+            "lodgePhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BlLjX/medium/",
+            "lodgePhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BlLjX/thumb/",
+            "lodgePhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BlLjX/large/",
+            "lodgePhotoTitle":"美丽的沙滩",
+            "lodgePhotoContent":"",
+            "lodgePhotoType":"首页幻灯片",
+            "lodgePhotoSize":"0B"
+        },
+        {
+            "lodgePhotoId":6,
+            "lodgePhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bt4z3/z8Iuz.jpg",
+            "lodgePhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bt4z3/small/",
+            "lodgePhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bt4z3/medium/",
+            "lodgePhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bt4z3/thumb/",
+            "lodgePhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bt4z3/large/",
+            "lodgePhotoTitle":"公共区域",
+            "lodgePhotoContent":"",
+            "lodgePhotoType":"首页幻灯片",
+            "lodgePhotoSize":"0B"
+        },
+        {
+            "lodgePhotoId":8,
+            "lodgePhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BvQso/sDgqw.jpg",
+            "lodgePhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BvQso/small/",
+            "lodgePhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BvQso/medium/",
+            "lodgePhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BvQso/thumb/",
+            "lodgePhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BvQso/large/",
+            "lodgePhotoTitle":"客栈前台",
+            "lodgePhotoContent":"",
+            "lodgePhotoType":"首页幻灯片",
+            "lodgePhotoSize":"0B"
+        },
+        {
+            "lodgePhotoId":10,
+            "lodgePhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BzuuE/c03sI.jpg",
+            "lodgePhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BzuuE/small/",
+            "lodgePhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BzuuE/medium/",
+            "lodgePhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BzuuE/thumb/",
+            "lodgePhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BzuuE/large/",
+            "lodgePhotoTitle":"阳台一角",
+            "lodgePhotoContent":"",
+            "lodgePhotoType":"首页幻灯片",
+            "lodgePhotoSize":"0B"
+        },
+        {
+            "lodgePhotoId":17,
+            "lodgePhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BM4Pp/CG0Zo.jpg",
+            "lodgePhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BM4Pp/small/",
+            "lodgePhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BM4Pp/medium/",
+            "lodgePhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BM4Pp/thumb/",
+            "lodgePhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BM4Pp/large/",
+            "lodgePhotoTitle":"",
+            "lodgePhotoContent":"",
+            "lodgePhotoType":"首页幻灯片",
+            "lodgePhotoSize":"0B"
+        }
+    ],
+    "specialPhotoSlide0":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BlLjX/bwtCC.jpg",
+    "specialPhotoSlide1":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9Bt4z3/z8Iuz.jpg",
+    "specialPhotoSlide2":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BvQso/sDgqw.jpg",
+    "specialPhotoSlide3":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BzuuE/c03sI.jpg",
+    "specialPhotoSlide4":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BM4Pp/CG0Zo.jpg",
+    "specialPhotosStory":[
+        {
+            "lodgePhotoId":16,
+            "lodgePhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BJ5di/81EGS.jpg",
+            "lodgePhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BJ5di/small/",
+            "lodgePhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BJ5di/medium/",
+            "lodgePhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BJ5di/thumb/",
+            "lodgePhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BJ5di/large/",
+            "lodgePhotoTitle":"",
+            "lodgePhotoContent":"",
+            "lodgePhotoType":"我们的故事",
+            "lodgePhotoSize":"0B"
+        }
+    ],
+    "specialPhotoStory0":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BJ5di/81EGS.jpg",
+    "specialPhotosLogo":[
+        {
+            "lodgePhotoId":13,
+            "lodgePhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BE0k1/FNhux.jpg",
+            "lodgePhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BE0k1/small/",
+            "lodgePhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BE0k1/medium/",
+            "lodgePhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BE0k1/thumb/",
+            "lodgePhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BE0k1/large/",
+            "lodgePhotoTitle":"壮壮的内心独白",
+            "lodgePhotoContent":"",
+            "lodgePhotoType":"旅馆LOGO",
+            "lodgePhotoSize":"0B"
+        }
+    ],
+    "specialPhotoLogo0":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9BE0k1/FNhux.jpg",
+    "ImportScripts":[
+        {
+            "FileName":"roomQuery.js"
+        }
+    ],
+    "RenderIt":true,
+    "PageTitle":"心悦小筑-家庭旅馆,别墅旅馆,旅馆,住宿,XX住宿",
+    "FirstRoomLink":"room35.htm",
+    "roomName":"301无敌海景房",
+    "roomPrize":"￥200元",
+    "roomId":41,
+    "roomIcon":"",
+    "roomAttributes":[
+        {
+            "attributeName":"电视",
+            "attributeIcon":"background-position:-0px -160px;",
+            "attributeId":65,
+            "optionName":"无",
+            "optionIcon":"-160px",
+            "optionId":0,
+            "attributeEnabled":false
+        },
+        {
+            "attributeName":"电脑",
+            "attributeIcon":"background-position:-32px -128px",
+            "attributeId":66,
+            "optionName":"电脑",
+            "optionIcon":"-128px",
+            "optionId":161,
+            "attributeEnabled":true
+        },
+        {
+            "attributeName":"洗浴",
+            "attributeIcon":"background-position:-128px -96px",
+            "attributeId":67,
+            "optionName":"超大独立卫浴",
+            "optionIcon":"-96px",
+            "optionId":164,
+            "attributeEnabled":true
+        },
+        {
+            "attributeName":"床型",
+            "attributeIcon":"background-position:-544px -64px",
+            "attributeId":68,
+            "optionName":"1.8M大床",
+            "optionIcon":"-64px",
+            "optionId":167,
+            "attributeEnabled":true
+        },
+        {
+            "attributeName":"衣柜",
+            "attributeIcon":"background-position:-192px -128px",
+            "attributeId":69,
+            "optionName":"组合大衣橱",
+            "optionIcon":"-128px",
+            "optionId":170,
+            "attributeEnabled":true
+        },
+        {
+            "attributeName":"网络连接",
+            "attributeIcon":"background-position:-160px -128px",
+            "attributeId":70,
+            "optionName":"免费WIFI",
+            "optionIcon":"-128px",
+            "optionId":171,
+            "attributeEnabled":true
+        },
+        {
+            "attributeName":"阳台",
+            "attributeIcon":"background-position:-64px -160px;",
+            "attributeId":71,
+            "optionName":"无",
+            "optionIcon":"-160px",
+            "optionId":0,
+            "attributeEnabled":false
+        },
+        {
+            "attributeName":"书桌",
+            "attributeIcon":"background-position:-192px -160px;",
+            "attributeId":72,
+            "optionName":"无",
+            "optionIcon":"-160px",
+            "optionId":0,
+            "attributeEnabled":false
+        }
+    ],
+    "FileName":"room.htm",
+    "roomAlbum":[
+        {
+            "roomPhotoId":1,
+            "roomPhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DLBJf/xcoAW.jpg",
+            "roomPhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DLBJf/small/",
+            "roomPhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DLBJf/medium/",
+            "roomPhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DLBJf/thumb/",
+            "roomPhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DLBJf/large/",
+            "roomPhotoTitle":"",
+            "roomPhotoContent":"",
+            "roomPhotoSize":"0B"
+        },
+        {
+            "roomPhotoId":2,
+            "roomPhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DN7B5/E6nrb.jpg",
+            "roomPhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DN7B5/small/",
+            "roomPhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DN7B5/medium/",
+            "roomPhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DN7B5/thumb/",
+            "roomPhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DN7B5/large/",
+            "roomPhotoTitle":"",
+            "roomPhotoContent":"",
+            "roomPhotoSize":"0B"
+        },
+        {
+            "roomPhotoId":3,
+            "roomPhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DPLFz/q0m91.jpg",
+            "roomPhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DPLFz/small/",
+            "roomPhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DPLFz/medium/",
+            "roomPhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DPLFz/thumb/",
+            "roomPhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DPLFz/large/",
+            "roomPhotoTitle":"",
+            "roomPhotoContent":"",
+            "roomPhotoSize":"0B"
+        },
+        {
+            "roomPhotoId":4,
+            "roomPhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DREZV/4nOuJ.jpg",
+            "roomPhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DREZV/small/",
+            "roomPhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DREZV/medium/",
+            "roomPhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DREZV/thumb/",
+            "roomPhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DREZV/large/",
+            "roomPhotoTitle":"",
+            "roomPhotoContent":"",
+            "roomPhotoSize":"0B"
+        },
+        {
+            "roomPhotoId":5,
+            "roomPhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DTPXa/Hygd8.jpg",
+            "roomPhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DTPXa/small/",
+            "roomPhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DTPXa/medium/",
+            "roomPhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DTPXa/thumb/",
+            "roomPhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DTPXa/large/",
+            "roomPhotoTitle":"",
+            "roomPhotoContent":"",
+            "roomPhotoSize":"0B"
+        },
+        {
+            "roomPhotoId":6,
+            "roomPhotoUrl":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DVpun/ux6Es.jpg",
+            "roomPhotoUrlSmall":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DVpun/small/",
+            "roomPhotoUrlMedium":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DVpun/medium/",
+            "roomPhotoUrlThumb":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DVpun/thumb/",
+            "roomPhotoUrlLarge":"http://pic.yupoo.com/skyxiaohaotian_v/Bw9DVpun/large/",
+            "roomPhotoTitle":"",
+            "roomPhotoContent":"",
+            "roomPhotoSize":"0B"
+        }
+    ]
+};
+root.PageTitle=root.roomName+'-'+root.lodgeName+'-'+root.TemplatePropertyTitleSuffix;
+for(var i in root.lodgeRooms){
+    root.lodgeRooms[i].roomAttributes='';
+    if(root.lodgeRooms[i].roomId==root.roomId){
+        for(var j in root.roomAttributes){
+            var attr=root.roomAttributes[j]
+            root.lodgeRooms[i].roomAttributes+=
+            '<li><span class="icon"><img src="'+root.baseUrl+'assets/shared/img/blank.gif" style="width:32px;height:32px;background-image:url('+root.adminBaseUrl+'/Style/lodge/icons_sprite.png);'+attr.attributeIcon+'" /></span><span class="attributeName">'+attr.attributeName+':</span><span class="optionName">'+attr.optionName+'</span></li>';
+        }
+    }
+};
+//MFL模版渲染机数据与处理脚本结果数据导出脚本
+//尹志翔 2011/11/10 08:39
+
+var rootNewStrings = '';
+var rootNewArrays = '';
+for (var p in root) {
+    if (typeof (root[p]) == 'string') {
+        rootNewStrings += 's_' + p + ',';
+    }
+    if (typeof (root[p]) == 'number') {
+        rootNewStrings += 'n_' + p + ',';
+    }
+    if (typeof (root[p]) == 'boolean') {
+        rootNewStrings += 'b_' + p + ',';
+    }
+    if (root[p].constructor === Array) {
+        rootNewArrays += p + ',';
+        if (root[p].length) 
+        {
+            for (var p2 in root[p][0]) {
+                if (typeof (root[p][0][p2]) == 'string') {
+                    rootNewArrays += 's_' + p2 + '|';
+                }
+                if (typeof (root[p][0][p2]) == 'number') {
+                    rootNewArrays += 'n_' + p2 + '|';
+                }
+                if (typeof (root[p][0][p2]) == 'boolean') {
+                    rootNewArrays += 'b_' + p2 + '|';
+                }
+            }
+            rootNewArrays += ',';
+            rootNewArrays += root[p].length + ',';
+        } else {
+            rootNewArrays += ',0,';
+        }
+    }
+}
+
+target=root.baseUrl;//导出String
+target=root.adminBaseUrl;//导出String
+target=root.MFLBaseUrl;//导出String
+target=root.lodgeName;//导出String
+target=root.lodgeLongtitude;//导出Number
+target=root.lodgeLatitude;//导出Number
+target=root.lodgeTraffic;//导出String
+target=root.lodgeContact;//导出String
+target=root.lodgeDescription;//导出String
+target=root.lodgeOrder;//导出String
+target=root.lodgeTemplateName;//导出String
+target=root.TemplatePropertyStory;//导出String
+target=root.TemplatePropertyServices;//导出String
+target=root.TemplatePropertyWeibo;//导出String
+target=root.TemplatePropertyTitleSuffix;//导出String
+target=root.specialPhotoSlide0;//导出String
+target=root.specialPhotoSlide1;//导出String
+target=root.specialPhotoSlide2;//导出String
+target=root.specialPhotoSlide3;//导出String
+target=root.specialPhotoSlide4;//导出String
+target=root.specialPhotoStory0;//导出String
+target=root.specialPhotoLogo0;//导出String
+target=root.RenderIt;//导出Boolean
+target=root.PageTitle;//导出String
+target=root.FirstRoomLink;//导出String
+target=root.roomName;//导出String
+target=root.roomPrize;//导出String
+target=root.roomId;//导出Number
+target=root.roomIcon;//导出String
+target=root.FileName;//导出String
+target=root.lodgeAlbum[0].lodgePhotoId;//导出Number
+target=root.lodgeAlbum[0].lodgePhotoUrl;//导出String
+target=root.lodgeAlbum[0].lodgePhotoUrlSmall;//导出String
+target=root.lodgeAlbum[0].lodgePhotoUrlMedium;//导出String
+target=root.lodgeAlbum[0].lodgePhotoUrlThumb;//导出String
+target=root.lodgeAlbum[0].lodgePhotoUrlLarge;//导出String
+target=root.lodgeAlbum[0].lodgePhotoTitle;//导出String
+target=root.lodgeAlbum[0].lodgePhotoContent;//导出String
+target=root.lodgeAlbum[0].lodgePhotoType;//导出String
+target=root.lodgeAlbum[0].lodgePhotoSize;//导出String
+target=root.lodgeAlbum[1].lodgePhotoId;//导出Number
+target=root.lodgeAlbum[1].lodgePhotoUrl;//导出String
+target=root.lodgeAlbum[1].lodgePhotoUrlSmall;//导出String
+target=root.lodgeAlbum[1].lodgePhotoUrlMedium;//导出String
+target=root.lodgeAlbum[1].lodgePhotoUrlThumb;//导出String
+target=root.lodgeAlbum[1].lodgePhotoUrlLarge;//导出String
+target=root.lodgeAlbum[1].lodgePhotoTitle;//导出String
+target=root.lodgeAlbum[1].lodgePhotoContent;//导出String
+target=root.lodgeAlbum[1].lodgePhotoType;//导出String
+target=root.lodgeAlbum[1].lodgePhotoSize;//导出String
+target=root.lodgeAlbum[2].lodgePhotoId;//导出Number
+target=root.lodgeAlbum[2].lodgePhotoUrl;//导出String
+target=root.lodgeAlbum[2].lodgePhotoUrlSmall;//导出String
+target=root.lodgeAlbum[2].lodgePhotoUrlMedium;//导出String
+target=root.lodgeAlbum[2].lodgePhotoUrlThumb;//导出String
+target=root.lodgeAlbum[2].lodgePhotoUrlLarge;//导出String
+target=root.lodgeAlbum[2].lodgePhotoTitle;//导出String
+target=root.lodgeAlbum[2].lodgePhotoContent;//导出String
+target=root.lodgeAlbum[2].lodgePhotoType;//导出String
+target=root.lodgeAlbum[2].lodgePhotoSize;//导出String
+target=root.lodgeAlbum[3].lodgePhotoId;//导出Number
+target=root.lodgeAlbum[3].lodgePhotoUrl;//导出String
+target=root.lodgeAlbum[3].lodgePhotoUrlSmall;//导出String
+target=root.lodgeAlbum[3].lodgePhotoUrlMedium;//导出String
+target=root.lodgeAlbum[3].lodgePhotoUrlThumb;//导出String
+target=root.lodgeAlbum[3].lodgePhotoUrlLarge;//导出String
+target=root.lodgeAlbum[3].lodgePhotoTitle;//导出String
+target=root.lodgeAlbum[3].lodgePhotoContent;//导出String
+target=root.lodgeAlbum[3].lodgePhotoType;//导出String
+target=root.lodgeAlbum[3].lodgePhotoSize;//导出String
+target=root.lodgeAlbum[4].lodgePhotoId;//导出Number
+target=root.lodgeAlbum[4].lodgePhotoUrl;//导出String
+target=root.lodgeAlbum[4].lodgePhotoUrlSmall;//导出String
+target=root.lodgeAlbum[4].lodgePhotoUrlMedium;//导出String
+target=root.lodgeAlbum[4].lodgePhotoUrlThumb;//导出String
+target=root.lodgeAlbum[4].lodgePhotoUrlLarge;//导出String
+target=root.lodgeAlbum[4].lodgePhotoTitle;//导出String
+target=root.lodgeAlbum[4].lodgePhotoContent;//导出String
+target=root.lodgeAlbum[4].lodgePhotoType;//导出String
+target=root.lodgeAlbum[4].lodgePhotoSize;//导出String
+target=root.lodgeAlbum[5].lodgePhotoId;//导出Number
+target=root.lodgeAlbum[5].lodgePhotoUrl;//导出String
+target=root.lodgeAlbum[5].lodgePhotoUrlSmall;//导出String
+target=root.lodgeAlbum[5].lodgePhotoUrlMedium;//导出String
+target=root.lodgeAlbum[5].lodgePhotoUrlThumb;//导出String
+target=root.lodgeAlbum[5].lodgePhotoUrlLarge;//导出String
+target=root.lodgeAlbum[5].lodgePhotoTitle;//导出String
+target=root.lodgeAlbum[5].lodgePhotoContent;//导出String
+target=root.lodgeAlbum[5].lodgePhotoType;//导出String
+target=root.lodgeAlbum[5].lodgePhotoSize;//导出String
+target=root.lodgeRooms[0].roomName;//导出String
+target=root.lodgeRooms[0].roomPrize;//导出String
+target=root.lodgeRooms[0].roomId;//导出Number
+target=root.lodgeRooms[0].roomIcon;//导出String
+target=root.lodgeRooms[0].roomCurrent;//导出Boolean
+target=root.lodgeRooms[0].roomAttributes;//导出String
+target=root.lodgeRooms[1].roomName;//导出String
+target=root.lodgeRooms[1].roomPrize;//导出String
+target=root.lodgeRooms[1].roomId;//导出Number
+target=root.lodgeRooms[1].roomIcon;//导出String
+target=root.lodgeRooms[1].roomCurrent;//导出Boolean
+target=root.lodgeRooms[1].roomAttributes;//导出String
+target=root.lodgeRooms[2].roomName;//导出String
+target=root.lodgeRooms[2].roomPrize;//导出String
+target=root.lodgeRooms[2].roomId;//导出Number
+target=root.lodgeRooms[2].roomIcon;//导出String
+target=root.lodgeRooms[2].roomCurrent;//导出Boolean
+target=root.lodgeRooms[2].roomAttributes;//导出String
+target=root.lodgeRooms[3].roomName;//导出String
+target=root.lodgeRooms[3].roomPrize;//导出String
+target=root.lodgeRooms[3].roomId;//导出Number
+target=root.lodgeRooms[3].roomIcon;//导出String
+target=root.lodgeRooms[3].roomCurrent;//导出Boolean
+target=root.lodgeRooms[3].roomAttributes;//导出String
+target=root.lodgeRooms[4].roomName;//导出String
+target=root.lodgeRooms[4].roomPrize;//导出String
+target=root.lodgeRooms[4].roomId;//导出Number
+target=root.lodgeRooms[4].roomIcon;//导出String
+target=root.lodgeRooms[4].roomCurrent;//导出Boolean
+target=root.lodgeRooms[4].roomAttributes;//导出String
+target=root.lodgeRooms[5].roomName;//导出String
+target=root.lodgeRooms[5].roomPrize;//导出String
+target=root.lodgeRooms[5].roomId;//导出Number
+target=root.lodgeRooms[5].roomIcon;//导出String
+target=root.lodgeRooms[5].roomCurrent;//导出Boolean
+target=root.lodgeRooms[5].roomAttributes;//导出String
+target=root.lodgeRooms[6].roomName;//导出String
+target=root.lodgeRooms[6].roomPrize;//导出String
+target=root.lodgeRooms[6].roomId;//导出Number
+target=root.lodgeRooms[6].roomIcon;//导出String
+target=root.lodgeRooms[6].roomCurrent;//导出Boolean
+target=root.lodgeRooms[6].roomAttributes;//导出String
+target=root.lodgePhotoTypes[0].type;//导出String
+target=root.lodgePhotoTypes[0].typeCurrent;//导出Boolean
+target=root.lodgePhotoTypes[0].typePinyin;//导出String
+target=root.lodgePhotoTypes[1].type;//导出String
+target=root.lodgePhotoTypes[1].typeCurrent;//导出Boolean
+target=root.lodgePhotoTypes[1].typePinyin;//导出String
+target=root.lodgePhotoTypes[2].type;//导出String
+target=root.lodgePhotoTypes[2].typeCurrent;//导出Boolean
+target=root.lodgePhotoTypes[2].typePinyin;//导出String
+target=root.lodgePhotoTypes[3].type;//导出String
+target=root.lodgePhotoTypes[3].typeCurrent;//导出Boolean
+target=root.lodgePhotoTypes[3].typePinyin;//导出String
+target=root.specialPhotosSlide[0].lodgePhotoId;//导出Number
+target=root.specialPhotosSlide[0].lodgePhotoUrl;//导出String
+target=root.specialPhotosSlide[0].lodgePhotoUrlSmall;//导出String
+target=root.specialPhotosSlide[0].lodgePhotoUrlMedium;//导出String
+target=root.specialPhotosSlide[0].lodgePhotoUrlThumb;//导出String
+target=root.specialPhotosSlide[0].lodgePhotoUrlLarge;//导出String
+target=root.specialPhotosSlide[0].lodgePhotoTitle;//导出String
+target=root.specialPhotosSlide[0].lodgePhotoContent;//导出String
+target=root.specialPhotosSlide[0].lodgePhotoType;//导出String
+target=root.specialPhotosSlide[0].lodgePhotoSize;//导出String
+target=root.specialPhotosSlide[1].lodgePhotoId;//导出Number
+target=root.specialPhotosSlide[1].lodgePhotoUrl;//导出String
+target=root.specialPhotosSlide[1].lodgePhotoUrlSmall;//导出String
+target=root.specialPhotosSlide[1].lodgePhotoUrlMedium;//导出String
+target=root.specialPhotosSlide[1].lodgePhotoUrlThumb;//导出String
+target=root.specialPhotosSlide[1].lodgePhotoUrlLarge;//导出String
+target=root.specialPhotosSlide[1].lodgePhotoTitle;//导出String
+target=root.specialPhotosSlide[1].lodgePhotoContent;//导出String
+target=root.specialPhotosSlide[1].lodgePhotoType;//导出String
+target=root.specialPhotosSlide[1].lodgePhotoSize;//导出String
+target=root.specialPhotosSlide[2].lodgePhotoId;//导出Number
+target=root.specialPhotosSlide[2].lodgePhotoUrl;//导出String
+target=root.specialPhotosSlide[2].lodgePhotoUrlSmall;//导出String
+target=root.specialPhotosSlide[2].lodgePhotoUrlMedium;//导出String
+target=root.specialPhotosSlide[2].lodgePhotoUrlThumb;//导出String
+target=root.specialPhotosSlide[2].lodgePhotoUrlLarge;//导出String
+target=root.specialPhotosSlide[2].lodgePhotoTitle;//导出String
+target=root.specialPhotosSlide[2].lodgePhotoContent;//导出String
+target=root.specialPhotosSlide[2].lodgePhotoType;//导出String
+target=root.specialPhotosSlide[2].lodgePhotoSize;//导出String
+target=root.specialPhotosSlide[3].lodgePhotoId;//导出Number
+target=root.specialPhotosSlide[3].lodgePhotoUrl;//导出String
+target=root.specialPhotosSlide[3].lodgePhotoUrlSmall;//导出String
+target=root.specialPhotosSlide[3].lodgePhotoUrlMedium;//导出String
+target=root.specialPhotosSlide[3].lodgePhotoUrlThumb;//导出String
+target=root.specialPhotosSlide[3].lodgePhotoUrlLarge;//导出String
+target=root.specialPhotosSlide[3].lodgePhotoTitle;//导出String
+target=root.specialPhotosSlide[3].lodgePhotoContent;//导出String
+target=root.specialPhotosSlide[3].lodgePhotoType;//导出String
+target=root.specialPhotosSlide[3].lodgePhotoSize;//导出String
+target=root.specialPhotosSlide[4].lodgePhotoId;//导出Number
+target=root.specialPhotosSlide[4].lodgePhotoUrl;//导出String
+target=root.specialPhotosSlide[4].lodgePhotoUrlSmall;//导出String
+target=root.specialPhotosSlide[4].lodgePhotoUrlMedium;//导出String
+target=root.specialPhotosSlide[4].lodgePhotoUrlThumb;//导出String
+target=root.specialPhotosSlide[4].lodgePhotoUrlLarge;//导出String
+target=root.specialPhotosSlide[4].lodgePhotoTitle;//导出String
+target=root.specialPhotosSlide[4].lodgePhotoContent;//导出String
+target=root.specialPhotosSlide[4].lodgePhotoType;//导出String
+target=root.specialPhotosSlide[4].lodgePhotoSize;//导出String
+target=root.specialPhotosStory[0].lodgePhotoId;//导出Number
+target=root.specialPhotosStory[0].lodgePhotoUrl;//导出String
+target=root.specialPhotosStory[0].lodgePhotoUrlSmall;//导出String
+target=root.specialPhotosStory[0].lodgePhotoUrlMedium;//导出String
+target=root.specialPhotosStory[0].lodgePhotoUrlThumb;//导出String
+target=root.specialPhotosStory[0].lodgePhotoUrlLarge;//导出String
+target=root.specialPhotosStory[0].lodgePhotoTitle;//导出String
+target=root.specialPhotosStory[0].lodgePhotoContent;//导出String
+target=root.specialPhotosStory[0].lodgePhotoType;//导出String
+target=root.specialPhotosStory[0].lodgePhotoSize;//导出String
+target=root.specialPhotosLogo[0].lodgePhotoId;//导出Number
+target=root.specialPhotosLogo[0].lodgePhotoUrl;//导出String
+target=root.specialPhotosLogo[0].lodgePhotoUrlSmall;//导出String
+target=root.specialPhotosLogo[0].lodgePhotoUrlMedium;//导出String
+target=root.specialPhotosLogo[0].lodgePhotoUrlThumb;//导出String
+target=root.specialPhotosLogo[0].lodgePhotoUrlLarge;//导出String
+target=root.specialPhotosLogo[0].lodgePhotoTitle;//导出String
+target=root.specialPhotosLogo[0].lodgePhotoContent;//导出String
+target=root.specialPhotosLogo[0].lodgePhotoType;//导出String
+target=root.specialPhotosLogo[0].lodgePhotoSize;//导出String
+target=root.ImportScripts[0].FileName;//导出String
+target=root.roomAttributes[0].attributeName;//导出String
+target=root.roomAttributes[0].attributeIcon;//导出String
+target=root.roomAttributes[0].attributeId;//导出Number
+target=root.roomAttributes[0].optionName;//导出String
+target=root.roomAttributes[0].optionIcon;//导出String
+target=root.roomAttributes[0].optionId;//导出Number
+target=root.roomAttributes[0].attributeEnabled;//导出Boolean
+target=root.roomAttributes[1].attributeName;//导出String
+target=root.roomAttributes[1].attributeIcon;//导出String
+target=root.roomAttributes[1].attributeId;//导出Number
+target=root.roomAttributes[1].optionName;//导出String
+target=root.roomAttributes[1].optionIcon;//导出String
+target=root.roomAttributes[1].optionId;//导出Number
+target=root.roomAttributes[1].attributeEnabled;//导出Boolean
+target=root.roomAttributes[2].attributeName;//导出String
+target=root.roomAttributes[2].attributeIcon;//导出String
+target=root.roomAttributes[2].attributeId;//导出Number
+target=root.roomAttributes[2].optionName;//导出String
+target=root.roomAttributes[2].optionIcon;//导出String
+target=root.roomAttributes[2].optionId;//导出Number
+target=root.roomAttributes[2].attributeEnabled;//导出Boolean
+target=root.roomAttributes[3].attributeName;//导出String
+target=root.roomAttributes[3].attributeIcon;//导出String
+target=root.roomAttributes[3].attributeId;//导出Number
+target=root.roomAttributes[3].optionName;//导出String
+target=root.roomAttributes[3].optionIcon;//导出String
+target=root.roomAttributes[3].optionId;//导出Number
+target=root.roomAttributes[3].attributeEnabled;//导出Boolean
+target=root.roomAttributes[4].attributeName;//导出String
+target=root.roomAttributes[4].attributeIcon;//导出String
+target=root.roomAttributes[4].attributeId;//导出Number
+target=root.roomAttributes[4].optionName;//导出String
+target=root.roomAttributes[4].optionIcon;//导出String
+target=root.roomAttributes[4].optionId;//导出Number
+target=root.roomAttributes[4].attributeEnabled;//导出Boolean
+target=root.roomAttributes[5].attributeName;//导出String
+target=root.roomAttributes[5].attributeIcon;//导出String
+target=root.roomAttributes[5].attributeId;//导出Number
+target=root.roomAttributes[5].optionName;//导出String
+target=root.roomAttributes[5].optionIcon;//导出String
+target=root.roomAttributes[5].optionId;//导出Number
+target=root.roomAttributes[5].attributeEnabled;//导出Boolean
+target=root.roomAttributes[6].attributeName;//导出String
+target=root.roomAttributes[6].attributeIcon;//导出String
+target=root.roomAttributes[6].attributeId;//导出Number
+target=root.roomAttributes[6].optionName;//导出String
+target=root.roomAttributes[6].optionIcon;//导出String
+target=root.roomAttributes[6].optionId;//导出Number
+target=root.roomAttributes[6].attributeEnabled;//导出Boolean
+target=root.roomAttributes[7].attributeName;//导出String
+target=root.roomAttributes[7].attributeIcon;//导出String
+target=root.roomAttributes[7].attributeId;//导出Number
+target=root.roomAttributes[7].optionName;//导出String
+target=root.roomAttributes[7].optionIcon;//导出String
+target=root.roomAttributes[7].optionId;//导出Number
+target=root.roomAttributes[7].attributeEnabled;//导出Boolean
+target=root.roomAlbum[0].roomPhotoId;//导出Number
+target=root.roomAlbum[0].roomPhotoUrl;//导出String
+target=root.roomAlbum[0].roomPhotoUrlSmall;//导出String
+target=root.roomAlbum[0].roomPhotoUrlMedium;//导出String
+target=root.roomAlbum[0].roomPhotoUrlThumb;//导出String
+target=root.roomAlbum[0].roomPhotoUrlLarge;//导出String
+target=root.roomAlbum[0].roomPhotoTitle;//导出String
+target=root.roomAlbum[0].roomPhotoContent;//导出String
+target=root.roomAlbum[0].roomPhotoSize;//导出String
+target=root.roomAlbum[1].roomPhotoId;//导出Number
+target=root.roomAlbum[1].roomPhotoUrl;//导出String
+target=root.roomAlbum[1].roomPhotoUrlSmall;//导出String
+target=root.roomAlbum[1].roomPhotoUrlMedium;//导出String
+target=root.roomAlbum[1].roomPhotoUrlThumb;//导出String
+target=root.roomAlbum[1].roomPhotoUrlLarge;//导出String
+target=root.roomAlbum[1].roomPhotoTitle;//导出String
+target=root.roomAlbum[1].roomPhotoContent;//导出String
+target=root.roomAlbum[1].roomPhotoSize;//导出String
+target=root.roomAlbum[2].roomPhotoId;//导出Number
+target=root.roomAlbum[2].roomPhotoUrl;//导出String
+target=root.roomAlbum[2].roomPhotoUrlSmall;//导出String
+target=root.roomAlbum[2].roomPhotoUrlMedium;//导出String
+target=root.roomAlbum[2].roomPhotoUrlThumb;//导出String
+target=root.roomAlbum[2].roomPhotoUrlLarge;//导出String
+target=root.roomAlbum[2].roomPhotoTitle;//导出String
+target=root.roomAlbum[2].roomPhotoContent;//导出String
+target=root.roomAlbum[2].roomPhotoSize;//导出String
+target=root.roomAlbum[3].roomPhotoId;//导出Number
+target=root.roomAlbum[3].roomPhotoUrl;//导出String
+target=root.roomAlbum[3].roomPhotoUrlSmall;//导出String
+target=root.roomAlbum[3].roomPhotoUrlMedium;//导出String
+target=root.roomAlbum[3].roomPhotoUrlThumb;//导出String
+target=root.roomAlbum[3].roomPhotoUrlLarge;//导出String
+target=root.roomAlbum[3].roomPhotoTitle;//导出String
+target=root.roomAlbum[3].roomPhotoContent;//导出String
+target=root.roomAlbum[3].roomPhotoSize;//导出String
+target=root.roomAlbum[4].roomPhotoId;//导出Number
+target=root.roomAlbum[4].roomPhotoUrl;//导出String
+target=root.roomAlbum[4].roomPhotoUrlSmall;//导出String
+target=root.roomAlbum[4].roomPhotoUrlMedium;//导出String
+target=root.roomAlbum[4].roomPhotoUrlThumb;//导出String
+target=root.roomAlbum[4].roomPhotoUrlLarge;//导出String
+target=root.roomAlbum[4].roomPhotoTitle;//导出String
+target=root.roomAlbum[4].roomPhotoContent;//导出String
+target=root.roomAlbum[4].roomPhotoSize;//导出String
+target=root.roomAlbum[5].roomPhotoId;//导出Number
+target=root.roomAlbum[5].roomPhotoUrl;//导出String
+target=root.roomAlbum[5].roomPhotoUrlSmall;//导出String
+target=root.roomAlbum[5].roomPhotoUrlMedium;//导出String
+target=root.roomAlbum[5].roomPhotoUrlThumb;//导出String
+target=root.roomAlbum[5].roomPhotoUrlLarge;//导出String
+target=root.roomAlbum[5].roomPhotoTitle;//导出String
+target=root.roomAlbum[5].roomPhotoContent;//导出String
+target=root.roomAlbum[5].roomPhotoSize;//导出String

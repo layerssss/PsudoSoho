@@ -1,0 +1,23 @@
+System.ServiceModel.FaultException: System.Web.Services.Protocols.SoapException: 服务器无法处理请求。 ---> System.IO.DirectoryNotFoundException: 未能找到路径“C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\MFLLodge\hahaha\”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileSystemEnumerableIterator`1.CommonInit()
+   在 System.IO.FileSystemEnumerableIterator`1..ctor(String path, String originalUserPath, String searchPattern, SearchOption searchOption, SearchResultHandler`1 resultHandler)
+   在 System.IO.Directory.GetFiles(String path, String searchPattern)
+   在 MFLLodge.WebService.EmptyFolder(String hashStr, String path, String pattern) 位置 A:\testing.lodge.myfamilylodge.com\WebService.asmx.cs:行号 39
+   --- 内部异常堆栈跟踪的结尾 ---
+
+Server stack trace: 
+   在 System.ServiceModel.Channels.ServiceChannel.HandleReply(ProxyOperationRuntime operation, ProxyRpc& rpc)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 MFLAdmin.LodgeService.WebServiceSoap.EmptyFolder(EmptyFolderRequest request)
+   在 MFLAdmin.LodgeService.WebServiceSoapClient.MFLAdmin.LodgeService.WebServiceSoap.EmptyFolder(EmptyFolderRequest request) 位置 A:\testing.admin.xunnlv.com\Service References\LodgeService\Reference.cs:行号 358
+   在 MFLAdmin.LodgeService.WebServiceSoapClient.EmptyFolder(String hashStr, String path, String pattern) 位置 A:\testing.admin.xunnlv.com\Service References\LodgeService\Reference.cs:行号 367
+   在 MFLAdmin.Global.threadStart() 位置 A:\testing.admin.xunnlv.com\Global.asax.cs:行号 105
+System.Exception: 引发类型为“System.Exception”的异常。
+   在 MFLAdmin.Global.threadStart() 位置 A:\testing.admin.xunnlv.com\Global.asax.cs:行号 212   在 MFLAdmin.Global.threadStart() 位置 A:\testing.admin.xunnlv.com\Global.asax.cs:行号 212

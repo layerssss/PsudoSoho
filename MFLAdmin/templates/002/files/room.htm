@@ -1,0 +1,27 @@
+$IncludeText:pre_content$
+	<div class="kwicks-box" style="padding:30px 40px;">
+			<h2>房间展示</h2>
+			<div class="room-list-module">
+				$MFLArray?:lodgeRooms$
+				<div class="room-list">
+				<a class="$MFLArrayShowIf:roomCurrent,active$" href$MFLArrayShowIf:roomCurrent,Current$="room$MFLArrayText:roomId$.htm">
+				<p>$MFLArrayText:roomName$<span class="roomPrize">￥$MFLArrayText:roomPrize$/晚</span></p>
+				<ul>$MFLArrayText:roomAttributes$</ul>
+				</a>
+				</div>
+				$MFLArrayEnds:$
+			</div>
+			<h2>$MFLText:roomName$</h2>
+			$MFLArray?:roomAlbum$
+			<div class="typePhotoList clearfix">
+				<h3 class="photoTitle">$MFLArrayHtml:roomPhotoTitle$</h3>
+				<a class="stroke lightbox-image" href="$MFLArrayText:roomPhotoUrl$" rel="prettyPhoto[gallery1]" title="$MFLArrayText:roomPhotoContent$">
+					<img src="$MFLArrayText:roomPhotoUrl$" alt="$MFLArrayText:roomPhotoTitle$"/>
+				</a>
+				<p class="photoContent">$MFLArrayHtml:roomPhotoContent$</p>
+			</div>
+			$MFLArrayEnds:$
+			<div class="clearfix"></div>
+	</div>
+$IncludeText:int_content$
+$IncludeText:post_content$

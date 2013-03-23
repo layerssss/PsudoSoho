@@ -1,0 +1,4 @@
+System.Exception: Key "lodgeNameee" not found! (baseUrl,adminBaseUrl,MFLBaseUrl,lodgeName,lodgeLongtitude,lodgeLatitude,lodgeTraffic,lodgeContact,lodgeDescription,lodgeOrder,lodgeTemplateName,lodgeAlbum,lodgeRooms,lodgePhotoTypes)
+   在 MFLJson.JsonObject.get_Item(String key) 位置 C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\MFLJson\JsonObject.cs:行号 36
+   在 MFLJson.JsonMachine.JsonContextImplementation.RenderToStream(Stream outputStream) 位置 C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\MFLJson\JsonMachine\JsonContextImplementation.cs:行号 40
+   在 MFLAdmin.Global.threadStart() 位置 C:\Users\LayersSss\Documents\Visual Studio 2010\Projects\PsudoSoho\MFLAdmin\Global.asax.cs:行号 76老两口离开

@@ -1,0 +1,1 @@
+﻿<%@Page Language="C#"%><%Server.Transfer("/Default.aspx?lodge=test"+(Request["day"]==null?"":"&day="+Server.UrlEncode(Request["day"])));%>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>$title$</title>
+    <link href="/Styles/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/root.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="header">
+        <div id="header-content">
+            <a href="$baseUrl$" title="上课网">
+                <img src="$baseUrl$Styles/header-logo.png" alt="Goclassing" /></a>
+        </div>
+    </div>
+    <div id="main">
+        $GCRender:$
+        <div id="users" style="float: left">
+            <h3>
+                <div class="mfl-list-pages">$GCObject:pages$
+            <a class="mfl-list-page" href="?page=$GCObjectText:$">$GCObjectKey:$</a>
+            $GCObjectEnds:$
+                </div>
+                <span>$GCText:title$</span>
+            </h3>
+            <div class="user-list">
+                <div class="block mfl-list-itemTemplate">
+                    
+                    <a href="/T/$username$/" class="mfl-href-username">
+                        <img src="/Avatars/$id$.jpg" class="mfl-replace-src-id" style="float: left" /></a>
+                       <div class="floatright"> 
+                    <a href="/T/$username$/" class="mfl-truename mfl-href-username">$truename$</a><span class=" mfl-tags-coop"><a href="/$coop$/" title="$coop$"><img alt="$coop$" title="$coop$" src="/Styles/Tags/$coop$.gif" /></a></span><br />
+                        性别：<img src="/Styles/sex$sexprefix$.gif" title="$sexchar$" alt="$sexchar$" class="mfl-replace-src-sexprefix" /><br />
+                        来自：<a class=" mfl-href-uprovince" onclick="$('.searchText').val($(this).text());return false;" href="#$uprovince$">$uprovince$</a>
+                        <a class=" mfl-href-ucity" onclick="$('.searchText').val($(this).text());return false;" href="#$ucity$">$ucity$</a><br />
+                        <a href="/T/$username$/#Courses">正在教授的课程数:$createdCourses$</a><br />
+                        <a href="/T/$username$/#PCourses">正在学习的课程数:$paticipatedCourses$</a><br />
+                        <span class="mfl-alt-sex" style="display:none">$sex$</span></div>
+                </div>
+                $GCArray:listItems$
+                <div class="block mfl-list-item">
+                    <span class="floatright mfl-tags-coop">$GCArrayTags:coop$<a href="/$GCArrayTagsText:$/" title="$GCArrayTagsText:$"><img alt="$GCArrayTagsText:$" title="$GCArrayTagsText:$" src="/Styles/Tags/$GCArrayTagsText:$.gif" /></a>$GCArrayTagsEnds:$</span><a href="/T/$GCArrayText:username$/" class="mfl-truename mfl-href-username">$GCArrayText:truename$</a><br />
+                    <a href="/T/$GCArrayText:username$/" class="mfl-href-username">
+                        <img src="/Avatars/$GCArrayText:id$.jpg" class="mfl-replace-src-id" style="float: left" /></a>
+                        性别：<img src="/Styles/sex$GCArrayText:sexprefix$.gif" title="$GCArrayText:sexchar$" alt="$GCArrayText:sexchar$" class="mfl-alt-sexchar mfl-replace-src-sexprefix" /><br />
+                        来自：<br />
+                        <a class="mfl-uprovince mfl-href-uprovince" onclick="$('.searchText').val($(this).text());return false;" href="#$GCArrayText:uprovince$">$GCArrayText:uprovince$</a><br />
+                        <a class="mfl-ucity mfl-href-ucity" onclick="$('.searchText').val($(this).text());return false;" href="#$GCArrayText:ucity$">$GCArrayText:ucity$</a><br />
+                        正在教授的课程数:<span class="mfl-createdCourses">$GCArrayText:createdCourses$</span><br />
+                        正在学习的课程数:<span class="mfl-paticipatedCourses">$GCArrayText:paticipatedCourses$</span><br />
+                </div>
+                $GCArrayEnds:$
+            </div>
+            <div class="clearfix">
+            </div>
+            <div class="mfl-list-pages">$GCObject:pages$
+            <a class="mfl-list-page" href="?page=$GCObjectText:$">$GCObjectKey:$</a>
+            $GCObjectEnds:$
+            </div>
+        </div>
+        $GCRenderEnds:$
+        <div id="foot">
+            <a href="$baseUrl$Help/">使用帮助</a> <a href="$baseUrl$Privacy/">隐私声明</a>
+            <div class="floatright">
+                版权所有 上课网 Goclassing.com © 2011</div>
+        </div>
+    </div>
+</body>
+</html>

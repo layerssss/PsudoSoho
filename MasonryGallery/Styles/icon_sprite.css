@@ -1,0 +1,62 @@
+﻿.mfl-btn,.btn,.subpics-handle,.comments-handle,#cboxPrevious.btn,div#cboxClose
+{
+    background-image:url('icon_sprite.png');
+    background-repeat:no-repeat;
+    width:30px;
+    height:30px;
+    border:none;
+    background-color:transparent;
+}
+td>span>.btn
+{
+    float:right;
+}
+td>input
+{
+    padding:5px;
+    width:180px;
+}
+.mfl-btn,.btn
+{
+    text-indent:-9999px;
+    font-size:0px;
+}
+.btn-edit{background-position:-0px -180px;}
+.btn-edit:hover{background-position:-0px -210px;}
+.btn-delalbum:hover,.btn-delsubpic:hover{background-position:-0px -30px;}
+.btn-name{background-position:-30px -300px;}
+.btn-email{background-position:-60px -300px;}
+.btn-newcomment{background-position:-0px -240px;}
+.btn-newcomment:hover{background-position:-0px -270px;}
+.btn-reg{background-position:-90px -0px;}
+.btn-reg:hover{background-position:-90px -30px;}
+.btn-password{background-position:-30px -120px;}
+.btn-password:hover{background-position:-30px -150px;}
+.btn-options{background-position:-60px -120px;}
+.btn-options:hover{background-position:-60px -150px;}
+.btn-size{background-position:-60px -180px;}
+.btn-size:hover{background-position:-60px -210px;}
+.btn-add,.btn-newalbum,.btn-newsubpic>.btn{background-position:-60px -240px;}
+.btn-add:hover,.btn-newalbum:hover,.btn-newsubpic:hover>.btn{background-position:-60px -270px;}
+.mfl-edit-ok{background-position:-30px -60px;}
+.mfl-edit-ok:hover{background-position:-30px -90px;}
+.mfl-edit-cancel{background-position:-0px -0px;}
+.mfl-edit-cancel:hover{background-position:-0px -30px;}
+
+.btn-del,div#cboxClose{background-position:-0px -0px;}
+.btn-del:hover,div#cboxClose:hover{background-position:-0px -30px;}
+
+.btn-msg{background-position:-0px -300px;}
+.btn-logout{background-position:-0px -120px;}
+.btn-logout:hover{background-position:-0px -150px;}
+.btn-subpics{background-position:-30px -240px;}
+.btn-subpics:hover{background-position:-30px -270px;}
+.btn-comments{background-position:-0px -240px;}
+.btn-comments:hover{background-position:-0px -270px;}
+.btn-ok,.btn-ok#cboxPrevious{background-position:-30px -60px;}
+.btn-ok,.btn-ok#cboxPrevious:hover{background-position:-30px -90px;}
+.btn-selector{background-position:-30px -60px;}
+.btn-selector.btn-selector-active{background-position:-30px -90px;}
+
+.subpics-handle{background-position:-0px -361px;width:60px;padding-left:25px;height:31px;text-decoration:none;font-weight:bold;}
+.comments-handle{background-position:-0px -330px;width:100px;padding-left:5px;height:31px;text-decoration:none;font-weight:bold;}

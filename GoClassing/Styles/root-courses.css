@@ -1,0 +1,62 @@
+﻿
+.tick
+{
+    width:30px;
+    height:15px;
+    padding:0;
+    margin:0;
+    float:right;
+}
+.createCourse
+{
+    border: 1px solid #CCCCCC;
+    padding:10px;
+}
+.mfl-lodge-icons a.ftype
+{
+    width:100px;
+    display:block;
+    float:left;
+    overflow:hidden;
+}
+.mfl-lodge-icons
+{
+    border-width: 1px;
+    border-color: #ddd;
+    border-style: solid;
+    width:95%;
+    float:right;
+    padding:10px;
+    background-color:#eee;
+}
+.links-content .ui-selecting
+{
+    background-color: #EAF392;
+}
+.links-content .ui-selected
+{
+    background: url("images/ui-bg_inset-soft_50_b2d228_1x100.png") repeat-x scroll 50% 50% #B2D228;
+}
+.infotag
+{
+    color:#aaa;
+    font-size:0.9em;
+    float:right;
+    display:block;
+}
+.ctype
+{
+    font-size:0.8em;
+    color:#555;
+    height:25px;
+    padding-top:5px;
+    padding-bottom:2px;
+}
+.courses-list .teacher
+{
+    float:right;
+}
+#myCourses .teacher
+{
+    display:none;
+}

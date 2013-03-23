@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>$title$</title>
+    <link href="/Styles/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/root.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="header">
+        <div id="header-content">
+            <a href="$baseUrl$" title="上课网">
+                <img src="$baseUrl$Styles/header-logo.png" alt="Goclassing" /></a>
+        </div>
+    </div>
+    <div id="main">
+        <div id="left">
+            $GCLeftRender:$ 
+            
+            <div class="block">
+            <span class="floatright">
+                <div class="teacher">
+                    <a href="/T/$GCLeftText:teacherUsername$">
+                        <img src="/Avatars/$GCLeftText:teacherId$.small.jpg" /></a> <span class="mfl-tags-teacherCoop">
+                            $GCLeftTags:teacherCoop$<a href="/$GCLeftArrayTagsText:$/" title="$GCLeftArrayTagsText:$"><img
+                                alt="$GCLeftArrayTagsText:$" title="$GCLeftArrayTagsText:$" src="/Styles/Tags/$GCLeftArrayTagsText:$.gif" /></a>$GCLeftArrayTagsEnds:$</span>
+                    <span class="mfl-teacherTruename">主讲：<br />
+                        $GCLeftHtml:teacherTruename$</span>
+                </div>
+            </span>
+            <label>
+                课程名称：</label><br />
+            $GCLeftText:name$<br />
+            <label>
+                所属课程类别：</label><br />
+            <a href="/C/$GCLeftText:ctype1$/" class="ftype ftype-ctype1">$GCLeftText:ctype1$</a><br />
+            &nbsp;&nbsp;&nbsp;<a href="/C/$GCLeftText:ctype1$/$GCLeftText:ctype2$/" class="ftype ftype-ctype2">$GCLeftText:ctype2$</a><br />
+            
+            <label>
+                课程主页：</label><br />
+            <a href="$GCLeftText:baseUrl$C/$GCLeftText:showId$" class="courseUrl">$GCLeftText:baseUrl$C/$GCLeftText:showId$</a></div>
+            <div class="tagSettings">是否允许申请加入：<span class="canJoin">$GCLeftText:canJoinText$</span></div>
+            <div class="clearfix">
+            </div>
+            <div class="friends block ">
+                <a href="/C/$GCLeftText:showId$/Members" class="more clearfix" style="display:block;">查看该课程的学习成员...</a>
+            </div>
+            <div id="notifications"></div>
+            <script type="text/javascript">
+        $(function () {
+            initPage({
+            courseId:$GCLeftText:courseId$,
+            isCreatorOf:$GCLeftText:isCreatorOf$,
+            isMemberOf:$GCLeftText:isMemberOf$,
+            id:$GCLeftText:id$
+        });
+        cid=$GCLeftText:courseId$;
+    });
+            </script>
+            $GCLeftRenderEnds:$
+        </div>
+        <div id="right">
+        </div>
+        <div id="middle">
+            $GCTagRender:$
+            <div class="tag ui-widget">
+                <h3 class="ui-widget-header">
+                    <span class="tagName">$GCTagHtml:tag$</span>
+                    </h3>
+                
+                    <div class="tagSettings">
+                        <span class="canReply floatright">$GCTagText:canReplyText$</span>允许回复？<br />
+                        <div class="clearfix"></div>
+                        <span class="canGuestView floatright">$GCTagText:canGuestViewText$</span>允许游客查看？<br />
+                        <div class="clearfix" style="text-align:right"><a href="#" onclick="$(this).parent().parent().siblings('.ui-widget-header').children().eq(0).trigger('click');return false;">[&nbsp;x&nbsp;]</a></div></div>
+                <ul class="ui-widget-content">
+                    $GCTagArray?:posts$
+                    <li><span class="floatright">$GCTagArrayText:numReply$</span><span class="ftype ftype-$GCTagArrayText:ftype$">&nbsp;</span><a href="/C/$GCTagText:courseShowId$/$GCTagArrayText:id$">$GCTagArrayHtml:title$</a> </li>
+                    $GCTagArrayEnds:$
+                </ul>
+            </div>
+            $GCTagRenderEnds:$
+            
+$GCPostRender:$
+<a href=".">返回课程首页...</a><br />
+        <h3 class="ui-widget-header">[$GCPostText:tag$]$GCPostText:title$
+        </h3>
+        <div class="reply-list">
+            $GCPostArray:reply$
+            <div class="ui-widge mfl-list-item">
+            <div class="ui-widget-content" style="width:732px">
+                <div class="floatright"><span class="time">$GCPostArrayText:time$<br /><a href="#" class="btn-reply-author" onclick="$('.reply textarea').val('(回复 $GCPostArrayText:teacherTruename$) ').focus(5);return false;">[回复$GCPostArrayText:teacherSex$]</a></span>
+                    
+                    <div class="mfl-alt-id" title="$GCPostArrayText:id$">
+                    </div></div>
+                    <div class="teacher">
+                        <a href="/T/$GCPostArrayText:teacherUsername$">
+                            <img src="/Avatars/$GCPostArrayText:teacherId$.small.jpg" /></a> 
+                            <span class="mfl-tags-teacherCoop">
+                            $GCPostArrayTags:teacherCoop$<a href="/$GCPostArrayTagsText:teacherCoop$/" title="$GCPostArrayTagsText:teacherCoop$"><img alt="$GCPostArrayTagsText:teacherCoop$" title="$GCPostArrayTagsText:teacherCoop$" src="/Styles/Tags/$GCPostArrayTagsText:teacherCoop$.gif" /></a>$GCPostArrayTagsEnds:teacherCoop$
+                            </span>
+                        <span class="mfl-truename"><span class="truename">$GCPostArrayText:teacherTruename$</span></span><span
+                            style="display: none" class="mfl-alt-teacherId" title="$GCPostArrayText:teacherId$"></span>
+                    </div>
+                    <span class="ftype ftype-$GCPostArrayText:ftype$">&nbsp;</span>
+                    $GCPostArrayText:content$
+                    <div style="clear:right"></div>
+                </div>
+            </div>
+            $GCPostArrayEnds:reply$
+        </div>
+        <div class="ui-widget reply block" style="display:none;">
+            <h3 class="ui-widget-header">
+                添加文档/视频</h3>
+            <div class="ui-widget-content">
+                <div class="swfuloading">上传控件正在载入中，请稍候</div>
+                <div class="swfu1" style="width: 300px;">
+                </div>
+                <div class="swfu2" style="width: 300px;">
+                </div>
+                <div class="swfu3" style="width: 300px;">
+                </div>
+            </div>
+        </div>
+        <div class="ui-widget reply block" style="display:none;">
+            <h3 class="ui-widget-header">
+                添加文字</h3>
+            <div class="ui-widget-content">
+                <textarea style="width: 98%" rows="6" maxlength="1000"></textarea>
+                <span style="height: 27px; line-height: 1;" class="noupload">提交</span><span class="numChar"></span></div>
+        </div>
+        <script type="text/javascript">
+            data = {
+            isCreatorOf:$GCPostText:isCreatorOf$,
+            canReply:$GCPostText:canReply$,
+            limitationSwf:'$GCPostText:limitationSwf$',
+            limitationMp4:'$GCPostText:limitationMp4$',
+            limitationMp3:'$GCPostText:limitationMp3$'
+        };
+        pid=$GCPostText:postId$;
+        courseId=$GCPostText:courseId$;
+        </script>
+        $GCPostRenderEnds:$
+        </div>
+        <div id="foot">
+            <a href="$baseUrl$Help/">使用帮助</a> <a href="$baseUrl$Privacy/">隐私声明</a>
+            <div class="floatright">
+                版权所有 上课网 Goclassing.com © 2011</div>
+        </div>
+    </div>
+</body>
+</html>

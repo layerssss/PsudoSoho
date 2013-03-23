@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="ftp://dev.xunnlv.com/www/htdocs/" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="False" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="配置文件1" publishMethod="FTP" replaceMatchingFiles="True" userName="tangzx" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATB3WlHuuMkC5oO4ryJCULgAAAAACAAAAAAAQZgAAAAEAACAAAACnychiNt2W2VuIIizigxxL6UoXbFx9nfjVfbhDG5HH8gAAAAAOgAAAAAIAACAAAADbkOOUBAz+l+4o/BmYYgar9FB9okD6Dt7mxdzGffSMCRAAAADt62YBSAsvFTmnm7kn+izQQAAAAHpckDUbmIPL+Hr6QhzTUOrrdwipLKvinyPcxP3sAOFmSB5aCn6Tl9i7ymNdsCcVCFbz4LjTfHWLxTuNu++Y9ok=" SelectedForPublish="True">
+    <file relUrl="Global.asax" publishTime="03/17/2012 00:04:44" />
+    <file relUrl="bin/Redirector.pdb" publishTime="04/23/2012 08:28:18" />
+    <file relUrl="Web.config" publishTime="03/28/2012 21:22:07" />
+    <file relUrl="bin/Redirector.dll" publishTime="04/23/2012 08:28:18" />
+  </publishProfile>
+</publishData>

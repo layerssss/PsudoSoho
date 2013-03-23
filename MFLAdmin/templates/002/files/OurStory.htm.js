@@ -1,0 +1,1 @@
+﻿root.PageTitle='我们的故事-'+root.lodgeName+'-'+root.TemplatePropertyTitleSuffix;
